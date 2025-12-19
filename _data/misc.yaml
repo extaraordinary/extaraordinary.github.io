@@ -1,10 +1,8 @@
 fun_paragraphs:
-  - "I love playing piano, exploring a wide range of music from the romantic masterpieces of Frederic Chopin and Franz Liszt to the evocative contemporary works of Ludovico Einaudi and Yann Tiersen. Occasionally, I enjoy covering modern songs that resonate with me."
+  - "I love playing the piano, exploring a wide range of music from the romantic masterpieces of Frederic Chopin and Franz Liszt to the evocative contemporary works of Ludovico Einaudi and Yann Tiersen. Occasionally, I enjoy covering modern songs that resonate with me."
 
-  - "Traveling and immersing myself in diverse cultures is a source of constant inspiration. I delight in uncovering local art, savoring regional cuisine, and absorbing the rhythms of daily life, experiences that continually broaden my perspective and nourish my creativity."
+  - "Traveling and learning about diverse cultures is a source of constant inspiration for me. I enjoy uncovering local art, savoring regional cuisine, and find equal delight in absorbing the rhythms of daily life through photography. I also enjoy hiking and camping, in whatever way I can connect with nature."
 
-  - "I have recently found joy in woodworking, and find equal delight in capturing fleeting moments through photography. These hands-on pursuits allow me to express creativity in tangible, meaningful ways."
-
-  - "Maintaining an active lifestyle is important to me, whether through gym workouts, running, basketball, or other spirited forms of movement that energize the mind and body."
+  - 'I have recently found joy in woodworking. Learning about CMU''s TechSpark was a great starting point for me. You can check out my latest projects here: <a href="{{ "/assets/misc/plant-stand.jpg" | prepend: site.baseurl }}" target="_blank">plant stand</a>, <a href="{{ "/assets/misc/crate.jpg" | prepend: site.baseurl }}" target="_blank">crate</a>, and <a href="{{ "/assets/misc/folding-stool-1.jpg" | prepend: site.baseurl }}" target="_blank">folding stool</a>.'
 
   - "Reading remains a cherished refuge. I am drawn to fiction novels and philosophy, which together enrich my understanding of the world and the human experience."

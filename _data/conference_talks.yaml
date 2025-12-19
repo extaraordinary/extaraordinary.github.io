@@ -1,0 +1,48 @@
+talks:
+  - title: "Ultra‑low heat conductivity by configurational entropy for thermoelectric conversion"
+    event: "APS Global Physics Summit"
+    location: "Anaheim, CA"
+    date: "18 March 2025"
+    type: "Oral Presentation"
+    slides: ""   # Add link if available
+    video: ""    # Add link if available
+
+  - title: "Electrocaloric performance of high‑entropy oxides from first principles"
+    event: "Materials Research Society Spring Meeting & Exhibit"
+    location: "Seattle, WA"
+    date: "24 April 2024"
+    type: "Invited Talk"
+    slides: ""
+    video: ""
+
+  - title: "Electrocaloric performance of high‑entropy perovskites from first principles"
+    event: "American Physical Society March Meeting"
+    location: "Minneapolis, MN"
+    date: "4 March 2024"
+    type: "Oral Presentation"
+    slides: ""
+    video: ""
+
+  - title: "Electric polarization in high‑entropy oxides for electrocaloric refrigeration"
+    event: "American Physical Society March Meeting"
+    location: "Las Vegas, NV"
+    date: "9 March 2023"
+    type: "Poster Presentation"
+    slides: ""
+    video: ""
+
+  - title: "First‑principles prediction of the phase stability of high‑entropy oxides"
+    event: "American Physical Society March Meeting"
+    location: "Las Vegas, NV"
+    date: "8 March 2023"
+    type: "Oral Presentation"
+    slides: ""
+    video: ""
+
+  - title: "Temperature‑dependent compositional stability and electric polarization of high‑entropy oxides in electrocaloric cooling applications"
+    event: "Conference Across MRSEC‑PREM Schools"
+    location: "Columbus, OH"
+    date: "9 November 2022"
+    type: "Poster Presentation"
+    slides: ""
+    video: ""

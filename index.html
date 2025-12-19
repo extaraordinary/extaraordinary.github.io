@@ -102,6 +102,25 @@ Building on extensive collaborations within NSF’s MRSEC and across interdiscip
   </div>
 </div>
 
+<!-- ========== CONFERENCE TALKS ========== -->
+<div class="docs-section" id="conference-talks">
+  <h4>Conference Talks</h4>
+  <ul>
+    {% for talk in site.data.conference_talks.talks %}
+      <li>
+        <b>{{ talk.title }}</b><br/>
+        {{ talk.event }}, {{ talk.location }}, {{ talk.date }} ({{ talk.type }})
+        {% if talk.slides %}
+          <a class="button" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+        {% endif %}
+        {% if talk.video %}
+          <a class="button" href="{{ talk.video }}" target="_blank">Video</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
 <!-- ========== PROJECTS ========== 
 <div class="docs-section" id="projects">
   <h4>Projects</h4>

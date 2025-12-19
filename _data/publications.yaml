@@ -1,14 +1,7 @@
 papers:
 
-  - title: "Community Notes Moderate Engagement With and Diffusion of False Information Online"
-    authors: "Isaac Slaughter, Axel Peytavin, Johan Ugander, <b>Martin Saveski</b>"
-    venue: "Arxiv'25: arXiv preprint. 2025."
-    paper_pdf: "/assets/publications/2025_cn_causal_effects/paper.pdf"
-    selected: y
-
-  - title: "Supernotes: Driving Consensus in Crowd-Sourced Fact-Checking"
-    authors: "Soham De, Michiel A. Bakker, Jay Baxter, <b>Martin Saveski</b>"
-    venue: "WWW'25: The Web Conference. 2025."
-    paper_pdf: "/assets/publications/2024_supernotes/paper.pdf"
-    code: "https://github.com/saveski-lab/supernotes"
+  - title: "Nanoscale confinement of phonon flow and heat transport"
+    authors: "Albert Beardo, Weinan Chen, Brendan McBennett, <b>Tara Karimzadeh Sabet<b>, Emma E Nelson, Theodore H Culman, Henry C Kapteyn, Joshua L Knobloch, Margaret M Murnane, Ismaila Dabo"
+    venue: "npj Computational Materials. 2025"
+    paper_pdf: "/assets/publications/npj_2025/s41524-025-01593-7.pdf"
     selected: y

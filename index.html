@@ -105,7 +105,8 @@ Building on extensive collaborations within NSF’s MRSEC and across interdiscip
 <!-- ========== CONFERENCE TALKS ========== -->
 <div class="docs-section" id="conference-talks"> 
   <h4>Conference Talks</h4> 
-  <ul style="list-style-type: none; padding-left: 0;" {% for talk in site.data.conference_talks.talks %}></ul>
+  <ul style="list-style-type: none; padding-left: 0;">
+  {% for talk in site.data.conference_talks.talks %}
     <li>
       <b>{{ talk.title }}</b><br/>
       {{ talk.event }}, {{ talk.location }}, {{ talk.date }} ({{ talk.type }})

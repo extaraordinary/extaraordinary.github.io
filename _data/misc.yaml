@@ -3,6 +3,6 @@ fun_paragraphs:
 
   - "Traveling and learning about diverse cultures is a source of constant inspiration for me. I enjoy uncovering local art, savoring regional cuisine, and find equal delight in absorbing the rhythms of daily life through photography. I also enjoy hiking and camping, in whatever way I can connect with nature."
 
-  - 'I have recently found joy in woodworking. Learning about CMU''s TechSpark was a great starting point for me. You can check out my latest projects here: <a href="{{ "/assets/misc/plant-stand.jpg" | prepend: site.baseurl }}" target="_blank">plant stand</a>, <a href="{{ "/assets/misc/crate.jpg" | prepend: site.baseurl }}" target="_blank">crate</a>, and <a href="{{ "/assets/misc/folding-stool-1.jpg" | prepend: site.baseurl }}" target="_blank">folding stool</a>.'
+  - 'I have recently found joy in woodworking. Learning about CMU''s TechSpark was a great starting point for me. You can check out my latest projects here: <a href="{{ "/assets/misc/plant-stand.jpg" | prepend: site.baseurl }}" target="_blank">plant stand</a>, <a href="{{ "/assets/misc/crate.jpg" | prepend: site.baseurl }}" target="_blank">crate</a>, and <a href="{{ "/assets/misc/folding-stool-1.JPG" | prepend: site.baseurl }}" target="_blank">folding stool</a>.'
 
   - "Reading remains a cherished refuge. I am drawn to fiction novels and philosophy, which together enrich my understanding of the world and the human experience."

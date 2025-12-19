@@ -154,7 +154,8 @@ Building on extensive collaborations within NSF’s MRSEC and across interdiscip
 
   {% for ta in site.data.teaching %}
   <div class="teaching-entry">
-    <p><b>{{ ta.position }}</b> | {{ ta.institution }}, {{ ta.location }} | {{ ta.time }}</p>
+    <p><b>{{ ta.position }}</b></p>
+    <p>{{ ta.institution }}, {{ ta.location }} | {{ ta.time }}</p>
     <ul>
       {% for item in ta.responsibilities %}
         <li>{{ item }}</li>
@@ -189,6 +190,15 @@ Building on extensive collaborations within NSF’s MRSEC and across interdiscip
     </li>
     {% endfor %}
   </ul>
+</div>
+
+<!-- ========== FUN / MISC ========== -->
+<div class="docs-section" id="fun">
+  <h4>Fun & Personal Interests</h4>
+
+  {% for paragraph in site.data.misc.fun_paragraphs %}
+    <p>{{ paragraph }}</p>
+  {% endfor %}
 </div>
 
 <div class="docs-section" id="template">

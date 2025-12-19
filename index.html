@@ -5,9 +5,6 @@ title: Home
 <!-- ========== BIO ========== -->
 <div class="docs-section" id="bio">
   <h4>Bio</h4>
-  <p>
-    PhD student in Materials Science, working on computational materials design, phonons, and ML.
-  </p>
 
   <p> I am a passionate Materials Scientist dedicated to advancing sustainable energy technologies through predictive modeling, high-performance computing, and machine learning. My research focuses on designing and understanding high-entropy oxides for thermal energy conversion devices, with an emphasis on phonons and vibrational properties. By integrating first-principles calculations and AI-driven approaches—such as Graph Neural Networks—I aim to accelerate the discovery of materials with tailored, energy-efficient properties.
 Building on extensive collaborations within NSF’s MRSEC and across interdisciplinary teams, I try to develop innovative computational workflows that tackle complex challenges in energy systems. Beyond research, I actively engage in K–12 and sustainability outreach initiatives and have held leadership roles to foster strong professional communities. My ultimate goal is to create atomistic-level methodologies that not only push the boundaries of materials science but also contribute to a more sustainable and equitable future.</p> 
@@ -17,90 +14,46 @@ Building on extensive collaborations within NSF’s MRSEC and across interdiscip
 <div class="docs-section" id="publications">
   <h4>Publications</h4>
 
-  <p>Most recent publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/>
-  <sup>‡</sup> indicates equal contribution.
+  <p>
+    All publications are also available on 
+    <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google Scholar</a>.<br/>
+    <sup>‡</sup> indicates equal contribution.
   </p>
 
-  <ul class="tab-nav">
-    <li><div class="button active" data-ref="#papers-selected">Selected</div></li>
-    <li><div class="button" data-ref="#papers-all">All</div></li>
-  </ul>
+  {% for paper in site.data.publications.papers %}
+    <div class="paper">
+      <p class="title"><b>{{ paper.title }}</b></p>
+      <p>{{ paper.authors }}</p>
+      <p><i>{{ paper.venue }}</i></p>
+      <div class="paper-buttons">
+        {% if paper.paper_pdf %}
+          <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
+        {% endif %}
 
-  <div class="tab-content">
-    <div class="tab-pane active" id="papers-selected">
-      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
-      {% for paper in selected_papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-           <div class="paper-buttons">
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-            {% endif %}
+        {% if paper.slides %}
+          <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+        {% endif %}
 
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
+        {% if paper.poster %}
+          <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+        {% endif %}
 
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
+        {% if paper.video %}
+          <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+        {% endif %}
 
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
+        {% if paper.code %}
+          <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+        {% endif %}
 
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-
-            {% if paper.data %}
-              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-            {% endif %}
-
-          </div>
-        </div>
-      {% endfor %}
+        {% if paper.data %}
+          <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
+        {% endif %}
+      </div>
     </div>
-
-    <div class="tab-pane" id="papers-all">
-      {% for paper in site.data.publications.papers %}
-        <div class="paper">
-          <p class="title"><b>{{ paper.title }}</b></p>
-          <p>{{ paper.authors }}</p>
-          <p><i>{{ paper.venue }}</i></p>
-           <div class="paper-buttons">
-            {% if paper.paper_pdf %}
-              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
-            {% endif %}
-
-            {% if paper.slides %}
-              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
-
-            {% if paper.poster %}
-              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-            {% endif %}
-
-            {% if paper.video %}
-              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
-            {% endif %}
-
-            {% if paper.code %}
-              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
-            {% endif %}
-
-            {% if paper.data %}
-              <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
-            {% endif %}
-
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
+  {% endfor %}
 </div>
+
 
 <!-- ========== CONFERENCE TALKS ========== -->
 <div class="docs-section" id="conference-talks"> 

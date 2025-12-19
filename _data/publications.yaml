@@ -1,7 +1,12 @@
 papers:
 
   - title: "Nanoscale confinement of phonon flow and heat transport"
-    authors: "Albert Beardo, Weinan Chen, Brendan McBennett, <b>Tara Karimzadeh Sabet</b>, Emma E Nelson, Theodore H Culman, Henry C Kapteyn, Joshua L Knobloch, Margaret M Murnane, Ismaila Dabo"
+    authors: "A. Beardo, W. Chen, B. McBennett, <b>T. Karimzadeh Sabet</b>, E. E. Nelson, T. H. Culman, H. C. Kapteyn, J. L. Knobloch, M. M. Murnane, I. Dabo"
     venue: "npj Computational Materials. 2025"
     paper_pdf: "/assets/publications/npj_2025/s41524-025-01593-7.pdf"
+    selected: y
+
+  - title: "High‑Entropy Design of Transition Metal Oxide Semiconductors with Ultra‑Low Thermal Conductivity"
+    authors: "R. A. Robinson, <b>T. Karimzadeh Sabet<b>, F. Marques dos Santos Vieira, S. S. I. Almishal, S. V. G. Ayyagari, R. Katzbaer, G. Di Gianluca, S. Sarker, P. R. Trinidad‑Perez, J. P. Barber, S. Gelin, S. H. Lee, J. Hodges, R. E. Schaak, V. H. Crespi, V. Gopalan, N. Alem, C. M. Rost, J‑P Maria, I. Dabo, Z. Mao"
+    venue: "Communications Materials. 2026 (submitted)"
     selected: y

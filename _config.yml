@@ -3,6 +3,13 @@ destination: ./_site
 includes:    ./_includes
 baseurl: ""
 
+title: Tara Sabet
+name: Tara Sabet
+author: Tara Sabet
+description: Tara Sabet's personal website
+
+url: https://YOURUSERNAME.github.io   # important for LinkedIn previews
+
 collections:
   projects:
     output: true

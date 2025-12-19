@@ -1,8 +1,27 @@
 experiences:
 
 - place: "Carnegie Mellon University"
-  time: "2025 - present"
+  time: "Jan 2025 - present"
   title: "Graduate Research Assistant"
   subtitle: "Materials Science and Engineering"
   category: "work"
+
+- place: "Carnegie Mellon University"
+  time: "Jan 2025 - Dec 2025"
+  title: "Master of Science"
+  subtitle: "Materials Science and Engineering"
+  category: "education"
+
+- place: "Pennsylvania State University"
+  time: "2021 - 2025"
+  title: "Graduate Research Assistant"
+  subtitle: "Materials Science and Engineering"
+  category: "work"
+
+- place: "Iran University of Science and Technology"
+  time: "2016 - 2020"
+  title: "Bachelor of Science"
+  subtitle: "Materials Engineering"
+  category: "education"
+
 

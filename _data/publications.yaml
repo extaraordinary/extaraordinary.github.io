@@ -4,6 +4,7 @@ papers:
     authors: "A. Beardo, W. Chen, B. McBennett, <b>T. Karimzadeh Sabet</b>, E. E. Nelson, T. H. Culman, H. C. Kapteyn, J. L. Knobloch, M. M. Murnane, I. Dabo"
     venue: "npj Computational Materials. 2025"
     paper_pdf: "/assets/publications/npj_2025/s41524-025-01593-7.pdf"
+    news: "https://www.mse.engineering.cmu.edu/news/2025/06/25-thermal-management.html"
     selected: y
 
   - title: "High‑Entropy Design of Transition Metal Oxide Semiconductors with Ultra‑Low Thermal Conductivity"

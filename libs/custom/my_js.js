@@ -88,6 +88,41 @@ $(document).ready(function() {
     })
   }
 
+  document.addEventListener("DOMContentLoaded", function () {
+
+  const sections = document.querySelectorAll(".section-page");
+  const links = document.querySelectorAll(".nav-toggle");
+
+  // Hide all sections
+  sections.forEach(section => {
+    section.style.display = "none";
+  });
+
+  // Show default section
+  const defaultSection = document.getElementById("bio");
+  if (defaultSection) {
+    defaultSection.style.display = "block";
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", function () {
+      const targetId = this.dataset.target;
+
+      sections.forEach(section => {
+        section.style.display = "none";
+      });
+
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.style.display = "block";
+      }
+
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+
+  });
 
   init();
 

@@ -334,39 +334,3 @@ html[data-theme="dark"] .timeline li .flag {
   border: 1px solid rgba(255,255,255,0.15) !important;
 }
 
-/* =========================================
-   Timeline: FORCE dots onto center spine
-   (disable built-in card dot; draw our own)
-   ========================================= */
-
-/* Make each timeline item a positioning context */
-.timeline > li {
-  position: relative;
-}
-
-/* Keep the spine perfectly centered */
-.timeline:before {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
-
-/* 1) Disable the template dot that sits on the card */
-.timeline .direction-l .flag:before,
-.timeline .direction-r .flag:before {
-  content: none !important;
-}
-
-/* 2) Create a new dot anchored to the spine */
-.timeline > li:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 18px;                 /* <-- if slightly off, tweak 14px–26px */
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #ffffff;       /* light mode inner */
-  border: 3px solid #3b0a7a; /* your purple */
-  z-index: 5;
-}

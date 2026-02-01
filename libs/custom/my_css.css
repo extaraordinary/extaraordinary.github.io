@@ -423,9 +423,11 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 @media (min-width: 750px) {
-  #fun p {
+  #fun {
     text-align: justify;
     text-justify: inter-word;
+    line-height: 1.65;
     hyphens: auto;
   }
 }
+

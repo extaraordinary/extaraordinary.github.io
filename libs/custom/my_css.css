@@ -438,3 +438,32 @@ html[data-theme="dark"] .timeline li .flag {
   margin-right: 8px;
   cursor: pointer;
 }
+
+/* Social icons – normalize size & alignment */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Font icons */
+.social-icon i {
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* X SVG icon */
+.social-icon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}

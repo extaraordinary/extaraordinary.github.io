@@ -381,3 +381,33 @@ html[data-theme="dark"] .timeline .direction-r .flag:before {
   background: var(--bg) !important;
   border-color: #8b5cf6 !important;
 }
+
+/* Perfectly center the dot on the spine */
+.timeline .direction-l .flag:before,
+.timeline .direction-r .flag:before {
+  left: 100% !important;      /* left column: dot at its right edge (the spine) */
+  right: auto !important;
+  transform: translate(-50%, -50%) !important; /* true centering */
+}
+
+.timeline .direction-r .flag:before {
+  left: 0% !important;        /* right column: dot at its left edge (the spine) */
+  transform: translate(-50%, -50%) !important; /* same centering */
+}
+
+/* Add breathing room between cards and the spine/dot */
+.timeline .direction-l .flag {
+  margin-right: 18px !important;
+}
+
+.timeline .direction-r .flag {
+  margin-left: 18px !important;
+}
+
+.timeline .direction-l .desc {
+  margin-right: 18px !important;
+}
+
+.timeline .direction-r .desc {
+  margin-left: 18px !important;
+}

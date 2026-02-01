@@ -278,3 +278,39 @@ h4 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
+
+/* =======================
+   Timeline – Dark mode fixes
+   ======================= */
+
+html[data-theme="dark"] .timeline li .flag {
+  background: #151923;              /* dark card */
+  color: #e7e7e7;                   /* readable text */
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+html[data-theme="dark"] .timeline li .desc {
+  color: #d6d6d6;
+}
+
+html[data-theme="dark"] .timeline li .time {
+  color: #c7b9ff;                   /* subtle purple accent */
+}
+
+/* Timeline vertical line */
+html[data-theme="dark"] .timeline:before {
+  background: rgba(255,255,255,0.18);
+}
+
+/* Timeline dots */
+html[data-theme="dark"] .timeline li .marker {
+  background: #0f1115;
+  border: 3px solid #8b5cf6;
+}
+
+.timeline li .flag {
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+

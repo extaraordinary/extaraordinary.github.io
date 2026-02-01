@@ -335,40 +335,49 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================
-   TIMELINE: FORCE CIRCLES ON CENTER LINE
+   FIX: center the timeline dots on the spine
+   (works with Martin Saveski timeline.css)
    ========================================= */
 
-/* Ensure timeline is the reference */
+/* Ensure the timeline is the positioning reference */
 .timeline {
   position: relative;
 }
 
-/* Keep the vertical spine perfectly centered */
-.timeline::before {
+/* Force the spine to be exactly centered */
+.timeline:before {
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
 
-/* Disable the original dot on the cards */
-.timeline .flag::before {
-  content: none !important;
-}
-
-/* Create a new dot per timeline item */
-.timeline > li {
+/* Make each half container full-width so the dot can reference the center */
+.timeline .direction-l,
+.timeline .direction-r {
   position: relative;
+  width: 50% !important;        /* keep halves */
 }
 
-.timeline > li::after {
-  content: "";
-  position: absolute;
-  top: 22px;               /* aligns with flag vertically */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 3px solid #6b21a8; /* your purple */
-  z-index: 10;
+/* Now force the dot pseudo-element to sit on the centered spine */
+.timeline .direction-l .flag:before,
+.timeline .direction-r .flag:before {
+  left: auto !important;
+  right: auto !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  /* anchor to the timeline center */
+  position: absolute !important;
+  left: calc(100% + 0px) !important;     /* for left items, dot at their right edge */
+}
+
+/* right side: dot at left edge */
+.timeline .direction-r .flag:before {
+  left: calc(0% + 0px) !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+html[data-theme="dark"] .timeline .direction-l .flag:before,
+html[data-theme="dark"] .timeline .direction-r .flag:before {
+  background: var(--bg) !important;
+  border-color: #8b5cf6 !important;
 }

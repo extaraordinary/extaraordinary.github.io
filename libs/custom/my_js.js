@@ -17,7 +17,43 @@ $(document).ready(function() {
         "/": '&#x2F;'
       }
 
+
+  function initThemeToggle() {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+
+    const storageKey = "theme"; // "light" | "dark"
+
+    function setTheme(theme) {
+      if (theme === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        btn.querySelector(".theme-toggle__icon").textContent = "☀️";
+        btn.querySelector(".theme-toggle__text").textContent = "Light";
+        btn.setAttribute("aria-label", "Switch to light mode");
+      } else {
+        document.documentElement.removeAttribute("data-theme");
+        btn.querySelector(".theme-toggle__icon").textContent = "🌙";
+        btn.querySelector(".theme-toggle__text").textContent = "Dark";
+        btn.setAttribute("aria-label", "Switch to dark mode");
+      }
+    }
+
+    // initial theme: saved > system preference > light
+    const saved = localStorage.getItem(storageKey);
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setTheme(saved || (prefersDark ? "dark" : "light"));
+
+    btn.addEventListener("click", function () {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+      const next = isDark ? "light" : "dark";
+      localStorage.setItem(storageKey, next);
+      setTheme(next);
+    });
+  }
+
+
   function init() {
+    initThemeToggle();   // <-- add this
     $window.on('scroll', onScroll)
     $window.on('resize', resize)
     $popoverLink.on('click', openPopover)
@@ -25,6 +61,7 @@ $(document).ready(function() {
     $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
   }
+
 
   function smoothScroll(e) {
     e.preventDefault();

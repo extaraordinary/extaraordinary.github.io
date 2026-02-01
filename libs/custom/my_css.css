@@ -314,3 +314,49 @@ html[data-theme="dark"] .timeline li .marker {
   padding: 8px 14px;
 }
 
+/* =======================
+   Timeline dot alignment (force on center line)
+   ======================= */
+
+.timeline {
+  position: relative; /* ensure :before and dot positioning are stable */
+}
+
+/* ensure the vertical line is exactly centered */
+.timeline:before {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* force the dot (often implemented as li:after or li:before) to center */
+.timeline > li:before,
+.timeline > li:after {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* If your dot is a class instead (some variants use .marker) */
+.timeline .marker {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* =======================
+   Timeline dates readability in dark mode
+   ======================= */
+
+html[data-theme="dark"] .timeline li .time {
+  color: #f3f4f6 !important;
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+}
+
+html[data-theme="dark"] .timeline li .time-wrapper {
+  opacity: 1 !important;
+}
+
+html[data-theme="dark"] .timeline li .flag {
+  background: #151923 !important;
+  color: #e7e7e7 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+}

@@ -248,3 +248,33 @@ h4 {
   outline: 2px solid var(--link);
   outline-offset: 2px;
 }
+
+/* =======================
+   Fixed top-right theme toggle
+   ======================= */
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 1000;
+
+  margin-top: 0; /* override earlier spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Slightly smaller on mobile */
+@media (max-width: 550px) {
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+    padding: 5px 9px;
+    font-size: 13px;
+  }
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+

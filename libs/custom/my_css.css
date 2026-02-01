@@ -382,3 +382,8 @@ html[data-theme="dark"] .timeline li .flag {
 .timeline .direction-r {
   padding-left: 32px !important;
 }
+
+/* Fine tune dot centering: nudge left */
+.timeline > li::before {
+  transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
+}

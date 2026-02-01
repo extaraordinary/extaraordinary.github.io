@@ -108,7 +108,9 @@
             <p>{{ site.data.main_info.email }}</p>
             <p>
               <span onclick="window.open('{{ site.data.main_info.twitter }}')" style="cursor: pointer">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <img src="{{ '/assets/icons/x-logo.svg' | prepend: site.baseurl }}"
+                     alt="X"
+                     class="social-icon">
               </span>
 
               <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">

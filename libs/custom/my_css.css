@@ -431,3 +431,10 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
+.social-icon {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  margin-right: 8px;
+  cursor: pointer;
+}

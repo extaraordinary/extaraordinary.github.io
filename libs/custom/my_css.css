@@ -413,3 +413,11 @@ html[data-theme="dark"] .timeline li .flag {
   margin-left: 12px !important;
   right: auto !important;
 }
+
+@media (min-width: 750px) {
+  #bio p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}

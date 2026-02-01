@@ -334,80 +334,50 @@ html[data-theme="dark"] .timeline li .flag {
   border: 1px solid rgba(255,255,255,0.15) !important;
 }
 
+
 /* =========================================
-   FIX: center the timeline dots on the spine
-   (works with Martin Saveski timeline.css)
+   Timeline: dots locked to center spine
+   (dot drawn on li; cards spaced independently)
    ========================================= */
 
-/* Ensure the timeline is the positioning reference */
-.timeline {
-  position: relative;
-}
-
-/* Force the spine to be exactly centered */
+/* Keep spine centered */
+.timeline { position: relative; }
 .timeline:before {
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
 
-/* Make each half container full-width so the dot can reference the center */
-.timeline .direction-l,
-.timeline .direction-r {
+/* Disable template dots (they are attached to cards) */
+.timeline .direction-l .flag:before,
+.timeline .direction-r .flag:before {
+  content: none !important;
+}
+
+/* Each item spans full width so the dot can be centered */
+.timeline > li {
   position: relative;
-  width: 50% !important;        /* keep halves */
 }
 
-/* Now force the dot pseudo-element to sit on the centered spine */
-.timeline .direction-l .flag:before,
-.timeline .direction-r .flag:before {
-  left: auto !important;
-  right: auto !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) !important;
-
-  /* anchor to the timeline center */
-  position: absolute !important;
-  left: calc(100% + 0px) !important;     /* for left items, dot at their right edge */
+/* Draw dot on the spine */
+.timeline > li:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 28px;                 /* tweak 24–34px if needed */
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid #3b0a7a;
+  z-index: 10;
 }
 
-/* right side: dot at left edge */
-.timeline .direction-r .flag:before {
-  left: calc(0% + 0px) !important;
-  transform: translate(-50%, -50%) !important;
+/* Add distance between cards and the spine (without moving the dot) */
+.timeline .direction-l {
+  padding-right: 28px !important;  /* space on the inside edge */
 }
 
-html[data-theme="dark"] .timeline .direction-l .flag:before,
-html[data-theme="dark"] .timeline .direction-r .flag:before {
-  background: var(--bg) !important;
-  border-color: #8b5cf6 !important;
-}
-
-/* Perfectly center the dot on the spine */
-.timeline .direction-l .flag:before,
-.timeline .direction-r .flag:before {
-  left: 100% !important;      /* left column: dot at its right edge (the spine) */
-  right: auto !important;
-  transform: translate(-50%, -50%) !important; /* true centering */
-}
-
-.timeline .direction-r .flag:before {
-  left: 0% !important;        /* right column: dot at its left edge (the spine) */
-  transform: translate(-50%, -50%) !important; /* same centering */
-}
-
-/* Add breathing room between cards and the spine/dot */
-.timeline .direction-l .flag {
-  margin-right: 18px !important;
-}
-
-.timeline .direction-r .flag {
-  margin-left: 18px !important;
-}
-
-.timeline .direction-l .desc {
-  margin-right: 18px !important;
-}
-
-.timeline .direction-r .desc {
-  margin-left: 18px !important;
+.timeline .direction-r {
+  padding-left: 28px !important;
 }

@@ -333,3 +333,42 @@ html[data-theme="dark"] .timeline li .flag {
   color: #e7e7e7 !important;
   border: 1px solid rgba(255,255,255,0.15) !important;
 }
+
+/* =====================================
+   FORCE timeline dots onto center line
+   ===================================== */
+
+/* Ensure timeline is the positioning reference */
+.timeline {
+  position: relative;
+}
+
+/* Force the vertical spine to exact center */
+.timeline::before {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Force ALL dots to center, regardless of side */
+.timeline li::before,
+.timeline li::after {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+/* If dots are attached to flags (common in this template) */
+.timeline .direction-l .flag::before,
+.timeline .direction-r .flag::before {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+.timeline li::before {
+  z-index: 2;
+}
+.timeline::before {
+  z-index: 1;
+}
+

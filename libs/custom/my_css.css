@@ -449,7 +449,7 @@ html[data-theme="dark"] .timeline li .flag {
 
 /* Font Awesome icons (LinkedIn, GitHub) */
 .social-icon .fa{
-  font-size: 24px;
+  font-size: 23px;
   line-height: 1;
   transform: translateY(0px);
 }
@@ -459,12 +459,12 @@ html[data-theme="dark"] .timeline li .flag {
   width: 22px;
   height: 22px;
   display:block;
-  transform: translateY(1px);  /* adjust to 0px or 2px if needed */
+  transform: translateY(0px);  /* adjust to 0px or 2px if needed */
 }
 
 /* Google Scholar (Academicons often looks optically "high") */
 .social-icon .ai-google-scholar{
   font-size: 23px;
-  line-height: 0;
-  transform: translateY(2px);  /* this is the main fix */
+  line-height: 1;
+  transform: translateY(0px);  /* this is the main fix */
 }

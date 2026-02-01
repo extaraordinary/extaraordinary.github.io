@@ -431,39 +431,40 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
-/* Social icons row */
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 18px;
+/* ===== Social icons: tight + perfectly aligned ===== */
+.social-icons{
+  display:flex;
+  align-items:center;
+  gap: 10px;                 /* closer together like before */
 }
 
-/* Shared icon container */
-.social-icon {
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+.social-icon{
+  width: 26px;
+  height: 26px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
 }
 
-/* X logo (optically smaller → scale up) */
-.social-icon img {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-
-/* LinkedIn & GitHub (Font Awesome) */
-.social-icon .fa {
-  font-size: 26px;
-  line-height: 1;
-}
-
-/* Google Scholar (Academicons run large) */
-.social-icon .ai {
+/* Font Awesome icons (LinkedIn, GitHub) */
+.social-icon .fa{
   font-size: 24px;
   line-height: 1;
-  transform: translateY(1px); /* optical baseline fix */
+  transform: translateY(0px);
+}
+
+/* X SVG: usually sits a hair low/high depending on the SVG */
+.social-icon img{
+  width: 22px;
+  height: 22px;
+  display:block;
+  transform: translateY(1px);  /* adjust to 0px or 2px if needed */
+}
+
+/* Google Scholar (Academicons often looks optically "high") */
+.social-icon .ai-google-scholar{
+  font-size: 23px;
+  line-height: 1;
+  transform: translateY(2px);  /* this is the main fix */
 }

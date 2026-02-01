@@ -10,9 +10,3 @@ projects:
     thumbnail: "assets/projects/2016_human-atlas/thumbnail.png"
     url: "projects/2016_human-atlas.html"
     selected: y
-
-  - title: "Responsive Communities"
-    subtitle: "Pilot project in Jun, Spain"
-    thumbnail: "assets/projects/2015_jun/thumbnail.png"
-    url: "projects/2015_jun.html"
-    selected: y

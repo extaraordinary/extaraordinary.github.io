@@ -431,39 +431,39 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
-.social-icon {
-  width: 22px;
-  height: 22px;
-  vertical-align: middle;
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-/* Social icons – normalize size & alignment */
+/* Social icons row */
 .social-icons {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
 }
 
+/* Shared icon container */
 .social-icon {
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-/* Font icons */
-.social-icon i {
-  font-size: 24px;
+/* X logo (optically smaller → scale up) */
+.social-icon img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* LinkedIn & GitHub (Font Awesome) */
+.social-icon .fa {
+  font-size: 26px;
   line-height: 1;
 }
 
-/* X SVG icon */
-.social-icon img {
-  width: 22px;
-  height: 22px;
-  display: block;
+/* Google Scholar (Academicons run large) */
+.social-icon .ai {
+  font-size: 24px;
+  line-height: 1;
+  transform: translateY(1px); /* optical baseline fix */
 }

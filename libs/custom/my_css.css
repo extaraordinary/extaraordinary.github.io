@@ -334,3 +334,41 @@ html[data-theme="dark"] .timeline li .flag {
   border: 1px solid rgba(255,255,255,0.15) !important;
 }
 
+/* =========================================
+   TIMELINE: FORCE CIRCLES ON CENTER LINE
+   ========================================= */
+
+/* Ensure timeline is the reference */
+.timeline {
+  position: relative;
+}
+
+/* Keep the vertical spine perfectly centered */
+.timeline::before {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Disable the original dot on the cards */
+.timeline .flag::before {
+  content: none !important;
+}
+
+/* Create a new dot per timeline item */
+.timeline > li {
+  position: relative;
+}
+
+.timeline > li::after {
+  content: "";
+  position: absolute;
+  top: 22px;               /* aligns with flag vertically */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid #6b21a8; /* your purple */
+  z-index: 10;
+}

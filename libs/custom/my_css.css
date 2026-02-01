@@ -315,41 +315,6 @@ html[data-theme="dark"] .timeline li .marker {
 }
 
 /* =======================
-   Timeline dot alignment (force on center line)
-   ======================= */
-
-.timeline {
-  position: relative; /* ensure :before and dot positioning are stable */
-}
-
-/* ensure the vertical line is exactly centered */
-.timeline:before {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
-
-/* force the dot (often implemented as li:after or li:before) to center */
-.timeline > li:before,
-.timeline > li:after {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
-
-/* If your dot is a class instead (some variants use .marker) */
-.timeline .marker {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
-
-.timeline .direction-l .flag:before,
-.timeline .direction-r .flag:before {
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
-}
-
-
-/* =======================
    Timeline dates readability in dark mode
    ======================= */
 

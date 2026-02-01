@@ -387,3 +387,29 @@ html[data-theme="dark"] .timeline li .flag {
 .timeline > li::before {
   transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
 }
+
+/* Make flag-wrapper the positioning context for the date pill */
+.timeline .flag-wrapper {
+  position: relative;
+}
+
+/* Base style so it behaves consistently */
+.timeline .time-wrapper {
+  position: absolute !important;
+  top: 50% !important;              /* aligned with the center of the flag */
+  white-space: nowrap;
+}
+
+/* LEFT column: put date pill to the left of the card */
+.timeline .direction-l .time-wrapper {
+  right: 100% !important;         /* sit outside, left side */
+  margin-right: 12px !important;  /* gap between pill and card */
+  left: auto !important;
+}
+
+/* RIGHT column: put date pill to the right of the card */
+.timeline .direction-r .time-wrapper {
+  left: 100% !important;          /* sit outside, right side */
+  margin-left: 12px !important;
+  right: auto !important;
+}

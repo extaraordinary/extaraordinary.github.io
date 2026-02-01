@@ -341,6 +341,14 @@ html[data-theme="dark"] .timeline li .marker {
   transform: translateX(-50%) !important;
 }
 
+.timeline .direction-l .flag:before,
+.timeline .direction-r .flag:before {
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+}
+
+
 /* =======================
    Timeline dates readability in dark mode
    ======================= */

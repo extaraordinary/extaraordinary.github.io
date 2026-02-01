@@ -465,6 +465,6 @@ html[data-theme="dark"] .timeline li .flag {
 /* Google Scholar (Academicons often looks optically "high") */
 .social-icon .ai-google-scholar{
   font-size: 23px;
-  line-height: 1;
+  line-height: 0;
   transform: translateY(2px);  /* this is the main fix */
 }

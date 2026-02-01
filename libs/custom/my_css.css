@@ -421,3 +421,11 @@ html[data-theme="dark"] .timeline li .flag {
     hyphens: auto;
   }
 }
+
+@media (min-width: 750px) {
+  #fun p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+}

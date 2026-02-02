@@ -51,9 +51,38 @@ $(document).ready(function() {
     });
   }
 
+  function initMobileMenu() {
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+    if (!btn || !menu) return;
+
+    function closeMenu() {
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const isOpen = menu.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+      menu.setAttribute("aria-hidden", String(!isOpen));
+    });
+
+    // close if tapping outside
+    document.addEventListener("click", closeMenu);
+
+    // close on link click
+    menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  }
+
+
 
   function init() {
   initThemeToggle();   // <-- add this
+  initMobileMenu();
   $window.on('scroll', onScroll)
   $window.on('resize', resize)
   $popoverLink.on('click', openPopover)
@@ -165,31 +194,4 @@ $(document).ready(function() {
 
 });
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".mobile-menu-toggle");
-  const menu = document.querySelector(".navbar-list");
 
-  if (!btn || !menu) return;
-
-  btn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    menu.classList.toggle("open");
-    btn.setAttribute("aria-expanded", menu.classList.contains("open"));
-  });
-
-  // close when clicking outside
-  document.addEventListener("click", function () {
-    menu.classList.remove("open");
-    btn.setAttribute("aria-expanded", "false");
-  });
-
-  // close when clicking a link
-  menu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => {
-      menu.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
-    });
-  });
-});
-</script>

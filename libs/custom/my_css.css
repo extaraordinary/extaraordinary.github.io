@@ -633,13 +633,26 @@ html[data-theme="dark"] .timeline li .flag {
     text-align: center !important;
   }
 
-  /* DATE: now placed AFTER desc */
+  /* DATE: centered on the timeline axis + space after it */
   .timeline li .time-wrapper{
+    /* CHANGED: hard reset any desktop positioning */
     float: none !important;
     position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    /* CHANGED: center the badge exactly */
     width: 100% !important;
-    margin: 12px 0 0 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     text-align: center !important;
+
+    /* CHANGED: top space from desc + bottom space before next item */
+    margin: 12px 0 20px 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .timeline li .time{
@@ -648,6 +661,11 @@ html[data-theme="dark"] .timeline li .flag {
     padding: 6px 10px !important;
     border-radius: 10px !important;
     text-align: center !important;
+
+    /* optional: prevents tiny nudges from inherited styles */
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
   }
 
   /* Remove markers/dots & pointer triangles on mobile */

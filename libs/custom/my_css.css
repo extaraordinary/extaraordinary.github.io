@@ -752,3 +752,72 @@ html[data-theme="dark"] .timeline li .time {
     display: none !important;
   }
 }
+
+/* =========================================================
+   TIMELINE: Force true centering on MOBILE
+   Paste at the VERY END of your CSS
+   ========================================================= */
+@media (max-width: 768px) {
+
+  /* remove any hidden left padding that shifts content */
+  .timeline {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .timeline li,
+  .timeline li .direction-l,
+  .timeline li .direction-r {
+    position: relative !important;
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* keep the center line perfectly centered */
+  .timeline:before {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* the wrapper should not shift anything */
+  .timeline li .flag-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  /* FORCE the title card to be centered on the line */
+  .timeline li .flag {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    margin: 0 !important;
+    max-width: min(92vw, 520px) !important;
+  }
+
+  /* FORCE the description card to be centered on the line */
+  .timeline li .desc {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    margin: 12px 0 0 0 !important;
+    max-width: min(92vw, 520px) !important;
+  }
+
+  /* dates: keep them centered too (prevents side drift) */
+  .timeline li .time-wrapper {
+    float: none !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    margin-top: 10px !important;
+    text-align: center !important;
+    width: fit-content !important;
+  }
+}

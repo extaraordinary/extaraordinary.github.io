@@ -93,6 +93,21 @@
 </head>
 <body>
 
+  <!-- Mobile-only menu -->
+  <div class="mobile-nav">
+    <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Menu" aria-expanded="false">
+      <span class="hamburger" aria-hidden="true"><span></span></span>
+
+    </button>
+
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <a href="#bio">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#resume">Resume</a>
+      <a href="#fun">Fun</a>
+    </div>
+  </div>
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
@@ -150,20 +165,6 @@
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl }}>Resume</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#fun" | prepend: site.baseurl }}>Fun</a></li>
         </ul>
-      </div>
-      
-      <!-- Mobile-only menu -->
-      <div class="mobile-nav">
-        <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Menu" aria-expanded="false">
-          <span class="hamburger" aria-hidden="true"></span>
-        </button>
-
-        <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-          <a href="#bio">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#resume">Resume</a>
-          <a href="#fun">Fun</a>
-        </div>
       </div>
 
     </nav>

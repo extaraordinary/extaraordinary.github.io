@@ -738,8 +738,10 @@ html[data-theme="dark"] .timeline li .flag {
     position: relative;
     display: block;
   }
+
   .hamburger::before,
-  .hamburger::after{
+  .hamburger::after,
+  .hamburger span{
     content:"";
     position:absolute;
     left:0;
@@ -748,12 +750,16 @@ html[data-theme="dark"] .timeline li .flag {
     background: var(--text);
     border-radius: 2px;
   }
+
   .hamburger::before{ top: 0; }
   .hamburger::after{ bottom: 0; }
-  .hamburger{
-    border-top: 2px solid var(--text);
-    transform: translateY(1px);
+
+  /* middle bar */
+  .hamburger span{
+    top: 50%;
+    transform: translateY(-50%);
   }
+
 
   /* menu panel */
   .mobile-menu{

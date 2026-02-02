@@ -77,20 +77,17 @@ $(document).ready(function() {
     // close on link click
     menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
   }
-
-
-
+  
   function init() {
-  initThemeToggle();   // <-- add this
-  initMobileMenu();
-  $window.on('scroll', onScroll)
-  $window.on('resize', resize)
-  $popoverLink.on('click', openPopover)
-  $document.on('click', closePopover)
-  $('a[href^="#"]').on('click', smoothScroll)
-  buildSnippets();
-}
-
+    initThemeToggle();   // <-- add this
+    initMobileMenu();
+    $window.on('scroll', onScroll)
+    $window.on('resize', resize)
+    $popoverLink.on('click', openPopover)
+    $document.on('click', closePopover)
+    $('a[href^="#"]').on('click', smoothScroll)
+    buildSnippets();
+  }
 
   function smoothScroll(e) {
     e.preventDefault();

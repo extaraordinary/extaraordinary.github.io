@@ -792,28 +792,21 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================
-   MOBILE MENU BUTTON: smaller + centered + matches theme toggle height
+   MOBILE MENU BUTTON: smaller + perfectly centered + aligned with theme toggle
    Paste at VERY END of CSS
    ========================================= */
 
 @media (max-width: 750px) {
 
-  /* Make BOTH buttons share the same top alignment (and respect iPhone safe area) */
-  .mobile-menu-btn,
-  .theme-toggle{
+  /* Align both buttons vertically + respect iPhone safe-area */
+  .mobile-menu-btn {
     top: calc(12px + env(safe-area-inset-top)) !important;
-  }
-
-  /* Match the visual "pill" height of the theme toggle (not its width) */
-  .mobile-menu-btn{
     left: calc(12px + env(safe-area-inset-left)) !important;
 
-    /* Same “control height” feel as your theme toggle */
     width: 44px !important;
     height: 44px !important;
     border-radius: 999px !important;
 
-    /* Center contents perfectly */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -822,31 +815,44 @@ html[data-theme="dark"] .timeline li .flag {
     box-sizing: border-box !important;
   }
 
-  /* Replace the hamburger drawing with a perfectly centered 3-line icon */
+  .theme-toggle {
+    top: calc(12px + env(safe-area-inset-top)) !important;
+    right: calc(12px + env(safe-area-inset-right)) !important;
+  }
+
+  /* Center the hamburger inside the button */
   .mobile-menu-btn .hamburger{
     width: 20px !important;
     height: 14px !important;
+    position: relative !important;
     display: block !important;
-
-    /* 3 crisp centered lines */
-    background:
-      linear-gradient(var(--text), var(--text)) 0 0 / 100% 2px no-repeat,
-      linear-gradient(var(--text), var(--text)) 0 50% / 100% 2px no-repeat,
-      linear-gradient(var(--text), var(--text)) 0 100% / 100% 2px no-repeat !important;
-
-    /* Remove your old border-top trick so it doesn’t look off-center */
-    border: 0 !important;
-    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Make sure old pseudo-lines don’t interfere (from earlier CSS) */
+  /* Make ALL 3 lines consistent + centered */
   .mobile-menu-btn .hamburger::before,
-  .mobile-menu-btn .hamburger::after{
-    content: none !important;
-    display: none !important;
+  .mobile-menu-btn .hamburger::after,
+  .mobile-menu-btn .hamburger span{
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: var(--text) !important;
+    border-radius: 2px !important;
+    content: "" !important;
+    display: block !important;
   }
 
-  /* OPTIONAL: keep menu panel aligned nicely under the button */
+  .mobile-menu-btn .hamburger::before { top: 0 !important; }
+  .mobile-menu-btn .hamburger::after  { bottom: 0 !important; }
+
+  .mobile-menu-btn .hamburger span{
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* Keep menu panel aligned under the button */
   .mobile-menu{
     top: calc(64px + env(safe-area-inset-top)) !important;
     left: calc(12px + env(safe-area-inset-left)) !important;

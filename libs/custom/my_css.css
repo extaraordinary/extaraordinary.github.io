@@ -732,8 +732,10 @@ html[data-theme="dark"] .timeline li .flag {
     box-sizing: border-box;
   }
 
+  .navbar > .container { position: relative; }  /* ADD THIS */
+
   /* Hamburger button */
-  .nav-toggle {
+  .mobile-menu-toggle {
     border: 1px solid var(--border);
     background: var(--card);
     color: var(--text);
@@ -793,6 +795,6 @@ html[data-theme="dark"] .timeline li .flag {
 
 /* Keep your desktop navbar behavior */
 @media (min-width: 751px) {
-  .nav-toggle { display: none; }
+  .mobile-menu-toggle { display: none; }
 }
 

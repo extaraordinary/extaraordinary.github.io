@@ -128,7 +128,7 @@ $(document).ready(function() {
   document.addEventListener("DOMContentLoaded", function () {
 
   const sections = document.querySelectorAll(".section-page");
-  const links = document.querySelectorAll(".section-toggle");
+  const links = document.querySelectorAll(".nav-toggle");
 
   // Hide all sections
   sections.forEach(section => {
@@ -165,12 +165,15 @@ $(document).ready(function() {
 
 });
 
-// Mobile menu toggle
+// Mobile menu toggle (safe class name)
 const nav = document.querySelector(".navbar");
-const toggleBtn = document.querySelector(".nav-toggle");
+const toggleBtn = document.querySelector(".mobile-menu-toggle");
 
 if (nav && toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
+  toggleBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     const isOpen = nav.classList.toggle("is-open");
     toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     toggleBtn.textContent = isOpen ? "✕" : "☰";

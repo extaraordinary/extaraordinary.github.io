@@ -454,5 +454,5 @@ html[data-theme="dark"] .timeline li .flag {
 .social-icon .ai-google-scholar{
   font-size: 22px;
   line-height: 1;
-  transform: translateY(2px);  /* this is the main fix */
+  transform: translateY(2.5px);  /* this is the main fix */
 }

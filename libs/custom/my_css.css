@@ -1,6 +1,4 @@
-/* =======================
-   Theme variables
-   ======================= */
+/* ==== Theme variables ==== */
 :root {
   --bg: #ffffff;
   --text: #111111;
@@ -227,9 +225,7 @@ h4 {
     border-bottom-color: var(--link); }
 }
 
-/* =======================
-   Theme toggle button
-   ======================= */
+/* ==== Theme toggle button ==== */
 .theme-toggle {
   margin-top: 10px;
   display: inline-flex;
@@ -249,9 +245,7 @@ h4 {
   outline-offset: 2px;
 }
 
-/* =======================
-   Fixed top-right theme toggle
-   ======================= */
+/* ==== Fixed top-right theme toggle ==== */
 .theme-toggle {
   position: fixed;
   top: 18px;
@@ -279,9 +273,7 @@ h4 {
 }
 
 
-/* =======================
-   Timeline – Dark mode fixes
-   ======================= */
+/* ==== Timeline Dark mode fix ==== */
 
 html[data-theme="dark"] .timeline li .flag {
   background: #151923;              /* dark card */
@@ -314,9 +306,7 @@ html[data-theme="dark"] .timeline li .marker {
   padding: 8px 14px;
 }
 
-/* =======================
-   Timeline dates readability in dark mode
-   ======================= */
+/* ==== Timeline dates readability in dark mode ===== */
 
 html[data-theme="dark"] .timeline li .time {
   color: #f3f4f6 !important;
@@ -334,28 +324,26 @@ html[data-theme="dark"] .timeline li .flag {
   border: 1px solid rgba(255,255,255,0.15) !important;
 }
 
-/* =================================================
-   TIMELINE — definitive dot positioning on spine
-   ================================================= */
+/* ==== Timeline marker positioning ==== */
 
-/* Ensure timeline is positioning context */
+/* Timeline positioning context */
 .timeline {
   position: relative;
 }
 
-/* Ensure spine is perfectly centered */
+/* Spine perfectly centered */
 .timeline::before {
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
 
-/* REMOVE the template’s dots (they are card-attached) */
+/* Remove template's dots (they are card-attached) */
 .timeline .flag::before,
 .timeline .flag::after {
   content: none !important;
 }
 
-/* Create ONE dot per timeline item, anchored to spine */
+/* Create one dot per item, anchored to spine */
 .timeline > li {
   position: relative;
 }
@@ -374,7 +362,7 @@ html[data-theme="dark"] .timeline li .flag {
   z-index: 10;
 }
 
-/* Add spacing between cards and spine WITHOUT moving dots */
+/* Add spacing between cards and spine without moving dots */
 .timeline .direction-l {
   padding-right: 32px !important;
 }
@@ -383,7 +371,7 @@ html[data-theme="dark"] .timeline li .flag {
   padding-left: 32px !important;
 }
 
-/* Fine tune dot centering: nudge left */
+/* Fine tune dot centering - nudge left */
 .timeline > li::before {
   transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
 }
@@ -400,14 +388,14 @@ html[data-theme="dark"] .timeline li .flag {
   white-space: nowrap;
 }
 
-/* LEFT column: put date pill to the left of the card */
+/* Left column - put date pill to the left of the card */
 .timeline .direction-l .time-wrapper {
   right: 100% !important;         /* sit outside, left side */
   margin-right: 12px !important;  /* gap between pill and card */
   left: auto !important;
 }
 
-/* RIGHT column: put date pill to the right of the card */
+/* Right column - put date pill to the right of the card */
 .timeline .direction-r .time-wrapper {
   left: 100% !important;          /* sit outside, right side */
   margin-left: 12px !important;
@@ -431,11 +419,11 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
-/* ===== Social icons: tight + perfectly aligned ===== */
+/* ===== Social icons ===== */
 .social-icons{
   display:flex;
   align-items:center;
-  gap: 8px;                 /* closer together like before */
+  gap: 6px;
 }
 
 .social-icon{
@@ -447,14 +435,14 @@ html[data-theme="dark"] .timeline li .flag {
   cursor:pointer;
 }
 
-/* Font Awesome icons (LinkedIn, GitHub) */
+/* LinkedIn, GitHub */
 .social-icon .fa{
   font-size: 22px;
   line-height: 1;
   transform: translateY(0px);
 }
 
-/* X SVG: usually sits a hair low/high depending on the SVG */
+/* X */
 .social-icon img{
   width: 22px;
   height: 22px;
@@ -462,7 +450,7 @@ html[data-theme="dark"] .timeline li .flag {
   transform: translateY(2px);  /* adjust to 0px or 2px if needed */
 }
 
-/* Google Scholar (Academicons often looks optically "high") */
+/* Google Scholar */
 .social-icon .ai-google-scholar{
   font-size: 22px;
   line-height: 1;

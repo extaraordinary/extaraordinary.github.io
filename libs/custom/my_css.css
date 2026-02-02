@@ -510,21 +510,11 @@ html[data-theme="dark"] .timeline li .flag {
   transition: opacity 0.15s ease;
 }
 
-/* Make map wider than text column */
-.map-wide {
-  width: 100vw;                  /* full viewport width */
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-/* Control map height & max width */
+/* Map same width as text column */
 .pdf-map {
-  width: 90vw;                   /* large but not edge-to-edge */
-  max-width: 1200px;             /* keeps it elegant on big screens */
-  height: 70vh;                  /* tall enough to read */
+  width: 100%;
+  height: 70vh;        /* adjust if you want taller */
   border: none;
   display: block;
-  margin: 0 auto;
+  margin: 2rem 0;
 }

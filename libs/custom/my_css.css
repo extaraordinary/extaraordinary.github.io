@@ -493,7 +493,7 @@ html[data-theme="dark"] .timeline li .flag {
   width: 22px;
   height: 22px;
   transform: translateY(2px);
-  opacity: 0.7;                 /* keep 1; wrapper handles fade */
+  opacity: 0.6;
 }
 
 /* On hover: full opacity */

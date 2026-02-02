@@ -451,7 +451,7 @@ html[data-theme="dark"] .timeline li .flag {
 .social-icon .fa{
   font-size: 22px;
   line-height: 1;
-  transform: translateY(2px);
+  transform: translateY(0px);
 }
 
 /* X SVG: usually sits a hair low/high depending on the SVG */

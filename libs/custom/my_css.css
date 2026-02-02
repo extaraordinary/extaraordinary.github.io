@@ -466,8 +466,8 @@ html[data-theme="dark"] .timeline li .flag {
 /* ==== Footer social icons ==== */
 .footer .footer-social {
   justify-content: center;
-  gap: 10px;                 /* adjust if you want tighter/looser */
-  opacity: 0.55;             /* fade all icons including X */
+  gap: 6px;
+  opacity: 0.55;
 }
 
 .footer .footer-social .social-icon {
@@ -475,7 +475,7 @@ html[data-theme="dark"] .timeline li .flag {
   height: 26px;
 }
 
-/* Make font icons align visually in footer */
+/* Align font icons */
 .footer .footer-social .fa {
   font-size: 22px;
   line-height: 1;
@@ -485,10 +485,10 @@ html[data-theme="dark"] .timeline li .flag {
 .footer .footer-social .ai-google-scholar {
   font-size: 22px;
   line-height: 1;
-  transform: translateY(2.5px);  /* scholar usually needs more */
+  transform: translateY(2.5px);
 }
 
-/* X icon: align + fade to match */
+/* X */
 .footer .footer-social img {
   width: 22px;
   height: 22px;
@@ -496,7 +496,7 @@ html[data-theme="dark"] .timeline li .flag {
   opacity: 0.6;
 }
 
-/* On hover: full opacity */
+/* On hover - full opacity */
 .footer .footer-social:hover {
   opacity: 1;
   transition: opacity 0.15s ease;

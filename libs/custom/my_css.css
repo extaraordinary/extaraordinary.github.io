@@ -510,7 +510,7 @@ html[data-theme="dark"] .timeline li .flag {
   transition: opacity 0.15s ease;
 }
 
-/* ===== Map styling ===== */
+/* ===== Map ===== */
 .map-image {
   width: 100%;          /* same width as text */
   max-width: 100%;
@@ -522,129 +522,141 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================================
-   TIMELINE (MOBILE): no markers + centered cards + dark-mode readability
+   TIMELINE (MOBILE): TRUE CENTERING + NO MARKERS + DARK MODE READABILITY
    Paste at the VERY END of your CSS
    ========================================================= */
 
-/* --- Dark mode: force readable timeline blocks on mobile (incl. iOS Safari) --- */
-@media (max-width: 768px) {
-  html[data-theme="dark"] .timeline li .flag,
-  html[data-theme="dark"] .timeline li .desc,
-  html[data-theme="dark"] .timeline li .time,
-  html[data-theme="dark"] .timeline li .desc * {
-    opacity: 1 !important;
-    filter: none !important;
-    -webkit-text-fill-color: currentColor !important;
-  }
-
-  html[data-theme="dark"] .timeline li .flag,
-  html[data-theme="dark"] .timeline li .desc {
-    background: #151923 !important;
-    color: #e7e7e7 !important;
-    border: 1px solid rgba(255,255,255,0.16) !important;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.45) !important;
-  }
-
-  html[data-theme="dark"] .timeline li .time {
-    background: rgba(255,255,255,0.12) !important;
-    color: #f3f4f6 !important;
-    border: 1px solid rgba(255,255,255,0.18) !important;
-  }
-}
-
-/* --- Mobile layout: single column, centered, no cropped date badges --- */
 @media (max-width: 768px) {
 
-  /* Make timeline fully responsive + avoid sideways cropping */
-  .timeline {
+  /* -------- Base container: no hidden padding/overflow shifts -------- */
+  .timeline{
     width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 12px !important;
+    padding: 0 12px !important;      /* safe phone edge padding */
     overflow: visible !important;
+    box-sizing: border-box !important;
   }
 
-  /* Keep the center line centered (optional; looks nice even without markers) */
-  .timeline:before {
+  /* Center the vertical line */
+  .timeline:before{
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
 
-  /* Turn off left/right desktop layout */
+  /* Kill ALL desktop left/right layout behavior */
   .timeline li,
   .timeline li .direction-l,
-  .timeline li .direction-r {
+  .timeline li .direction-r{
     float: none !important;
     width: 100% !important;
-    position: relative !important;
-    text-align: center !important;
     margin: 0 !important;
     padding: 0 !important;
+    position: relative !important;
     left: auto !important;
     right: auto !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
 
-  /* Stack: title -> date -> description (all centered) */
-  .timeline li .flag-wrapper {
+  /* Some templates add extra padding/margins here — remove them */
+  .timeline li .direction-l,
+  .timeline li .direction-r{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Stack everything and center */
+  .timeline li .flag-wrapper{
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
-  /* Title card */
-  .timeline li .flag {
-    display: block !important;
+  /* -------- TRUE center for ALL cards: force center relative to timeline -------- */
+  .timeline li .flag,
+  .timeline li .desc,
+  .timeline li .time-wrapper{
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Make widths consistent and prevent off-screen crop */
+  .timeline li .flag,
+  .timeline li .desc{
     width: min(92vw, 560px) !important;
-    margin: 0 auto !important;
+    max-width: 560px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Spacing */
+  .timeline li .flag{
     padding: 10px 14px !important;
     border-radius: 10px !important;
   }
 
-  /* Date badge: always below the title, centered */
-  .timeline li .time-wrapper {
-    float: none !important;
-    position: static !important;
-    width: auto !important;
-    margin: 10px auto 0 auto !important;
+  .timeline li .time-wrapper{
+    margin-top: 10px !important;
+    width: fit-content !important;   /* keeps badge tight */
     text-align: center !important;
   }
-  .timeline li .time {
+
+  .timeline li .time{
     display: inline-block !important;
     white-space: nowrap !important;
     padding: 6px 10px !important;
     border-radius: 10px !important;
   }
 
-  /* Description card */
-  .timeline li .desc {
-    display: block !important;
-    width: min(92vw, 560px) !important;
-    margin: 14px auto 0 auto !important;
+  .timeline li .desc{
+    margin-top: 14px !important;
     padding: 14px 16px !important;
     border-radius: 12px !important;
     text-align: center !important;
   }
 
-  /* Remove marker dots (most templates draw them via .flag:after) */
+  /* -------- Remove markers/dots (common patterns) -------- */
   .timeline li .direction-l .flag:after,
-  .timeline li .direction-r .flag:after {
-    display: none !important;
-    content: none !important;
-  }
-
-  /* Also remove any little pointer triangles */
+  .timeline li .direction-r .flag:after,
   .timeline li .direction-l .flag:before,
-  .timeline li .direction-r .flag:before {
+  .timeline li .direction-r .flag:before,
+  .timeline li:after,
+  .timeline li:before,
+  .timeline .marker,
+  .timeline li .marker{
     display: none !important;
     content: none !important;
   }
 
-  /* In case your template uses a real marker element */
-  .timeline .marker,
-  .timeline li .marker {
-    display: none !important;
+  /* -------- Dark mode readability (esp. iOS Safari “faded” text) -------- */
+  html[data-theme="dark"] .timeline li .flag,
+  html[data-theme="dark"] .timeline li .desc,
+  html[data-theme="dark"] .timeline li .time,
+  html[data-theme="dark"] .timeline li .desc *{
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-text-fill-color: currentColor !important;
+  }
+
+  html[data-theme="dark"] .timeline li .flag,
+  html[data-theme="dark"] .timeline li .desc{
+    background: #151923 !important;
+    color: #e7e7e7 !important;
+    border: 1px solid rgba(255,255,255,0.16) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.45) !important;
+  }
+
+  html[data-theme="dark"] .timeline li .time{
+    background: rgba(255,255,255,0.12) !important;
+    color: #f3f4f6 !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
   }
 }

@@ -159,18 +159,23 @@
           {{ site.data.main_info.email }}
         </div>
         <div class="four columns">
-          <span onclick="window.open('{{ site.data.main_info.twitter }}')" style="cursor: pointer">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </span>
-          <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-          </span>
-          <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </span>
-          <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" style="cursor: pointer">
-            <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
-          </span>
+          <div class="social-icons footer-social">
+            <span onclick="window.open('{{ site.data.main_info.twitter }}')" class="social-icon" aria-label="X">
+              <img src="{{ '/assets/icons/x-logo.svg' | prepend: site.baseurl }}" alt="X">
+            </span>
+
+            <span onclick="window.open('{{ site.data.main_info.linkedin }}')" class="social-icon" aria-label="LinkedIn">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </span>
+
+            <span onclick="window.open('{{ site.data.main_info.github }}')" class="social-icon" aria-label="GitHub">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span>
+
+            <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" class="social-icon" aria-label="Google Scholar">
+              <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
+            </span>
+          </div>
         </div>
       </div>
     </div>

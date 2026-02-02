@@ -463,7 +463,7 @@ html[data-theme="dark"] .timeline li .flag {
   transform: translateY(2.5px);  /* this is the main fix */
 }
 
-/* ===== Footer social icons: align + fade uniformly ===== */
+/* ==== Footer social icons ==== */
 .footer .footer-social {
   justify-content: center;
   gap: 10px;                 /* adjust if you want tighter/looser */
@@ -479,13 +479,13 @@ html[data-theme="dark"] .timeline li .flag {
 .footer .footer-social .fa {
   font-size: 22px;
   line-height: 1;
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
 
 .footer .footer-social .ai-google-scholar {
   font-size: 22px;
   line-height: 1;
-  transform: translateY(3px);  /* scholar usually needs more */
+  transform: translateY(2.5px);  /* scholar usually needs more */
 }
 
 /* X icon: align + fade to match */

@@ -727,12 +727,11 @@ html[data-theme="dark"] .timeline li .flag {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;   /* LEFT */
     padding: 10px 12px;
     box-sizing: border-box;
+    position: relative;            /* IMPORTANT for dropdown positioning */
   }
-
-  .navbar > .container { position: relative; }  /* ADD THIS */
 
   /* Hamburger button */
   .mobile-menu-toggle {

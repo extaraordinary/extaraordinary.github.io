@@ -522,302 +522,115 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================================
-   Mobile timeline fix + iOS dark-mode readability
+   TIMELINE: Mobile centering + iOS dark-mode readability
    Paste at the VERY END of your CSS
    ========================================================= */
 
-/* ----- 1) Force good colors for timeline content in dark mode (all screens) ----- */
-html[data-theme="dark"] .timeline li .desc,
+/* ---- Dark mode: force readable timeline blocks (desktop + mobile) ---- */
 html[data-theme="dark"] .timeline li .flag,
-html[data-theme="dark"] .timeline li .time {
-  opacity: 1 !important; /* iOS/Safari can make things look washed out if opacity is used */
-}
-
-/* If your template gives .desc a light background by default, override it */
-html[data-theme="dark"] .timeline li .desc {
-  background: var(--card) !important;
-  color: var(--text) !important;
-  border: 1px solid rgba(255,255,255,0.12) !important;
-}
-
-/* Make the “subtitle” lines readable (your screenshot shows they’re too faint) */
 html[data-theme="dark"] .timeline li .desc,
+html[data-theme="dark"] .timeline li .time,
 html[data-theme="dark"] .timeline li .desc * {
-  color: var(--text) !important;
-}
-
-/* Date badge: readable in dark mode */
-html[data-theme="dark"] .timeline li .time {
-  color: #f3f4f6 !important;
-  background: rgba(255,255,255,0.12) !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
-}
-
-
-/* ----- 2) Mobile layout: single column, centered line + centered markers ----- */
-@media (max-width: 750px) {
-
-  /* Make the timeline full width */
-  .timeline {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-  }
-
-  /* Center the vertical line */
-  .timeline:before {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-
-  /* Each item becomes full width */
-  .timeline li {
-    width: 100% !important;
-    margin: 0 auto 42px auto !important;
-  }
-
-  /* Kill desktop floats and side layouts */
-  .timeline li .direction-l,
-  .timeline li .direction-r {
-    float: none !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Put the content in a neat centered column */
-  .timeline li .flag-wrapper {
-    display: inline-flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 10px !important;
-    position: relative !important;
-    width: 100% !important;
-  }
-
-  /* Keep the “flag” (place) centered and not touching the line */
-  .timeline li .flag {
-    display: inline-block !important;
-    max-width: 92% !important;
-    margin: 0 auto !important;
-  }
-
-  /* Description box: readable + same width style */
-  .timeline li .desc {
-    max-width: 92% !important;
-    margin: 10px auto 0 auto !important;
-    padding: 14px 16px !important;
-    text-align: center !important;
-    background: var(--card) !important;
-    color: var(--text) !important;
-  }
-
-  /* Center markers on the vertical line */
-  .timeline li .marker {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: 0px !important; /* adjust if needed */
-    z-index: 5 !important;
-  }
-
-  /* Date badge under the flag (so it doesn’t get cut off on the sides) */
-  .timeline li .time-wrapper {
-    position: static !important;
-    margin-top: 6px !important;
-  }
-
-  .timeline li .time {
-    display: inline-block !important;
-  }
-}
-
-/* =========================================================
-   TIMELINE: Mobile layout + iOS dark-mode readability
-   Paste at the VERY END of your CSS
-   ========================================================= */
-
-/* ---- Dark mode: force readable timeline blocks everywhere ---- */
-html[data-theme="dark"] .timeline li .flag,
-html[data-theme="dark"] .timeline li .desc,
-html[data-theme="dark"] .timeline li .time {
   opacity: 1 !important;
   filter: none !important;
-  -webkit-text-fill-color: var(--text) !important; /* iOS Safari sometimes "fades" text */
+  -webkit-text-fill-color: currentColor !important; /* iOS Safari text fade fix */
 }
 
-html[data-theme="dark"] .timeline li .flag {
+html[data-theme="dark"] .timeline li .flag,
+html[data-theme="dark"] .timeline li .desc {
   background: var(--card) !important;
   color: var(--text) !important;
   border: 1px solid rgba(255,255,255,0.14) !important;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35) !important;
 }
 
-html[data-theme="dark"] .timeline li .desc {
-  background: var(--card) !important;
-  color: var(--text) !important;
-  border: 1px solid rgba(255,255,255,0.14) !important;
-}
-
-html[data-theme="dark"] .timeline li .desc,
-html[data-theme="dark"] .timeline li .desc * {
-  color: var(--text) !important;
-}
-
 html[data-theme="dark"] .timeline li .time {
   color: #f3f4f6 !important;
   background: rgba(255,255,255,0.12) !important;
   border: 1px solid rgba(255,255,255,0.20) !important;
 }
 
-
-/* ---- Mobile: make it single-column, centered, no cropped date badges ---- */
+/* ---- Mobile: make timeline single-column and CENTER everything on the line ---- */
 @media (max-width: 768px) {
 
-  /* Give breathing room so nothing touches the phone edges */
   .timeline {
     width: 100% !important;
-    padding: 0 10px !important;
+    padding: 0 12px !important;   /* breathing room so nothing is cropped */
     margin: 0 auto !important;
     overflow: visible !important;
   }
 
-  /* Center the vertical line */
+  /* Vertical line centered */
   .timeline:before {
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
 
-  /* Remove desktop left/right floats */
+  /* Remove desktop left/right layout */
   .timeline li,
   .timeline li .direction-l,
   .timeline li .direction-r {
     float: none !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
     text-align: center !important;
   }
 
-  /* Center wrapper */
+  /* Keep wrapper from shifting things */
   .timeline li .flag-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
   }
 
-  /* Center the "flag" card and keep it away from the line */
+  /* Center the main "flag" title card on the center line */
   .timeline li .flag {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     display: inline-block !important;
-    max-width: min(92%, 520px) !important;
-    margin: 0 auto !important;
+
+    max-width: min(92vw, 520px) !important;
+    margin: 0 !important;
   }
 
-  /* Put the DATE under the flag so it can’t be cropped off-screen */
+  /* Center the date badge UNDER the flag (prevents off-screen cropping) */
   .timeline li .time-wrapper {
     float: none !important;
-    position: static !important;
-    display: block !important;
-    width: auto !important;
-    margin: 8px auto 0 auto !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    margin: 10px 0 0 0 !important;
+    width: fit-content !important;
+    text-align: center !important;
   }
 
   .timeline li .time {
     display: inline-block !important;
     white-space: nowrap !important;
     padding: 6px 10px !important;
-    border-radius: 8px !important;
+    border-radius: 10px !important;
   }
 
-  /* Description box centered + readable */
+  /* Center the description box on the center line */
   .timeline li .desc {
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
     display: block !important;
-    max-width: min(92%, 520px) !important;
-    margin: 12px auto 0 auto !important;
+    max-width: min(92vw, 520px) !important;
+    margin: 12px 0 0 0 !important;
     padding: 14px 16px !important;
     text-align: center !important;
   }
 
-  /* If your timeline dots are generated with :after on .flag, center them on the line */
-  .timeline li .direction-l .flag:after,
-  .timeline li .direction-r .flag:after {
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%) !important;
-    top: -34px !important;  /* move dot above the flag so it sits on the line */
-  }
-
-  /* Remove the little pointer triangles on mobile (they can push layout sideways) */
+  /* Optional: remove pointer triangles on mobile (they can shift layout) */
   .timeline li .direction-l .flag:before,
   .timeline li .direction-r .flag:before {
     display: none !important;
-  }
-}
-
-/* =========================================================
-   TIMELINE: Force true centering on MOBILE
-   Paste at the VERY END of your CSS
-   ========================================================= */
-@media (max-width: 768px) {
-
-  /* remove any hidden left padding that shifts content */
-  .timeline {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-
-  .timeline li,
-  .timeline li .direction-l,
-  .timeline li .direction-r {
-    position: relative !important;
-    width: 100% !important;
-    float: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* keep the center line perfectly centered */
-  .timeline:before {
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-
-  /* the wrapper should not shift anything */
-  .timeline li .flag-wrapper {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  /* FORCE the title card to be centered on the line */
-  .timeline li .flag {
-    position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    margin: 0 !important;
-    max-width: min(92vw, 520px) !important;
-  }
-
-  /* FORCE the description card to be centered on the line */
-  .timeline li .desc {
-    position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    margin: 12px 0 0 0 !important;
-    max-width: min(92vw, 520px) !important;
-  }
-
-  /* dates: keep them centered too (prevents side drift) */
-  .timeline li .time-wrapper {
-    float: none !important;
-    position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-
-    margin-top: 10px !important;
-    text-align: center !important;
-    width: fit-content !important;
   }
 }

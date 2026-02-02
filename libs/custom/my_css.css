@@ -521,3 +521,130 @@ html[data-theme="dark"] .timeline li .flag {
   box-shadow: none;
 }
 
+/* =========================================================
+   TIMELINE (MOBILE): no markers + centered cards + dark-mode readability
+   Paste at the VERY END of your CSS
+   ========================================================= */
+
+/* --- Dark mode: force readable timeline blocks on mobile (incl. iOS Safari) --- */
+@media (max-width: 768px) {
+  html[data-theme="dark"] .timeline li .flag,
+  html[data-theme="dark"] .timeline li .desc,
+  html[data-theme="dark"] .timeline li .time,
+  html[data-theme="dark"] .timeline li .desc * {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-text-fill-color: currentColor !important;
+  }
+
+  html[data-theme="dark"] .timeline li .flag,
+  html[data-theme="dark"] .timeline li .desc {
+    background: #151923 !important;
+    color: #e7e7e7 !important;
+    border: 1px solid rgba(255,255,255,0.16) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.45) !important;
+  }
+
+  html[data-theme="dark"] .timeline li .time {
+    background: rgba(255,255,255,0.12) !important;
+    color: #f3f4f6 !important;
+    border: 1px solid rgba(255,255,255,0.18) !important;
+  }
+}
+
+/* --- Mobile layout: single column, centered, no cropped date badges --- */
+@media (max-width: 768px) {
+
+  /* Make timeline fully responsive + avoid sideways cropping */
+  .timeline {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    overflow: visible !important;
+  }
+
+  /* Keep the center line centered (optional; looks nice even without markers) */
+  .timeline:before {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Turn off left/right desktop layout */
+  .timeline li,
+  .timeline li .direction-l,
+  .timeline li .direction-r {
+    float: none !important;
+    width: 100% !important;
+    position: relative !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* Stack: title -> date -> description (all centered) */
+  .timeline li .flag-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Title card */
+  .timeline li .flag {
+    display: block !important;
+    width: min(92vw, 560px) !important;
+    margin: 0 auto !important;
+    padding: 10px 14px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Date badge: always below the title, centered */
+  .timeline li .time-wrapper {
+    float: none !important;
+    position: static !important;
+    width: auto !important;
+    margin: 10px auto 0 auto !important;
+    text-align: center !important;
+  }
+  .timeline li .time {
+    display: inline-block !important;
+    white-space: nowrap !important;
+    padding: 6px 10px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Description card */
+  .timeline li .desc {
+    display: block !important;
+    width: min(92vw, 560px) !important;
+    margin: 14px auto 0 auto !important;
+    padding: 14px 16px !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+  }
+
+  /* Remove marker dots (most templates draw them via .flag:after) */
+  .timeline li .direction-l .flag:after,
+  .timeline li .direction-r .flag:after {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* Also remove any little pointer triangles */
+  .timeline li .direction-l .flag:before,
+  .timeline li .direction-r .flag:before {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* In case your template uses a real marker element */
+  .timeline .marker,
+  .timeline li .marker {
+    display: none !important;
+  }
+}

@@ -463,6 +463,14 @@ html[data-theme="dark"] .timeline li .flag {
   transform: translateY(2.5px);  /* this is the main fix */
 }
 
+/* Strava */
+.social-icon img[src*="strava"] {
+  width: 22px;
+  height: 22px;
+  transform: translateY(2px);
+}
+
+
 /* ==== Footer social icons ==== */
 .footer .footer-social {
   justify-content: center;

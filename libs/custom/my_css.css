@@ -449,9 +449,9 @@ html[data-theme="dark"] .timeline li .flag {
 
 /* Font Awesome icons (LinkedIn, GitHub) */
 .social-icon .fa{
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1;
-  transform: translateY(0px);
+  transform: translateY(2px);
 }
 
 /* X SVG: usually sits a hair low/high depending on the SVG */
@@ -464,7 +464,7 @@ html[data-theme="dark"] .timeline li .flag {
 
 /* Google Scholar (Academicons often looks optically "high") */
 .social-icon .ai-google-scholar{
-  font-size: 23px;
+  font-size: 22px;
   line-height: 1;
-  transform: translateY(3px);  /* this is the main fix */
+  transform: translateY(2px);  /* this is the main fix */
 }

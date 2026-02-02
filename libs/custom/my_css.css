@@ -306,6 +306,12 @@ html[data-theme="dark"] .timeline li .marker {
   padding: 8px 14px;
 }
 
+/* X icon color fix in dark mode */
+html[data-theme="dark"] .social-icon img {
+  filter: invert(1);
+}
+
+
 /* ==== Timeline dates readability in dark mode ===== */
 
 html[data-theme="dark"] .timeline li .time {

@@ -510,23 +510,14 @@ html[data-theme="dark"] .timeline li .flag {
   transition: opacity 0.15s ease;
 }
 
-/* Map same width as text column */
-.pdf-map {
-  width: 100%;
-  height: 70vh;        /* adjust if you want taller */
-  border: none;
+/* ===== Map styling ===== */
+.map-image {
+  width: 100%;          /* same width as text */
+  max-width: 100%;
+  height: auto;
   display: block;
   margin: 2rem 0;
+  border: none;
+  box-shadow: none;
 }
 
-@media (min-width: 750px) {
-  .pdf-map {
-    height: 80vh;
-  }
-}
-
-@media (max-width: 550px) {
-  .pdf-map {
-    height: 60vh;
-  }
-}

@@ -518,3 +518,15 @@ html[data-theme="dark"] .timeline li .flag {
   display: block;
   margin: 2rem 0;
 }
+
+@media (min-width: 750px) {
+  .pdf-map {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 550px) {
+  .pdf-map {
+    height: 60vh;
+  }
+}

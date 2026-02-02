@@ -522,201 +522,157 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================================
-   TIMELINE (MOBILE): Center everything + dates AFTER desc + no markers + dark mode readable
+   TIMELINE (MOBILE): center everything + dates below desc
    Paste at the VERY END of your CSS
    ========================================================= */
 
 @media (max-width: 768px) {
 
-  /* iPhone Safari safe-area so nothing looks clipped */
-  .container{
-    max-width: 100% !important;
-    padding-left: calc(16px + env(safe-area-inset-left)) !important;
-    padding-right: calc(16px + env(safe-area-inset-right)) !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-  }
-
+  /* Make sure nothing can overflow/crop on phone */
   .timeline{
     width: 100% !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 !important;
+    padding: 0 12px !important;          /* breathing room from screen edges */
     box-sizing: border-box !important;
     overflow: visible !important;
   }
 
-  /* center vertical line */
+  /* Center the vertical line (if you keep it) */
   .timeline:before{
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
 
-  /* Kill desktop L/R layout completely */
+  /* Kill desktop two-column layout */
   .timeline li,
   .timeline li .direction-l,
   .timeline li .direction-r{
     float: none !important;
     width: 100% !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    transform: none !important;
-    position: relative !important;
+    text-align: center !important;
+    position: static !important;
     box-sizing: border-box !important;
   }
 
-  /* Make each item a grid so we can reorder: FLAG -> DESC -> DATE */
-  .timeline li .direction-l,
-  .timeline li .direction-r{
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    grid-template-areas:
-      "flag"
-      "desc"
-      "date" !important;
-    justify-items: center !important;
-    align-items: start !important;
-    text-align: center !important;
-  }
-
-  /* IMPORTANT: let children of flag-wrapper become grid items */
+  /* Wrapper centered */
   .timeline li .flag-wrapper{
-    display: contents !important;
-  }
-
-  /* Assign grid areas */
-  .timeline li .flag{
-    grid-area: flag !important;
-  }
-  .timeline li .desc{
-    grid-area: desc !important;
-  }
-  .timeline li .time-wrapper{
-    grid-area: date !important;
-  }
-
-  /* Cards: use container width (not vw) so no right-cropping */
-  .timeline li .flag,
-  .timeline li .desc{
-    display: block !important;
     width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Main title card (place/university/company) */
+  .timeline li .flag{
+    display: block !important;
+    width: min(92vw, 520px) !important;
     max-width: 100% !important;
     margin: 0 auto !important;
-    left: 0 !important;
-    right: 0 !important;
-    transform: none !important;
-    box-sizing: border-box !important;
 
-    /* outer breathing room */
-    padding-left: 14px !important;
-    padding-right: 14px !important;
-
-    /* CENTER TEXT inside cards */
-    text-align: center !important;
-  }
-
-  /* Keep your card feel */
-  .timeline li .flag{
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-    border-radius: 12px !important;
-  }
-
-  .timeline li .desc{
-    margin-top: 14px !important;
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
-    border-radius: 14px !important;
-
-    /* Center everything inside desc (title/subtitle) */
-    text-align: center !important;
-  }
-
-  /* DATE: now placed AFTER desc */
-  .timeline li .time-wrapper{
-    float: none !important;
+    /* remove any shifts from desktop CSS */
     position: static !important;
-    width: 100% !important;
-    margin: 12px 0 0 0 !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+
+  /* Description card (role/degree) */
+  .timeline li .desc{
+    display: block !important;
+    width: min(92vw, 520px) !important;
+    max-width: 100% !important;
+    margin: 12px auto 0 auto !important; /* space under flag */
+    padding: 14px 16px !important;
+
     text-align: center !important;
-  }
-
-  .timeline li .time{
-    display: inline-block !important;
-    white-space: nowrap !important;
-    padding: 6px 10px !important;
-    border-radius: 10px !important;
-    text-align: center !important;
-  }
-
-  /* Remove markers/dots & pointer triangles on mobile */
-  .timeline li .direction-l .flag:after,
-  .timeline li .direction-r .flag:after,
-  .timeline li .direction-l .flag:before,
-  .timeline li .direction-r .flag:before,
-  .timeline li:before,
-  .timeline li:after,
-  .timeline .marker,
-  .timeline li .marker{
-    display: none !important;
-    content: none !important;
-  }
-
-  /* Dark mode readability (iOS Safari can "fade" text) */
-  html[data-theme="dark"] .timeline li .flag,
-  html[data-theme="dark"] .timeline li .desc,
-  html[data-theme="dark"] .timeline li .time,
-  html[data-theme="dark"] .timeline li .desc *{
-    opacity: 1 !important;
-    filter: none !important;
-    -webkit-text-fill-color: currentColor !important;
-  }
-
-  html[data-theme="dark"] .timeline li .flag,
-  html[data-theme="dark"] .timeline li .desc{
-    background: #151923 !important;
-    color: #e7e7e7 !important;
-    border: 1px solid rgba(255,255,255,0.16) !important;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.45) !important;
-  }
-
-  html[data-theme="dark"] .timeline li .time{
-    background: rgba(255,255,255,0.12) !important;
-    color: #f3f4f6 !important;
-    border: 1px solid rgba(255,255,255,0.18) !important;
-  }
-}
-
-/* ===============================
-   TIMELINE: Center DATE cards
-   =============================== */
-
-@media (max-width: 768px) {
-
-  /* Date wrapper: full width, centered */
-  .timeline li .time-wrapper{
-    width: 100% !important;
-    margin: 12px 0 0 0 !important;
-    padding: 0 !important;
-
-    display: flex !important;
-    justify-content: center !important;
 
     position: static !important;
     left: auto !important;
     right: auto !important;
     transform: none !important;
-    float: none !important;
+    box-sizing: border-box !important;
   }
 
-  /* Date badge itself */
+  /* DATE: force it to be BELOW the desc, centered, with spacing after */
+  .timeline li .time-wrapper{
+    order: 3 !important;                 /* makes it come AFTER flag + desc */
+    width: 100% !important;
+    margin: 10px 0 18px 0 !important;    /* <-- bottom margin adds space before next card */
+    padding: 0 !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    float: none !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+  }
+
   .timeline li .time{
     display: inline-block !important;
-    text-align: center !important;
     white-space: nowrap !important;
+    text-align: center !important;
 
     padding: 6px 12px !important;
     border-radius: 10px !important;
+
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
   }
+
+  /* Optional: remove dots/markers on mobile (if your template uses them) */
+  .timeline li .direction-l .flag:after,
+  .timeline li .direction-r .flag:after,
+  .timeline li .direction-l .flag:before,
+  .timeline li .direction-r .flag:before{
+    display: none !important;
+    content: none !important;
+  }
+}
+
+/* =========================================================
+   TIMELINE (DARK MODE): make cards readable on iOS Safari
+   Paste at the VERY END (keep this too)
+   ========================================================= */
+
+html[data-theme="dark"] .timeline li .flag,
+html[data-theme="dark"] .timeline li .desc,
+html[data-theme="dark"] .timeline li .time{
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+html[data-theme="dark"] .timeline li .flag,
+html[data-theme="dark"] .timeline li .desc{
+  background: #151923 !important;
+  color: #e7e7e7 !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45) !important;
+}
+
+html[data-theme="dark"] .timeline li .desc,
+html[data-theme="dark"] .timeline li .desc *{
+  color: #e7e7e7 !important;
+}
+
+html[data-theme="dark"] .timeline li .time{
+  background: rgba(255,255,255,0.14) !important;
+  color: #f3f4f6 !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
 }

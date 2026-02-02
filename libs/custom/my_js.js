@@ -128,7 +128,7 @@ $(document).ready(function() {
   document.addEventListener("DOMContentLoaded", function () {
 
   const sections = document.querySelectorAll(".section-page");
-  const links = document.querySelectorAll(".nav-toggle");
+  const links = document.querySelectorAll(".section-toggle");
 
   // Hide all sections
   sections.forEach(section => {
@@ -164,3 +164,33 @@ $(document).ready(function() {
   init();
 
 });
+
+// Mobile menu toggle
+const nav = document.querySelector(".navbar");
+const toggleBtn = document.querySelector(".nav-toggle");
+
+if (nav && toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggleBtn.textContent = isOpen ? "✕" : "☰";
+  });
+
+  // Close after clicking a menu link
+  nav.querySelectorAll(".navbar-link").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      toggleBtn.setAttribute("aria-expanded", "false");
+      toggleBtn.textContent = "☰";
+    });
+  });
+
+  // Close if user taps outside
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target)) {
+      nav.classList.remove("is-open");
+      toggleBtn.setAttribute("aria-expanded", "false");
+      toggleBtn.textContent = "☰";
+    }
+  });
+}

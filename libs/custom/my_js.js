@@ -53,14 +53,14 @@ $(document).ready(function() {
 
 
   function init() {
-    initThemeToggle();   // <-- add this
-    $window.on('scroll', onScroll)
-    $window.on('resize', resize)
-    $popoverLink.on('click', openPopover)
-    $document.on('click', closePopover)
-    $('a[href^="#"]').on('click', smoothScroll)
-    buildSnippets();
-  }
+  initThemeToggle();   // <-- add this
+  $window.on('scroll', onScroll)
+  $window.on('resize', resize)
+  $popoverLink.on('click', openPopover)
+  $document.on('click', closePopover)
+  $('a[href^="#"]').on('click', smoothScroll)
+  buildSnippets();
+}
 
 
   function smoothScroll(e) {
@@ -165,35 +165,31 @@ $(document).ready(function() {
 
 });
 
-// Mobile menu toggle (safe class name)
-const nav = document.querySelector(".navbar");
-const toggleBtn = document.querySelector(".mobile-menu-toggle");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".mobile-menu-toggle");
+  const menu = document.querySelector(".navbar-list");
 
-if (nav && toggleBtn) {
-  toggleBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+  if (!btn || !menu) return;
+
+  btn.addEventListener("click", function (e) {
     e.stopPropagation();
-
-    const isOpen = nav.classList.toggle("is-open");
-    toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    toggleBtn.textContent = isOpen ? "✕" : "☰";
+    menu.classList.toggle("open");
+    btn.setAttribute("aria-expanded", menu.classList.contains("open"));
   });
 
-  // Close after clicking a menu link
-  nav.querySelectorAll(".navbar-link").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("is-open");
-      toggleBtn.setAttribute("aria-expanded", "false");
-      toggleBtn.textContent = "☰";
+  // close when clicking outside
+  document.addEventListener("click", function () {
+    menu.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  });
+
+  // close when clicking a link
+  menu.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
     });
   });
-
-  // Close if user taps outside
-  document.addEventListener("click", (e) => {
-    if (!nav.contains(e.target)) {
-      nav.classList.remove("is-open");
-      toggleBtn.setAttribute("aria-expanded", "false");
-      toggleBtn.textContent = "☰";
-    }
-  });
-}
+});
+</script>

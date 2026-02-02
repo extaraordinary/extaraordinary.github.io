@@ -142,10 +142,18 @@
     <div class="navbar-spacer"></div>
     <nav class="navbar">
       <div class="container">
-        <!-- Mobile hamburger -->
-        <button class="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
-          ☰
+        
+
+        <button class="mobile-menu-toggle" type="button" aria-label="Menu" aria-expanded="false">
+          <span class="hamburger" aria-hidden="true"></span>
         </button>
+
+        <ul class="navbar-list" id="mobile-menu">
+          <li class="navbar-item"><a class="navbar-link" href="#bio">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#publications">Publications</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#resume">Resume</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="#fun">Fun</a></li>
+        </ul>
 
         <ul class="navbar-list">
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>About</a></li>
@@ -155,7 +163,6 @@
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl }}>Resume</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#fun" | prepend: site.baseurl }}>Fun</a></li>
         </ul>
-        
       </div>
     </nav>
 

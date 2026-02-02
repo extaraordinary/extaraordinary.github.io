@@ -429,7 +429,7 @@ html[data-theme="dark"] .timeline li .flag {
 .social-icons{
   display:flex;
   align-items:center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .social-icon{
@@ -474,7 +474,7 @@ html[data-theme="dark"] .timeline li .flag {
 /* ==== Footer social icons ==== */
 .footer .footer-social {
   justify-content: center;
-  gap: 4px;
+  gap: 2px;
   opacity: 0.55;
 }
 

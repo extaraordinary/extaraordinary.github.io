@@ -522,13 +522,13 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================================
-   TIMELINE (MOBILE): TRUE CENTER + NO CROPPING (iPhone) + NO MARKERS + DARK MODE READABILITY
+   TIMELINE (MOBILE): Center everything + dates AFTER desc + no markers + dark mode readable
    Paste at the VERY END of your CSS
    ========================================================= */
 
 @media (max-width: 768px) {
 
-  /* iPhone Safari: use safe-area so nothing gets visually clipped */
+  /* iPhone Safari safe-area so nothing looks clipped */
   .container{
     max-width: 100% !important;
     padding-left: calc(16px + env(safe-area-inset-left)) !important;
@@ -537,7 +537,6 @@ html[data-theme="dark"] .timeline li .flag {
     overflow: visible !important;
   }
 
-  /* Timeline wrapper must not clip children */
   .timeline{
     width: 100% !important;
     margin: 0 auto !important;
@@ -546,91 +545,112 @@ html[data-theme="dark"] .timeline li .flag {
     overflow: visible !important;
   }
 
-  /* Center the vertical line */
+  /* center vertical line */
   .timeline:before{
     left: 50% !important;
     transform: translateX(-50%) !important;
   }
 
-  /* Completely remove desktop left/right behavior */
+  /* Kill desktop L/R layout completely */
   .timeline li,
   .timeline li .direction-l,
-  .timeline li .direction-r,
-  .timeline li .flag-wrapper{
+  .timeline li .direction-r{
     float: none !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-
     left: 0 !important;
     right: 0 !important;
     transform: none !important;
-
     position: relative !important;
-    text-align: center !important;
     box-sizing: border-box !important;
   }
 
-  /* Use container width (NOT vw) to avoid Safari rounding / clipping */
-  .timeline li .direction-l .flag,
-  .timeline li .direction-r .flag,
-  .timeline li .direction-l .desc,
-  .timeline li .direction-r .desc{
-    float: none !important;
-    display: block !important;
+  /* Make each item a grid so we can reorder: FLAG -> DESC -> DATE */
+  .timeline li .direction-l,
+  .timeline li .direction-r{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "flag"
+      "desc"
+      "date" !important;
+    justify-items: center !important;
+    align-items: start !important;
+    text-align: center !important;
+  }
 
-    /* This is the key: never exceed the container */
+  /* IMPORTANT: let children of flag-wrapper become grid items */
+  .timeline li .flag-wrapper{
+    display: contents !important;
+  }
+
+  /* Assign grid areas */
+  .timeline li .flag{
+    grid-area: flag !important;
+  }
+  .timeline li .desc{
+    grid-area: desc !important;
+  }
+  .timeline li .time-wrapper{
+    grid-area: date !important;
+  }
+
+  /* Cards: use container width (not vw) so no right-cropping */
+  .timeline li .flag,
+  .timeline li .desc{
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-
     margin: 0 auto !important;
-
     left: 0 !important;
     right: 0 !important;
     transform: none !important;
-
     box-sizing: border-box !important;
 
-    /* A tiny inner padding so it doesn't touch the container edges */
+    /* outer breathing room */
     padding-left: 14px !important;
     padding-right: 14px !important;
+
+    /* CENTER TEXT inside cards */
+    text-align: center !important;
   }
 
-  /* Restore your card padding (content padding) */
-  .timeline li .direction-l .flag,
-  .timeline li .direction-r .flag{
+  /* Keep your card feel */
+  .timeline li .flag{
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     border-radius: 12px !important;
   }
 
-  .timeline li .direction-l .desc,
-  .timeline li .direction-r .desc{
+  .timeline li .desc{
     margin-top: 14px !important;
     padding-top: 14px !important;
     padding-bottom: 14px !important;
     border-radius: 14px !important;
-  }
 
-  /* Dates: always centered under each entry */
-  .timeline li .direction-l .time-wrapper,
-  .timeline li .direction-r .time-wrapper{
-    float: none !important;
-    position: static !important;
-    width: 100% !important;
-    margin: 10px 0 0 0 !important;
+    /* Center everything inside desc (title/subtitle) */
     text-align: center !important;
   }
 
-  .timeline li .direction-l .time,
-  .timeline li .direction-r .time{
+  /* DATE: now placed AFTER desc */
+  .timeline li .time-wrapper{
+    float: none !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 12px 0 0 0 !important;
+    text-align: center !important;
+  }
+
+  .timeline li .time{
     display: inline-block !important;
     white-space: nowrap !important;
     padding: 6px 10px !important;
     border-radius: 10px !important;
+    text-align: center !important;
   }
 
-  /* Remove markers/dots + pointer triangles on mobile */
+  /* Remove markers/dots & pointer triangles on mobile */
   .timeline li .direction-l .flag:after,
   .timeline li .direction-r .flag:after,
   .timeline li .direction-l .flag:before,
@@ -643,7 +663,7 @@ html[data-theme="dark"] .timeline li .flag {
     content: none !important;
   }
 
-  /* Dark mode readability (fix iOS Safari “faded text”) */
+  /* Dark mode readability (iOS Safari can "fade" text) */
   html[data-theme="dark"] .timeline li .flag,
   html[data-theme="dark"] .timeline li .desc,
   html[data-theme="dark"] .timeline li .time,

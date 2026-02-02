@@ -791,3 +791,65 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
+/* =========================================
+   MOBILE MENU BUTTON: smaller + centered + matches theme toggle height
+   Paste at VERY END of CSS
+   ========================================= */
+
+@media (max-width: 750px) {
+
+  /* Make BOTH buttons share the same top alignment (and respect iPhone safe area) */
+  .mobile-menu-btn,
+  .theme-toggle{
+    top: calc(12px + env(safe-area-inset-top)) !important;
+  }
+
+  /* Match the visual "pill" height of the theme toggle (not its width) */
+  .mobile-menu-btn{
+    left: calc(12px + env(safe-area-inset-left)) !important;
+
+    /* Same “control height” feel as your theme toggle */
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 999px !important;
+
+    /* Center contents perfectly */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Replace the hamburger drawing with a perfectly centered 3-line icon */
+  .mobile-menu-btn .hamburger{
+    width: 20px !important;
+    height: 14px !important;
+    display: block !important;
+
+    /* 3 crisp centered lines */
+    background:
+      linear-gradient(var(--text), var(--text)) 0 0 / 100% 2px no-repeat,
+      linear-gradient(var(--text), var(--text)) 0 50% / 100% 2px no-repeat,
+      linear-gradient(var(--text), var(--text)) 0 100% / 100% 2px no-repeat !important;
+
+    /* Remove your old border-top trick so it doesn’t look off-center */
+    border: 0 !important;
+    transform: none !important;
+  }
+
+  /* Make sure old pseudo-lines don’t interfere (from earlier CSS) */
+  .mobile-menu-btn .hamburger::before,
+  .mobile-menu-btn .hamburger::after{
+    content: none !important;
+    display: none !important;
+  }
+
+  /* OPTIONAL: keep menu panel aligned nicely under the button */
+  .mobile-menu{
+    top: calc(64px + env(safe-area-inset-top)) !important;
+    left: calc(12px + env(safe-area-inset-left)) !important;
+    right: calc(12px + env(safe-area-inset-right)) !important;
+  }
+}

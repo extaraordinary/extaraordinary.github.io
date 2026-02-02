@@ -522,19 +522,24 @@ html[data-theme="dark"] .timeline li .flag {
 }
 
 /* =========================================================
-   TIMELINE (MOBILE): TRUE CENTERING + NO MARKERS + DARK MODE READABILITY
+   TIMELINE (MOBILE): NO CROPPING + TRUE CENTERING + NO MARKERS + DARK MODE READABILITY
    Paste at the VERY END of your CSS
    ========================================================= */
 
 @media (max-width: 768px) {
 
-  /* -------- Base container: no hidden padding/overflow shifts -------- */
+  /* --- Prevent any horizontal clipping on iOS / small screens --- */
+  html, body { overflow-x: hidden; } /* page should not scroll sideways */
+  .docs-section, .container { overflow: visible !important; } /* allow badges to render */
+  .timeline { overflow: visible !important; overflow-x: visible !important; }
+
+  /* --- Timeline container breathing room --- */
   .timeline{
     width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 12px !important;      /* safe phone edge padding */
-    overflow: visible !important;
+    padding: 0 16px !important;      /* keep content away from phone edges */
     box-sizing: border-box !important;
+    position: relative !important;
   }
 
   /* Center the vertical line */
@@ -543,7 +548,7 @@ html[data-theme="dark"] .timeline li .flag {
     transform: translateX(-50%) !important;
   }
 
-  /* Kill ALL desktop left/right layout behavior */
+  /* --- Destroy desktop left/right layout completely --- */
   .timeline li,
   .timeline li .direction-l,
   .timeline li .direction-r{
@@ -551,23 +556,23 @@ html[data-theme="dark"] .timeline li .flag {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    position: relative !important;
     left: auto !important;
     right: auto !important;
+    position: relative !important;
     text-align: center !important;
     box-sizing: border-box !important;
   }
 
-  /* Some templates add extra padding/margins here — remove them */
+  /* Some templates add inner side padding/margins: remove */
   .timeline li .direction-l,
   .timeline li .direction-r{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  /* Stack everything and center */
+  /* Center wrapper */
   .timeline li .flag-wrapper{
     width: 100% !important;
     margin: 0 !important;
@@ -576,67 +581,87 @@ html[data-theme="dark"] .timeline li .flag {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
+    text-align: center !important;
     box-sizing: border-box !important;
   }
 
-  /* -------- TRUE center for ALL cards: force center relative to timeline -------- */
-  .timeline li .flag,
-  .timeline li .desc,
-  .timeline li .time-wrapper{
-    position: relative !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
+  /* --- TRUE CENTER the place-name "flag" card (education/job place) --- */
+  .timeline li .direction-l .flag,
+  .timeline li .direction-r .flag{
+    float: none !important;
+    display: block !important;
 
-  /* Make widths consistent and prevent off-screen crop */
-  .timeline li .flag,
-  .timeline li .desc{
     width: min(92vw, 560px) !important;
     max-width: 560px !important;
-    margin: 0 !important;
+
+    margin: 0 auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;         /* remove any desktop transforms */
+    position: relative !important;
+    text-align: center !important;
+
+    border-radius: 12px !important;
+    padding: 10px 14px !important;
     box-sizing: border-box !important;
   }
 
-  /* Spacing */
-  .timeline li .flag{
-    padding: 10px 14px !important;
-    border-radius: 10px !important;
-  }
-
-  .timeline li .time-wrapper{
-    margin-top: 10px !important;
-    width: fit-content !important;   /* keeps badge tight */
+  /* --- Date badge: place it UNDER the flag, centered (prevents cropping) --- */
+  .timeline li .direction-l .time-wrapper,
+  .timeline li .direction-r .time-wrapper{
+    float: none !important;
+    position: static !important;        /* IMPORTANT: stops it from drifting offscreen */
+    width: 100% !important;
+    margin: 10px 0 0 0 !important;
+    padding: 0 !important;
     text-align: center !important;
+    box-sizing: border-box !important;
   }
 
-  .timeline li .time{
+  .timeline li .direction-l .time,
+  .timeline li .direction-r .time{
     display: inline-block !important;
     white-space: nowrap !important;
     padding: 6px 10px !important;
     border-radius: 10px !important;
   }
 
-  .timeline li .desc{
-    margin-top: 14px !important;
+  /* --- Description card centered --- */
+  .timeline li .direction-l .desc,
+  .timeline li .direction-r .desc{
+    float: none !important;
+    display: block !important;
+
+    width: min(92vw, 560px) !important;
+    max-width: 560px !important;
+
+    margin: 14px auto 0 auto !important;
     padding: 14px 16px !important;
-    border-radius: 12px !important;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    position: relative !important;
+
     text-align: center !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
   }
 
-  /* -------- Remove markers/dots (common patterns) -------- */
+  /* --- Remove markers/dots + pointer triangles on mobile --- */
   .timeline li .direction-l .flag:after,
   .timeline li .direction-r .flag:after,
   .timeline li .direction-l .flag:before,
   .timeline li .direction-r .flag:before,
-  .timeline li:after,
   .timeline li:before,
+  .timeline li:after,
   .timeline .marker,
   .timeline li .marker{
     display: none !important;
     content: none !important;
   }
 
-  /* -------- Dark mode readability (esp. iOS Safari “faded” text) -------- */
+  /* --- Dark mode readability (iOS Safari sometimes fades text) --- */
   html[data-theme="dark"] .timeline li .flag,
   html[data-theme="dark"] .timeline li .desc,
   html[data-theme="dark"] .timeline li .time,

@@ -1,9 +1,8 @@
 /* =========================================================
-   THEME TOKENS (Light + Dark)
-   - Only variables here: no layout/style rules.
+   THEME TOKENS
    ========================================================= */
 
-/* Light theme (default) */
+/* light theme (default) */
 :root {
   /* surfaces */
   --bg: #ffffff;
@@ -13,28 +12,28 @@
   /* grays */
   --muted: rgba(0, 0, 0, 0.60);
   --muted2: rgba(0, 0, 0, 0.40);
-  --border: #E0E0E0;         /* steel Gray */
-  --gray: #6D6E71;           /* iron Gray */
+  --border: #E0E0E0;         /* steel gray */
+  --gray: #6D6E71;           /* iron gray */
 
   /* navigation */
   --nav-bg: #ffffff;
   --link-text: #111111;
 
   /* CMU accents */
-  --accent: #C41230;         /* Carnegie Red */
-  --accent-2: #941120;       /* Skibo Red */
+  --accent: #C41230;         /* carnegie red */
+  --accent-2: #941120;       /* skibo red */
   --accent-soft: rgba(196, 18, 48, 0.12);
   --accent-border: rgba(196, 18, 48, 0.35);
 
   /* secondary accents */
-  --teal: #008F91;           /* Teal Thread */
-  --deep-teal: #1F4C4C;      /* Hornbostel Teal */
+  --teal: #008F91;           /* teal thread */
+  --deep-teal: #1F4C4C;      /* hornbostel teal */
 
   /* alias used in popovers, focus outlines, etc. */
   --link: var(--accent);
 }
 
-/* Dark theme overrides (applied when html[data-theme="dark"]) */
+/* dark theme overrides (applied when html[data-theme="dark"]) */
 html[data-theme="dark"] {
   --bg: #0f1115;
   --card: #151923;
@@ -75,7 +74,7 @@ h4 { letter-spacing: .1rem; }
 .container { max-width: 800px; }
 
 /* =========================================================
-   HEADER (profile picture + name + social icons)
+   HEADER
    ========================================================= */
 
 .header {
@@ -102,7 +101,7 @@ h4 { letter-spacing: .1rem; }
 .paper-buttons { margin-top: 5px; }
 
 /* =========================================================
-   BUTTONS (generic buttons used across site)
+   BUTTONS
    ========================================================= */
 
 .button {
@@ -140,16 +139,16 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   font-weight: 600;
 }
 
-/* Default section spacing */
+/* default section spacing */
 .docs-section {
   border-top: 1px solid var(--border);
   padding: 4rem 0;
   margin-bottom: 0;
 }
 
-/* Single-page navigation mode:
-   - If JS hides/shows one section at a time, the visible section sits directly under the navbar.
-   - We remove the section top border to avoid a “double-thick” line (navbar border + section border).
+/* single-page navigation mode:
+   - if JS hides/shows one section at a time, the visible section sits directly under the navbar.
+   - we remove the section top border to avoid a "double-thick" line (navbar border + section border).
 */
 .docs-section.section-page { border-top: 0; }
 
@@ -166,7 +165,7 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 .image { text-align: center; }
 
 /* =========================================================
-   PROJECT CARDS (hover fade effect)
+   PROJECT CARDS
    ========================================================= */
 
 .project-container { margin-bottom: 30px; }
@@ -189,7 +188,7 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 .navbar { display: none; }
 
 /* =========================================================
-   THEME TOGGLE (fixed top-right)
+   THEME TOGGLE
    ========================================================= */
 
 .theme-toggle {
@@ -229,34 +228,34 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
    TIMELINE (Resume)
    ========================================================= */
 
-/* Layout */
+/* layout */
 .timeline { position: relative; }
 
-/* Center spine */
+/* center spine */
 .timeline::before {
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
 
-/* Cards */
+/* cards */
 .timeline li .flag {
   border-radius: 8px;
   padding: 8px 14px;
 }
 
-/* Remove template’s attached markers */
+/* remove template's attached markers */
 .timeline .flag::before,
 .timeline .flag::after {
   content: none !important;
 }
 
-/* One marker per item anchored to spine */
+/* one marker per item anchored to spine */
 .timeline > li { position: relative; }
 
 .timeline > li::before {
   content: "";
   position: absolute;
-  top: 32px; /* aligns with flag vertically */
+  top: 32px;    /* aligns with flag vertically */
   left: 50%;
   width: 14px;
   height: 14px;
@@ -267,11 +266,11 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
 }
 
-/* Space between cards and spine (desktop) */
+/* space between cards and spine (desktop) */
 .timeline .direction-l { padding-right: 32px !important; }
 .timeline .direction-r { padding-left: 32px !important; }
 
-/* Date pill positioning (desktop) */
+/* date pill positioning (desktop) */
 .timeline .flag-wrapper { position: relative; }
 
 .timeline .time-wrapper {
@@ -293,14 +292,14 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   right: auto !important;
 }
 
-/* Date pill styling (force CMU accent) */
+/* date pill styling */
 .timeline .time {
   color: var(--accent) !important;
   border: 1px solid var(--accent-border) !important;
   background: var(--accent-soft) !important;
 }
 
-/* Dark mode timeline overrides (keep intent obvious; avoid hunting) */
+/* dark mode timeline overrides */
 html[data-theme="dark"] .timeline li .flag {
   background: #151923 !important;
   color: #e7e7e7 !important;
@@ -345,7 +344,7 @@ html[data-theme="dark"] .timeline li .marker {
 }
 
 /* =========================================================
-   SOCIAL ICONS (header + footer)
+   SOCIAL ICONS
    ========================================================= */
 
 .social-icons {
@@ -363,21 +362,21 @@ html[data-theme="dark"] .timeline li .marker {
   cursor: pointer;
 }
 
-/* Font icons (LinkedIn, GitHub) */
+/* font icons (LinkedIn, GitHub) */
 .social-icon .fa {
   font-size: 22px;
   line-height: 1;
   transform: translateY(0px);
 }
 
-/* Academicons (Google Scholar) */
+/* academicons (Google Scholar) */
 .social-icon .ai-google-scholar {
   font-size: 22px;
   line-height: 1;
   transform: translateY(2.5px);
 }
 
-/* Image icons (X, Strava, etc.) */
+/* image icons (X, Strava) */
 .social-icon img {
   width: 22px;
   height: 22px;
@@ -385,10 +384,10 @@ html[data-theme="dark"] .timeline li .marker {
   transform: translateY(2px);
 }
 
-/* Dark mode: invert image-based icons */
+/* dark mode - invert image-based icons */
 html[data-theme="dark"] .social-icon img { filter: invert(1); }
 
-/* Footer social row tweaks */
+/* footer social row tweaks */
 .footer .footer-social {
   justify-content: center;
   gap: 2px;
@@ -400,7 +399,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   height: 26px;
 }
 
-/* Footer icon vertical alignment */
+/* footer icon vertical alignment */
 .footer .footer-social .fa { transform: translateY(2px); }
 .footer .footer-social .ai-google-scholar { transform: translateY(2.5px); }
 
@@ -409,7 +408,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   opacity: 0.6;
 }
 
-/* Full opacity on hover */
+/* full opacity on hover */
 .footer .footer-social:hover {
   opacity: 1;
   transition: opacity 0.15s ease;
@@ -491,12 +490,12 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
    RESPONSIVE
    ========================================================= */
 
-/* Larger than phone */
+/* larger than phone */
 @media (min-width: 550px) {
   .header { margin-top: 5rem; }
 }
 
-/* Smaller theme toggle on small screens */
+/* smaller theme toggle on small screens */
 @media (max-width: 550px) {
   .theme-toggle {
     top: 12px;
@@ -506,7 +505,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   }
 }
 
-/* Desktop navbar + popovers (tablet and up) */
+/* desktop navbar + popovers (tablet & up) */
 @media (min-width: 750px) {
   .navbar,
   .navbar-spacer {
@@ -546,7 +545,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 
   .navbar-link.active { color: var(--accent); }
 
-  /* Popover (template feature) */
+  /* popover (template feature) */
   .popover.open { display: block; }
 
   .popover {
@@ -628,9 +627,9 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   }
 }
 
-/* Timeline on mobile (stacked single-column layout) */
+/* timeline on mobile (stacked single-column layout) */
 @media (max-width: 768px) {
-  /* iPhone Safari safe-area so nothing is clipped */
+  /* iPhone safari safe-area so nothing is clipped */
   .container {
     max-width: 100% !important;
     padding-left: calc(16px + env(safe-area-inset-left)) !important;
@@ -785,7 +784,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   }
 }
 
-/* Mobile menu (≤ 750px) */
+/* mobile menu */
 @media (max-width: 750px) {
   .mobile-nav { display: block; }
 
@@ -879,7 +878,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     font-size: 12px;
   }
 
-  /* Talks stack on mobile */
+  /* talks stack on mobile */
   .talk-row {
     flex-direction: column;
     gap: 10px;

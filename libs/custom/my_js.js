@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // Variables
+  // variables
   var $codeSnippets = $('.code-example-body'),
       $nav = $('.navbar'),
       $body = $('body'),
@@ -16,7 +16,6 @@ $(document).ready(function() {
         "'": '&#39;',
         "/": '&#x2F;'
       }
-
 
   function initThemeToggle() {
     const btn = document.getElementById("theme-toggle");
@@ -77,9 +76,9 @@ $(document).ready(function() {
     // close on link click
     menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
   }
-  
+
   function init() {
-    initThemeToggle();   // <-- add this
+    initThemeToggle();
     initMobileMenu();
     $window.on('scroll', onScroll)
     $window.on('resize', resize)
@@ -156,12 +155,12 @@ $(document).ready(function() {
   const sections = document.querySelectorAll(".section-page");
   const links = document.querySelectorAll(".nav-toggle");
 
-  // Hide all sections
+  // hide all sections
   sections.forEach(section => {
     section.style.display = "none";
   });
 
-  // Show default section
+  // show default section
   const defaultSection = document.getElementById("bio");
   if (defaultSection) {
     defaultSection.style.display = "block";
@@ -190,5 +189,3 @@ $(document).ready(function() {
   init();
 
 });
-
-

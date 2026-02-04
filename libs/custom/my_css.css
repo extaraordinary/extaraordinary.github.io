@@ -223,6 +223,8 @@ h4 {
     border-bottom-color: var(--link); }
 }
 
+/* =============================================================== */
+
 /* ==== theme toggle button ==== */
 .theme-toggle {
   position: fixed;
@@ -263,6 +265,8 @@ h4 {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
+
+/* =============================================================== */
 
 /* ==== timeline dark mode ==== */
 html[data-theme="dark"] .timeline li .flag {
@@ -408,6 +412,8 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
+/* =============================================================== */
+
 /* ==== social icons ==== */
 .social-icons{
   display:flex;
@@ -497,6 +503,8 @@ html[data-theme="dark"] .social-icon img {
   transition: opacity 0.15s ease;
 }
 
+/* =============================================================== */
+
 /* ===== map ===== */
 .map-image {
   width: 100%;          /* same width as text */
@@ -507,6 +515,8 @@ html[data-theme="dark"] .social-icon img {
   border: none;
   box-shadow: none;
 }
+
+/* =============================================================== */
 
 /* ==== timeline on mobile ==== */
 @media (max-width: 768px) {
@@ -625,13 +635,13 @@ html[data-theme="dark"] .social-icon img {
     right: auto !important;
     transform: none !important;
 
-    /* center the badge exactly */
+    /* center the badge */
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
-
+    
     /* outer breathing room */
     margin: 12px 0 20px 0 !important;
     padding: 0 !important;
@@ -689,14 +699,15 @@ html[data-theme="dark"] .social-icon img {
   }
 }
 
+/* =============================================================== */
+
 /* ==== mobile menu ==== */
 .mobile-nav { display: none; } /* hidden on desktop */
 
 @media (max-width: 750px) {
   .mobile-nav { display: block; }
 
-  /* mobile menu button */
-  .mobile-menu-btn{
+  .mobile-menu-btn{    /* floating mobile menu button */
     position: fixed;
     z-index: 3000;
 
@@ -721,14 +732,12 @@ html[data-theme="dark"] .social-icon img {
     box-sizing: border-box;
   }
 
-  /* keep theme toggle aligned too */
-  .theme-toggle {
+  .theme-toggle {      /* keep theme toggle aligned */
     top: calc(12px + env(safe-area-inset-top));
     right: calc(12px + env(safe-area-inset-right));
   }
 
-  /* hamburger icon */
-  .hamburger{
+  .hamburger{          /* hamburger icon */
     width: 20px;
     height: 14px;
     position: relative;
@@ -753,14 +762,12 @@ html[data-theme="dark"] .social-icon img {
   .hamburger::before{ top: 0; }
   .hamburger::after{ bottom: 0; }
 
-  /* middle bar */
-  .hamburger span{
+  .hamburger span{      /* middle bar */
     top: 50%;
     transform: translateY(-50%);
   }
 
-  /* menu panel */
-  .mobile-menu{
+  .mobile-menu{         /* dropdown menu panel */
     position: fixed;
     top: calc(64px + env(safe-area-inset-top));
     left: calc(12px + env(safe-area-inset-left));

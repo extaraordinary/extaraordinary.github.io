@@ -1,32 +1,62 @@
 /* ==== theme variables ==== */
 :root {
+  /* core surfaces */
   --bg: #ffffff;
+  --card: #ffffff;
   --text: #111111;
+
+  /* CMU core grays */
   --muted: rgba(0, 0, 0, 0.60);
   --muted2: rgba(0, 0, 0, 0.40);
-  --border: #eeeeee;
+  --border: #E0E0E0;         /* steel Gray */
+  --gray: #6D6E71;           /* iron Gray */
+
+  /* navigation */
   --nav-bg: #ffffff;
-  --link: #33C3F0;
-  --link-text: #222222;
-  --card: #ffffff;
+  --link-text: #111111;
+
+  /* CMU accents (official) */
+  --accent: #C41230;         /* carnegie Red (dominant) */
+  --accent-2: #941120;       /* skibo Red (deep accent) */
+  --accent-soft: rgba(196, 18, 48, 0.12);
+  --accent-border: rgba(196, 18, 48, 0.35);
+
+  /* CMU secondary accents */
+  --teal: #008F91;           /* Teal Thread */
+  --deep-teal: #1F4C4C;      /* Hornbostel Teal */
+
+  --link: var(--accent);
 }
 
 html[data-theme="dark"] {
   --bg: #0f1115;
+  --card: #151923;
   --text: #e7e7e7;
+
   --muted: rgba(231, 231, 231, 0.72);
   --muted2: rgba(231, 231, 231, 0.55);
   --border: rgba(255, 255, 255, 0.14);
   --nav-bg: #0f1115;
-  --link: #8ab4f8;
   --link-text: #e7e7e7;
-  --card: #151923;
+
+  --accent: #C41230;
+  --accent-2: #941120;
+  --accent-soft: rgba(196, 18, 48, 0.18);
+  --accent-border: rgba(196, 18, 48, 0.45);
+
+  --teal: #008F91;
+  --deep-teal: #1F4C4C;
+
+  --link: var(--accent);
 }
 
 body {
   background: var(--bg);
   color: var(--text);
 }
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-2); }
 
 h4 { letter-spacing: .1rem; }
 .container { max-width: 800px; }
@@ -55,13 +85,11 @@ h4 { letter-spacing: .1rem; }
 .button {
   display: inline-block;
   height: 25px;
+  line-height: 25px;
   padding: 0 25px;
   font-weight: 100;
-  line-height: 25px;
   text-transform: none;
-}
 
-.button {
   border: 1px solid var(--border);
   background: transparent;
   color: var(--text);
@@ -70,13 +98,8 @@ h4 { letter-spacing: .1rem; }
   cursor: pointer;
 }
 
-.button:hover {
-  background: rgba(0,0,0,0.03);
-}
-
-html[data-theme="dark"] .button:hover {
-  background: rgba(255,255,255,0.06);
-}
+.button:hover { background: rgba(0,0,0,0.03); }
+html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 
 .button:focus {
   outline: 2px solid var(--link);
@@ -171,7 +194,7 @@ html[data-theme="dark"] .button:hover {
     color: var(--link-text);
   }
 
-  .navbar-link.active { color: var(--link); }
+  .navbar-link.active { color: var(--accent); }
 
   .has-docked-nav .navbar {
     position: fixed;
@@ -292,7 +315,7 @@ html[data-theme="dark"] .button:hover {
 }
 
 .theme-toggle:focus {
-  outline: 2px solid var(--link);
+  outline: 2px solid var(--teal);
   outline-offset: 2px;
 }
 
@@ -338,7 +361,7 @@ html[data-theme="dark"] .timeline:before {
 /* markers */
 html[data-theme="dark"] .timeline li .marker {
   background: #0f1115;
-  border: 3px solid #8b5cf6;
+  border: 3px solid var(--accent);
 }
 
 /* flags */
@@ -374,7 +397,7 @@ html[data-theme="dark"] .timeline li .marker {
   height: 14px;
   border-radius: 50%;
   background: var(--bg);
-  border: 3px solid #3b0a7a;
+  border: 3px solid var(--accent);
   z-index: 10;
   transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
 }
@@ -644,6 +667,8 @@ html[data-theme="dark"] .social-icon img {
     white-space: nowrap !important;
     padding: 6px 10px !important;
     border-radius: 10px !important;
+    border-color: var(--accent-border) !important;
+    color: var(--accent) !important;
     text-align: center !important;
     left: auto !important;
     right: auto !important;
@@ -682,10 +707,11 @@ html[data-theme="dark"] .social-icon img {
   }
 
   html[data-theme="dark"] .timeline li .time{
-    background: rgba(255,255,255,0.12) !important;
-    color: #f3f4f6 !important;
-    border: 1px solid rgba(255,255,255,0.18) !important;
+    background: var(--accent-soft) !important;
+    color: var(--accent) !important;
+    border: 1px solid var(--accent-border) !important;
   }
+
 }
 
 /* ==== mobile menu ==== */
@@ -784,7 +810,7 @@ html[data-theme="dark"] .social-icon img {
   }
 }
 
-/* ==== Conference Talks layout ==== */
+/* ==== conference talks layout ==== */
 .talks-list {
   list-style: none;
   padding-left: 0;
@@ -818,7 +844,7 @@ html[data-theme="dark"] .social-icon img {
   line-height: 1.4;
 }
 
-/* ==== Type text (not a badge) ==== */
+/* ==== type text ==== */
 .talk-type {
   font-weight: 700;     /* bold */
   color: var(--text);   /* darker than muted line */
@@ -826,17 +852,11 @@ html[data-theme="dark"] .social-icon img {
   white-space: nowrap;
 }
 
-/* Invited highlight: color + star */
-.talk-type--invited {
-  color: #6d28d9;
-}
+/* invited talk highlight */
+.talk-type--invited { color: var(--accent); }
+.talk-star { color: var(--accent); }
 
-.talk-star {
-  margin-left: 6px;
-  color: #6d28d9;
-}
-
-/* ==== Buttons ==== */
+/* ==== buttons ==== */
 .talk-actions {
   flex: 0 0 auto;
   display: flex;
@@ -846,7 +866,7 @@ html[data-theme="dark"] .social-icon img {
   align-items: center;
 }
 
-/* Mobile stacking */
+/* mobile stacking */
 @media (max-width: 750px) {
   .talk-row {
     flex-direction: column;

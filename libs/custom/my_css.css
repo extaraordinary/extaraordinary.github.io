@@ -828,7 +828,7 @@ html[data-theme="dark"] .social-icon img {
   align-items: flex-start;
   gap: 18px;
   padding: 14px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
 }
 
 .talk-row:last-child {

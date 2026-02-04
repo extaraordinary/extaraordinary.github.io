@@ -894,36 +894,3 @@ html[data-theme="dark"] .social-icon img {
   opacity: 1 !important;
 }
 
-/* ===== Timeline mobile: make date pills sit ABOVE the spine ===== */
-@media (max-width: 768px) {
-  .timeline { position: relative; }
-
-  /* spine */
-  .timeline:before {
-    z-index: 1 !important;
-  }
-
-  /* wrapper above spine */
-  .timeline li .time-wrapper {
-    position: relative !important;
-    z-index: 3 !important;
-  }
-
-  /* pill above spine + solid background */
-  .timeline li .time {
-    position: relative !important;
-    z-index: 4 !important;
-
-    background: var(--bg) !important;      /* solid so line can't show through */
-    border: 1px solid var(--accent-border) !important;
-    color: var(--accent) !important;
-
-    padding: 6px 10px !important;
-    border-radius: 10px !important;
-  }
-
-  /* optional: nudge the pill a bit so it doesn't sit exactly on the line */
-  .timeline li .time {
-    transform: translateX(10px) !important; /* try 6–14px or remove if you want centered */
-  }
-}

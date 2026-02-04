@@ -103,39 +103,37 @@ title: Home
 
   <ul class="talks-list">
     {% for talk in site.data.conference_talks.talks %}
-      {% assign t = talk.type | downcase %}
-
       <li class="talk-row">
         <div class="talk-main">
           <div class="talk-title"><b>{{ talk.title }}</b></div>
+
           <div class="talk-meta">
             {{ talk.event }}, {{ talk.location }}, {{ talk.date }}
+            <span class="talk-type{% if talk.type == 'Invited Talk' %} talk-type--invited{% endif %}">
+              ({{ talk.type }})
+              {% if talk.type == 'Invited Talk' %}<span class="talk-star" aria-hidden="true">★</span>{% endif %}
+            </span>
           </div>
         </div>
 
-        <div class="talk-side">
-          <span class="talk-badge talk-badge--{{ t | replace: ' ', '-' }}">
-            {{ talk.type }}
-          </span>
+        <div class="talk-actions">
+          {% if talk.slides %}
+            <a class="button button--small" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+          {% endif %}
 
-          <div class="talk-actions">
-            {% if talk.slides %}
-              <a class="button button--small" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-            {% endif %}
+          {% if talk.poster %}
+            <a class="button button--small" href="{{ talk.poster | prepend: site.baseurl }}" target="_blank">Poster PDF</a>
+          {% endif %}
 
-            {% if talk.poster %}
-              <a class="button button--small" href="{{ talk.poster | prepend: site.baseurl }}" target="_blank">Poster PDF</a>
-            {% endif %}
-
-            {% if talk.video %}
-              <a class="button button--small" href="{{ talk.video }}" target="_blank">Video</a>
-            {% endif %}
-          </div>
+          {% if talk.video %}
+            <a class="button button--small" href="{{ talk.video }}" target="_blank">Video</a>
+          {% endif %}
         </div>
       </li>
     {% endfor %}
   </ul>
 </div>
+
 
 <!-- ========== TEACHING ========== -->
 <div class="docs-section" id="teaching">

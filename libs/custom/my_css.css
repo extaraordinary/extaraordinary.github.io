@@ -1,4 +1,4 @@
-/* ==== Theme variables ==== */
+/* ==== theme variables ==== */
 :root {
   --bg: #ffffff;
   --text: #111111;
@@ -27,8 +27,6 @@ body {
   background: var(--bg);
   color: var(--text);
 }
-
-
 
 h4 {
   letter-spacing: .1rem; }
@@ -85,7 +83,7 @@ h4 {
 .image {
   text-align: center; }
 
-/*  ================ Project styling  ================ */
+/* ==== project styling ==== */
 .project-container {
   margin-bottom: 30px;
 }
@@ -104,15 +102,15 @@ h4 {
   padding: 3px;
 }
 
-/* Larger than phone */
+/* larger than phone */
 @media (min-width: 550px) {
   .header {
     margin-top: 5rem; }
 }
 
-/* Larger than tablet */
+/* larger than tablet */
 @media (min-width: 750px) {
-  /* Navbar */
+  /* navbar */
   .navbar + .docs-section {
     border-top-width: 0; }
   .navbar,
@@ -152,11 +150,11 @@ h4 {
     left: 0; }
   .has-docked-nav .navbar-spacer {
     display: block; }
-  /* Re-overiding the width 100% declaration to match size of % based container */
+  /* re-overiding the width 100% declaration to match size of % based container */
   .has-docked-nav .navbar > .container {
     width: 80%; }
 
-  /* Popover */
+  /* popover */
   .popover.open {
     display: block;
   }
@@ -225,9 +223,12 @@ h4 {
     border-bottom-color: var(--link); }
 }
 
-/* ==== Theme toggle button ==== */
+/* ==== theme toggle button ==== */
 .theme-toggle {
-  margin-top: 10px;
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 1000;
   display: inline-flex;
   gap: 8px;
   align-items: center;
@@ -238,6 +239,8 @@ h4 {
   border-radius: 999px;
   cursor: pointer;
   font-size: 14px;
+  margin-top: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .theme-toggle:focus {
@@ -245,7 +248,7 @@ h4 {
   outline-offset: 2px;
 }
 
-/* ==== Fixed top-right theme toggle ==== */
+/* ==== Fixed top-right theme toggle ====
 .theme-toggle {
   position: fixed;
   top: 18px;
@@ -253,8 +256,8 @@ h4 {
   z-index: 1000;
 
   margin-top: 0; /* override earlier spacing */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+} */
 
 /* Slightly smaller on mobile */
 @media (max-width: 550px) {
@@ -731,7 +734,7 @@ html[data-theme="dark"] .timeline li .flag {
     box-shadow: 0 10px 25px rgba(0,0,0,0.18);
   }
 
-  /* hamburger icon (3 lines) */
+  /* hamburger icon */
   .hamburger{
     width: 22px;
     height: 16px;

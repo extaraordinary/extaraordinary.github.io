@@ -889,52 +889,57 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 }
 
 /* =========================================================
-   PHOTOGRAPHY
-   - responsive gallery with captions
+   Photography (simple: rectangular images + captions)
    ========================================================= */
+
 .photo-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 18px;
   margin-top: 18px;
 }
 
-.photo-card {
-  margin: 0;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--card);
+@media (min-width: 750px) {
+  .photo-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
 }
 
-.photo-card img {
-  width: 100%;
-  height: auto;
+/* neutralize default figure spacing */
+.photo {
+  margin: 0;
+}
+
+/* remove all “card” look */
+.photo-link {
   display: block;
 }
 
-.photo-card figcaption {
-  padding: 10px 12px;
-  color: var(--muted);
+/* force simple rectangular images */
+.photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;     /* no curved corners */
+  border: 0;            /* no border */
+  box-shadow: none;     /* no shadow */
+}
+
+/* simple caption underneath */
+.photo-caption {
+  margin-top: 10px;
   line-height: 1.35;
 }
 
 .photo-title {
   display: block;
-  color: var(--text);
   font-weight: 600;
+  color: var(--text);
   margin-bottom: 2px;
 }
 
 .photo-meta {
   display: block;
-  font-size: 0.95em;
-}
-
-/* wider screens: 2 columns */
-@media (min-width: 750px) {
-  .photo-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
+  color: var(--muted);
 }

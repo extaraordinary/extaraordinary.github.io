@@ -893,7 +893,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
    ========================================================= */
 .photo-grid {
   column-gap: 18px;
-  row-gap: 32px;   /* 👈 more air between rows */
+  row-gap: 32px;         /* more air between rows */
 }
 
 .photo-card{
@@ -909,11 +909,11 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 
 .photo-card img{
   width: 100%;
-  max-width: 420px;
+  max-width: 380px;     /* constrain large photos */
   height: auto;
   display: block;
   border-radius: 0;     /* no curved edges */
-  box-shadow: none;     /* ensure no “card” feel */
+  box-shadow: none;     /* no card feel */
 }
 
 .photo-card figcaption{

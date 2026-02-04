@@ -248,18 +248,7 @@ h4 {
   outline-offset: 2px;
 }
 
-/* ==== Fixed top-right theme toggle ====
-.theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 20px;
-  z-index: 1000;
-
-  margin-top: 0; /* override earlier spacing */
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-} */
-
-/* Slightly smaller on mobile */
+/* smaller theme toggle button for mobile */
 @media (max-width: 550px) {
   .theme-toggle {
     top: 12px;
@@ -275,9 +264,7 @@ h4 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-
-/* ==== Timeline Dark mode fix ==== */
-
+/* ==== timeline dark mode ==== */
 html[data-theme="dark"] .timeline li .flag {
   background: #151923;              /* dark card */
   color: #e7e7e7;                   /* readable text */
@@ -293,30 +280,24 @@ html[data-theme="dark"] .timeline li .time {
   color: #c7b9ff;                   /* subtle purple accent */
 }
 
-/* Timeline vertical line */
+/* vertical line */
 html[data-theme="dark"] .timeline:before {
   background: rgba(255,255,255,0.18);
 }
 
-/* Timeline dots */
+/* markers */
 html[data-theme="dark"] .timeline li .marker {
   background: #0f1115;
   border: 3px solid #8b5cf6;
 }
 
+/* flags */
 .timeline li .flag {
   border-radius: 8px;
   padding: 8px 14px;
 }
 
-/* X icon color fix in dark mode */
-html[data-theme="dark"] .social-icon img {
-  filter: invert(1);
-}
-
-
-/* ==== Timeline dates readability in dark mode ===== */
-
+/* timeline readability in dark mode */
 html[data-theme="dark"] .timeline li .time {
   color: #f3f4f6 !important;
   background: rgba(255,255,255,0.10) !important;
@@ -333,26 +314,24 @@ html[data-theme="dark"] .timeline li .flag {
   border: 1px solid rgba(255,255,255,0.15) !important;
 }
 
-/* ==== Timeline marker positioning ==== */
-
-/* Timeline positioning context */
+/* timeline positioning */
 .timeline {
   position: relative;
 }
 
-/* Spine perfectly centered */
+/* spine perfectly centered */
 .timeline::before {
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
 
-/* Remove template's dots (they are card-attached) */
+/* remove template's card-attached markers */
 .timeline .flag::before,
 .timeline .flag::after {
   content: none !important;
 }
 
-/* Create one dot per item, anchored to spine */
+/* create one marker per item, anchored to spine */
 .timeline > li {
   position: relative;
 }
@@ -371,7 +350,7 @@ html[data-theme="dark"] .timeline li .flag {
   z-index: 10;
 }
 
-/* Add spacing between cards and spine without moving dots */
+/* add spacing between cards and spine without moving markers */
 .timeline .direction-l {
   padding-right: 32px !important;
 }
@@ -380,37 +359,38 @@ html[data-theme="dark"] .timeline li .flag {
   padding-left: 32px !important;
 }
 
-/* Fine tune dot centering - nudge left */
+/* fine tune marker centering - nudge left */
 .timeline > li::before {
   transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
 }
 
-/* Make flag-wrapper the positioning context for the date pill */
+/* make flag-wrapper the positioning context for the date pills */
 .timeline .flag-wrapper {
   position: relative;
 }
 
-/* Base style so it behaves consistently */
+/* base style so it behaves consistently */
 .timeline .time-wrapper {
   position: absolute !important;
   top: 50% !important;              /* aligned with the center of the flag */
   white-space: nowrap;
 }
 
-/* Left column - put date pill to the left of the card */
+/* left column - put date pill to the left of the card */
 .timeline .direction-l .time-wrapper {
   right: 100% !important;         /* sit outside, left side */
   margin-right: 12px !important;  /* gap between pill and card */
   left: auto !important;
 }
 
-/* Right column - put date pill to the right of the card */
+/* right column - put date pill to the right of the card */
 .timeline .direction-r .time-wrapper {
   left: 100% !important;          /* sit outside, right side */
   margin-left: 12px !important;
   right: auto !important;
 }
 
+/* justify texts */
 @media (min-width: 750px) {
   #bio p {
     text-align: justify;
@@ -428,7 +408,7 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
-/* ===== Social icons ===== */
+/* ==== social icons ==== */
 .social-icons{
   display:flex;
   align-items:center;
@@ -444,7 +424,7 @@ html[data-theme="dark"] .timeline li .flag {
   cursor:pointer;
 }
 
-/* LinkedIn, GitHub */
+/* font icons (LinkedIn, GitHub) */
 .social-icon .fa{
   font-size: 22px;
   line-height: 1;
@@ -463,7 +443,7 @@ html[data-theme="dark"] .timeline li .flag {
 .social-icon .ai-google-scholar{
   font-size: 22px;
   line-height: 1;
-  transform: translateY(2.5px);  /* this is the main fix */
+  transform: translateY(2.5px);
 }
 
 /* Strava */
@@ -473,8 +453,12 @@ html[data-theme="dark"] .timeline li .flag {
   transform: translateY(2px);
 }
 
+/* social icon in dark mode */
+html[data-theme="dark"] .social-icon img {
+  filter: invert(1);
+}
 
-/* ==== Footer social icons ==== */
+/* ==== footer social icons ==== */
 .footer .footer-social {
   justify-content: center;
   gap: 2px;
@@ -486,7 +470,7 @@ html[data-theme="dark"] .timeline li .flag {
   height: 26px;
 }
 
-/* Align font icons */
+/* align font icons */
 .footer .footer-social .fa {
   font-size: 22px;
   line-height: 1;
@@ -507,13 +491,13 @@ html[data-theme="dark"] .timeline li .flag {
   opacity: 0.6;
 }
 
-/* On hover - full opacity */
+/* full opacity on hover */
 .footer .footer-social:hover {
   opacity: 1;
   transition: opacity 0.15s ease;
 }
 
-/* ===== Map ===== */
+/* ===== map ===== */
 .map-image {
   width: 100%;          /* same width as text */
   max-width: 100%;
@@ -524,11 +508,7 @@ html[data-theme="dark"] .timeline li .flag {
   box-shadow: none;
 }
 
-/* =========================================================
-   TIMELINE (MOBILE): Center everything + dates AFTER desc + no markers + dark mode readable
-   Paste at the VERY END of your CSS
-   ========================================================= */
-
+/* ==== timeline on mobile ==== */
 @media (max-width: 768px) {
 
   /* iPhone Safari safe-area so nothing looks clipped */
@@ -554,7 +534,7 @@ html[data-theme="dark"] .timeline li .flag {
     transform: translateX(-50%) !important;
   }
 
-  /* Kill desktop L/R layout completely */
+  /* kill desktop L/R layout */
   .timeline li,
   .timeline li .direction-l,
   .timeline li .direction-r{
@@ -569,7 +549,7 @@ html[data-theme="dark"] .timeline li .flag {
     box-sizing: border-box !important;
   }
 
-  /* Make each item a grid so we can reorder: FLAG -> DESC -> DATE */
+  /* make each item a grid and reorder: flag -> desc -> date */
   .timeline li .direction-l,
   .timeline li .direction-r{
     display: grid !important;
@@ -583,12 +563,12 @@ html[data-theme="dark"] .timeline li .flag {
     text-align: center !important;
   }
 
-  /* IMPORTANT: let children of flag-wrapper become grid items */
+  /* make children of flag-wrapper grid items */
   .timeline li .flag-wrapper{
     display: contents !important;
   }
 
-  /* Assign grid areas */
+  /* assign grid areas */
   .timeline li .flag{
     grid-area: flag !important;
   }
@@ -599,7 +579,7 @@ html[data-theme="dark"] .timeline li .flag {
     grid-area: date !important;
   }
 
-  /* Cards: use container width (not vw) so no right-cropping */
+  /* use container width for cards (not vw) */
   .timeline li .flag,
   .timeline li .desc{
     display: block !important;
@@ -615,11 +595,11 @@ html[data-theme="dark"] .timeline li .flag {
     padding-left: 14px !important;
     padding-right: 14px !important;
 
-    /* CENTER TEXT inside cards */
+    /* center text inside cards */
     text-align: center !important;
   }
 
-  /* Keep your card feel */
+  /* keep your card feel */
   .timeline li .flag{
     padding-top: 10px !important;
     padding-bottom: 10px !important;
@@ -632,27 +612,27 @@ html[data-theme="dark"] .timeline li .flag {
     padding-bottom: 14px !important;
     border-radius: 14px !important;
 
-    /* Center everything inside desc (title/subtitle) */
+    /* center everything inside desc (title/subtitle) */
     text-align: center !important;
   }
 
-  /* DATE: centered on the timeline axis + space after it */
+  /* center date pills on the timeline axis + space after */
   .timeline li .time-wrapper{
-    /* CHANGED: hard reset any desktop positioning */
+    /* hard reset any desktop positioning */
     float: none !important;
     position: static !important;
     left: auto !important;
     right: auto !important;
     transform: none !important;
 
-    /* CHANGED: center the badge exactly */
+    /* center the badge exactly */
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
 
-    /* CHANGED: top space from desc + bottom space before next item */
+    /* outer breathing room */
     margin: 12px 0 20px 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
@@ -671,7 +651,7 @@ html[data-theme="dark"] .timeline li .flag {
     transform: none !important;
   }
 
-  /* Remove markers/dots & pointer triangles on mobile */
+  /* remove markers/dots & pointer triangles on mobile */
   .timeline li .direction-l .flag:after,
   .timeline li .direction-r .flag:after,
   .timeline li .direction-l .flag:before,
@@ -684,7 +664,7 @@ html[data-theme="dark"] .timeline li .flag {
     content: none !important;
   }
 
-  /* Dark mode readability (iOS Safari can "fade" text) */
+  /* dark mode readability on mobile */
   html[data-theme="dark"] .timeline li .flag,
   html[data-theme="dark"] .timeline li .desc,
   html[data-theme="dark"] .timeline li .time,
@@ -709,37 +689,52 @@ html[data-theme="dark"] .timeline li .flag {
   }
 }
 
-/* =========================
-   MOBILE MENU (mobile-only)
-   ========================= */
+/* ==== mobile menu ==== */
 .mobile-nav { display: none; } /* hidden on desktop */
 
 @media (max-width: 750px) {
   .mobile-nav { display: block; }
 
+  /* mobile menu button */
   .mobile-menu-btn{
     position: fixed;
-    top: 12px;
-    left: 12px;
     z-index: 3000;
 
-    width: 54px;
-    height: 54px;
-    border-radius: 16px;
+    top: calc(12px + env(safe-area-inset-top));
+    left: calc(12px + env(safe-area-inset-left));
+
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+
     border: 1px solid var(--border);
     background: var(--card);
-    display: grid;
-    place-items: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* keep theme toggle aligned too */
+  .theme-toggle {
+    top: calc(12px + env(safe-area-inset-top));
+    right: calc(12px + env(safe-area-inset-right));
   }
 
   /* hamburger icon */
   .hamburger{
-    width: 22px;
-    height: 16px;
+    width: 20px;
+    height: 14px;
     position: relative;
     display: block;
+    margin: 0;
+    padding: 0;
   }
 
   .hamburger::before,
@@ -752,6 +747,7 @@ html[data-theme="dark"] .timeline li .flag {
     height:2px;
     background: var(--text);
     border-radius: 2px;
+    display:block;
   }
 
   .hamburger::before{ top: 0; }
@@ -763,13 +759,12 @@ html[data-theme="dark"] .timeline li .flag {
     transform: translateY(-50%);
   }
 
-
   /* menu panel */
   .mobile-menu{
     position: fixed;
-    top: 74px;
-    left: 12px;
-    right: 12px;
+    top: calc(64px + env(safe-area-inset-top));
+    left: calc(12px + env(safe-area-inset-left));
+    right: calc(12px + env(safe-area-inset-right));
     z-index: 2999;
 
     background: var(--card);
@@ -780,6 +775,7 @@ html[data-theme="dark"] .timeline li .flag {
 
     display: none;
   }
+
   .mobile-menu.open{ display: block; }
 
   .mobile-menu a{
@@ -791,74 +787,5 @@ html[data-theme="dark"] .timeline li .flag {
     letter-spacing: .06rem;
     text-transform: uppercase;
     font-size: 12px;
-  }
-}
-
-/* =========================================
-   MOBILE MENU BUTTON: smaller + perfectly centered + aligned with theme toggle
-   Paste at VERY END of CSS
-   ========================================= */
-
-@media (max-width: 750px) {
-
-  /* Align both buttons vertically + respect iPhone safe-area */
-  .mobile-menu-btn {
-    top: calc(12px + env(safe-area-inset-top)) !important;
-    left: calc(12px + env(safe-area-inset-left)) !important;
-
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 999px !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .theme-toggle {
-    top: calc(12px + env(safe-area-inset-top)) !important;
-    right: calc(12px + env(safe-area-inset-right)) !important;
-  }
-
-  /* Center the hamburger inside the button */
-  .mobile-menu-btn .hamburger{
-    width: 20px !important;
-    height: 14px !important;
-    position: relative !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Make ALL 3 lines consistent + centered */
-  .mobile-menu-btn .hamburger::before,
-  .mobile-menu-btn .hamburger::after,
-  .mobile-menu-btn .hamburger span{
-    position: absolute !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 2px !important;
-    background: var(--text) !important;
-    border-radius: 2px !important;
-    content: "" !important;
-    display: block !important;
-  }
-
-  .mobile-menu-btn .hamburger::before { top: 0 !important; }
-  .mobile-menu-btn .hamburger::after  { bottom: 0 !important; }
-
-  .mobile-menu-btn .hamburger span{
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-
-  /* Keep menu panel aligned under the button */
-  .mobile-menu{
-    top: calc(64px + env(safe-area-inset-top)) !important;
-    left: calc(12px + env(safe-area-inset-left)) !important;
-    right: calc(12px + env(safe-area-inset-right)) !important;
   }
 }

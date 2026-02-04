@@ -951,8 +951,17 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 }
 
 /* =========================================================
-   TEACHING RECOGNITION
+   TEACHING
    ========================================================= */
+.teaching-entry{
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.teaching-entry:last-child{
+  border-bottom: none;
+}
+
 .teaching-recognition{
   font-size: 0.95em;
   color: var(--muted);

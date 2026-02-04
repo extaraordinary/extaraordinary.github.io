@@ -954,7 +954,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
    TEACHING
    ========================================================= */
 .teaching-entry{
-  padding: 16px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border);
 }
 

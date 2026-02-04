@@ -940,3 +940,46 @@ html[data-theme="dark"] .social-icon img {
     margin-top: 26px !important;       /* adjust as needed */
   }
 }
+
+/* ===== MOBILE FIX: force date pill onto the centered spine ===== */
+@media (max-width: 768px) {
+
+  /* make each li the positioning context */
+  .timeline > li{
+    position: relative !important;
+  }
+
+  /* hard override any left/right "100%" rules from desktop */
+  .timeline .direction-l .time-wrapper,
+  .timeline .direction-r .time-wrapper{
+    left: 50% !important;
+    right: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* place the date pill on the spine */
+  .timeline li .time-wrapper{
+    position: absolute !important;
+    top: 32px !important;                 /* tweak 28–40px if needed */
+    transform: translate(-50%, -50%) !important;
+
+    width: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    opacity: 1 !important;
+    z-index: 5 !important;
+  }
+
+  /* pill itself at full opacity */
+  .timeline li .time{
+    opacity: 1 !important;
+  }
+
+  /* add breathing room so pill doesn't overlap the card */
+  .timeline li .flag{
+    margin-top: 26px !important;
+  }
+}

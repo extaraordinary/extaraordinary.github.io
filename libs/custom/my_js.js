@@ -189,3 +189,75 @@ $(document).ready(function() {
   init();
 
 });
+
+/* ===== Single-section navigation (show only one section) ===== */
+(function () {
+  const sections = Array.from(document.querySelectorAll(".docs-section[id]"));
+  const navLinks = Array.from(document.querySelectorAll(".navbar-link, #mobileMenu a"));
+
+  function normalizeToId(href) {
+    if (!href) return null;
+    // handles:
+    //  - "#bio"
+    //  - "/index.html#bio"
+    //  - "https://.../index.html#bio"
+    const hashIndex = href.indexOf("#");
+    if (hashIndex === -1) return null;
+    return href.slice(hashIndex + 1);
+  }
+
+  function setActiveSection(id, updateUrl = true) {
+    const targetId = (id && document.getElementById(id)) ? id : "bio";
+
+    // show/hide
+    sections.forEach(sec => sec.classList.toggle("is-active", sec.id === targetId));
+
+    // nav active state (desktop)
+    navLinks.forEach(a => {
+      const linkId = normalizeToId(a.getAttribute("href"));
+      if (!linkId) return;
+      a.classList.toggle("active", linkId === targetId);
+    });
+
+    // update URL hash without scrolling
+    if (updateUrl) {
+      history.pushState(null, "", "#" + targetId);
+    }
+
+    // always jump to top (since we're not "scrolling" anymore)
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  // Intercept clicks so the browser doesn't scroll
+  navLinks.forEach(a => {
+    a.addEventListener("click", (e) => {
+      const id = normalizeToId(a.getAttribute("href"));
+      if (!id) return;
+      e.preventDefault();
+      setActiveSection(id, true);
+
+      // close mobile menu if open
+      const menu = document.getElementById("mobileMenu");
+      const btn  = document.getElementById("mobileMenuBtn");
+      if (menu && btn) {
+        menu.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
+      }
+    });
+  });
+
+  // Back/forward buttons
+  window.addEventListener("popstate", () => {
+    const id = (location.hash || "#bio").replace("#", "");
+    setActiveSection(id, false);
+  });
+
+  // Initial load:
+  // - if URL has #section, show it
+  // - otherwise show About (#bio)
+  document.addEventListener("DOMContentLoaded", () => {
+    const id = (location.hash || "#bio").replace("#", "");
+    setActiveSection(id, false);
+  });
+})();

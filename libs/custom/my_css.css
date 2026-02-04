@@ -944,10 +944,9 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   color: var(--muted);
 }
 
-/* make photos feel lighter / less dominant */
-.photo {
-  max-width: 520px;      /* controls perceived size */
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: 900px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 

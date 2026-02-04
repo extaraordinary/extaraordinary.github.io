@@ -51,7 +51,8 @@ h4 { letter-spacing: .1rem; }
 
 .paper-buttons { margin-top: 5px; }
 
-.paper .button {
+/* ==== buttons ==== */
+.button {
   display: inline-block;
   height: 25px;
   padding: 0 25px;
@@ -60,6 +61,29 @@ h4 { letter-spacing: .1rem; }
   text-transform: none;
 }
 
+.button {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+html[data-theme="dark"] .button:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+.button:focus {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* ==== sections ==== */
 .section-header {
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -820,17 +844,6 @@ html[data-theme="dark"] .social-icon img {
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-}
-
-.button--small {
-  height: 32px;
-  line-height: 32px;
-  padding: 0 14px;
-  font-size: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
 }
 
 /* Mobile stacking */

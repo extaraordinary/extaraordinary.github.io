@@ -118,17 +118,18 @@ title: Home
 
         <div class="talk-actions">
           {% if talk.slides %}
-            <a class="button button--small" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+            <a class="button" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
           {% endif %}
 
           {% if talk.poster %}
-            <a class="button button--small" href="{{ talk.poster | prepend: site.baseurl }}" target="_blank">Poster PDF</a>
+            <a class="button" href="{{ talk.poster | prepend: site.baseurl }}" target="_blank">Poster PDF</a>
           {% endif %}
 
           {% if talk.video %}
-            <a class="button button--small" href="{{ talk.video }}" target="_blank">Video</a>
+            <a class="button" href="{{ talk.video }}" target="_blank">Video</a>
           {% endif %}
         </div>
+
       </li>
     {% endfor %}
   </ul>

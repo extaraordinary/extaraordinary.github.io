@@ -78,12 +78,14 @@
     </button>
 
     <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-      <a href="#bio">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#conference-talks">Talks</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#resume">Resume</a>
-      <a href="#fun">Fun</a>
+      
+      <a class="nav-toggle" href="#" data-target="bio">About</a>
+      <a class="nav-toggle" href="#" data-target="publications">Publications</a>
+      <a class="nav-toggle" href="#" data-target="conference-talks">Talks</a>
+      <a class="nav-toggle" href="#" data-target="teaching">Teaching</a>
+      <a class="nav-toggle" href="#" data-target="resume">Resume</a>
+      <a class="nav-toggle" href="#" data-target="fun">Fun</a>
+      
     </div>
   </div>
 
@@ -136,12 +138,12 @@
     <nav class="navbar">
       <div class="container">
         <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#bio' | prepend: site.baseurl }}">About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#publications' | prepend: site.baseurl }}">Publications</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#conference-talks' | prepend: site.baseurl }}">Talks</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#teaching' | prepend: site.baseurl }}">Teaching</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#resume' | prepend: site.baseurl }}">Resume</a></li>
-          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#fun' | prepend: site.baseurl }}">Fun</a></li>
+          <li class="navbar-item"><a class="navbar-link nav-toggle active" href="#" data-target="bio">About</a></li>
+          <li class="navbar-item"><a class="navbar-link nav-toggle" href="#" data-target="publications">Publications</a></li>
+          <li class="navbar-item"><a class="navbar-link nav-toggle" href="#" data-target="conference-talks">Talks</a></li>
+          <li class="navbar-item"><a class="navbar-link nav-toggle" href="#" data-target="teaching">Teaching</a></li>
+          <li class="navbar-item"><a class="navbar-link nav-toggle" href="#" data-target="resume">Resume</a></li>
+          <li class="navbar-link nav-toggle" href="#" data-target="fun">Fun</a></li>
         </ul>
       </div>
     </nav>

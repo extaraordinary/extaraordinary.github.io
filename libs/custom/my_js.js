@@ -77,30 +77,75 @@ $(document).ready(function() {
     menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
   }
 
+  function initSectionTabs() {
+    const sections = document.querySelectorAll(".section-page");
+    const links = document.querySelectorAll(".nav-toggle");
+
+    if (!sections.length || !links.length) return;
+
+    function show(id) {
+      sections.forEach(s => (s.style.display = (s.id === id ? "block" : "none")));
+
+      links.forEach(l => {
+        const active = l.dataset.target === id;
+        l.classList.toggle("active", active);
+        if (active) l.setAttribute("aria-current", "page");
+        else l.removeAttribute("aria-current");
+      });
+
+      // optional: reflect state in URL without scrolling
+      if (history && history.replaceState) {
+        history.replaceState(null, "", "#" + id);
+      }
+    }
+
+    // bind clicks
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        show(this.dataset.target);
+
+        // if mobile menu is open, close it
+        const menu = document.getElementById("mobileMenu");
+        const btn = document.getElementById("mobileMenuBtn");
+        if (menu && btn && menu.classList.contains("open")) {
+          menu.classList.remove("open");
+          btn.setAttribute("aria-expanded", "false");
+          menu.setAttribute("aria-hidden", "true");
+        }
+      });
+    });
+
+    // start page: About/Bio by default (or respect URL hash if present)
+    const initial = (window.location.hash || "").replace("#", "");
+    show(initial || "bio");
+  }
+
   function init() {
     initThemeToggle();
     initMobileMenu();
-    $window.on('scroll', onScroll)
-    $window.on('resize', resize)
+    initSectionTabs();
+    // $window.on('scroll', onScroll)
+    // $window.on('resize', resize)
     $popoverLink.on('click', openPopover)
     $document.on('click', closePopover)
-    $('a[href^="#"]').on('click', smoothScroll)
     buildSnippets();
   }
 
-  function smoothScroll(e) {
-    e.preventDefault();
-    $(document).off("scroll");
-    var target = this.hash,
-        menu = target;
-    $target = $(target);
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top-40
-    }, 0, 'swing', function () {
-        window.location.hash = target;
-        $(document).on("scroll", onScroll);
-    });
-  }
+  // function smoothScroll(e) {
+  //   e.preventDefault();
+  //   $(document).off("scroll");
+  //   var target = this.hash,
+  //       menu = target;
+  //   $target = $(target);
+  //   $('html, body').stop().animate({
+  //       'scrollTop': $target.offset().top-40
+  //   }, 0, 'swing', function () {
+  //       window.location.hash = target;
+  //       $(document).on("scroll", onScroll);
+  //   });
+  // }
 
   function openPopover(e) {
     e.preventDefault()

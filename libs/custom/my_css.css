@@ -889,8 +889,12 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 }
 
 /* =========================================================
-   PHOTOGRAPHY (simpler, no cards)
+   PHOTOGRAPHY
    ========================================================= */
+.photo-grid {
+  column-gap: 18px;
+  row-gap: 32px;   /* 👈 more air between rows */
+}
 
 .photo-card{
   margin: 0;
@@ -898,12 +902,14 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   border-radius: 0;
   overflow: visible;
   background: transparent;
+  margin-bottom: 28px;
 }
 
 .photo-card a { display: block; }
 
 .photo-card img{
   width: 100%;
+  max-width: 420px;
   height: auto;
   display: block;
   border-radius: 0;     /* no curved edges */
@@ -914,6 +920,8 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   padding: 8px 0 0 0;   /* caption below photo */
   color: var(--muted);
   line-height: 1.35;
+  padding-top: 10px;
+  margin-bottom: 6px;
 }
 
 .photo-title{

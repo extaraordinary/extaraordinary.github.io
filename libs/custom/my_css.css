@@ -943,3 +943,11 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   display: block;
   color: var(--muted);
 }
+
+/* make photos feel lighter / less dominant */
+.photo {
+  max-width: 520px;      /* controls perceived size */
+  margin-left: auto;
+  margin-right: auto;
+}
+

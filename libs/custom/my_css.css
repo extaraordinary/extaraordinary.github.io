@@ -129,6 +129,10 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 }
 
 .navbar { display: none; }
+/* prevent "double line" right under navbar */
+.navbar + .docs-section.section-page {
+  border-top: 0;
+}
 
 .title-subtitle h3 { margin-bottom: 0px; }
 .title-subtitle h5 { color: var(--muted); }

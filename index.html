@@ -98,22 +98,29 @@ title: Home
 </div>
 
 <!-- ========== CONFERENCE TALKS ========== -->
-<div class="docs-section" id="conference-talks"> 
-  <h4>Conference Talks</h4> 
-  <ul style="list-style-type: none; padding-left: 0;">
-  {% for talk in site.data.conference_talks.talks %}
-    <li>
-      <b>{{ talk.title }}</b><br/>
-      {{ talk.event }}, {{ talk.location }}, {{ talk.date }} ({{ talk.type }})
-      {% if talk.slides %}
-        <a class="button" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-      {% endif %}
-      {% if talk.video %}
-        <a class="button" href="{{ talk.video }}" target="_blank">Video</a>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+<div class="docs-section" id="conference-talks">
+  <h4>Conference Talks</h4>
+
+  <ul class="talks-list">
+    {% for talk in site.data.conference_talks.talks %}
+      <li class="talk-item{% if talk.type == 'Invited Talk' %} invited{% endif %}">
+        <b>{{ talk.title }}</b><br/>
+        {{ talk.event }}, {{ talk.location }}, {{ talk.date }}
+
+        <span class="talk-badge{% if talk.type == 'Invited Talk' %} invited{% endif %}">
+          {{ talk.type }}
+        </span>
+
+        {% if talk.slides %}
+          <a class="button" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+        {% endif %}
+        {% if talk.video %}
+          <a class="button" href="{{ talk.video }}" target="_blank">Video</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
 <!-- ========== TEACHING ========== -->
 <div class="docs-section" id="teaching">

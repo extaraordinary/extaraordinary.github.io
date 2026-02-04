@@ -759,3 +759,43 @@ html[data-theme="dark"] .social-icon img {
     font-size: 12px;
   }
 }
+
+/* ==== conference talks ==== */
+.talks-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.talk-item {
+  margin-bottom: 14px;
+}
+
+/* badge for talk type */
+.talk-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: var(--muted);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+/* highlight invited talks */
+.talk-badge.invited {
+  color: #6d28d9;
+  background: rgba(139, 92, 246, 0.14);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+/* subtle left accent on invited talk row */
+.talk-item.invited {
+  border-left: 3px solid rgba(139, 92, 246, 0.6);
+  padding-left: 10px;
+}

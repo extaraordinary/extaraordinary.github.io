@@ -140,21 +140,27 @@ title: Home
 
 
 <!-- ========== TEACHING ========== -->
-<div class="docs-section section-page" id="teaching">
-  <h4>Teaching Experience</h4>
+<div class="teaching-entry">
+  <p><b>{{ ta.position }}</b></p>
+  <p>{{ ta.institution }}, {{ ta.location }} | {{ ta.time }}</p>
 
-  {% for ta in site.data.teaching %}
-  <div class="teaching-entry">
-    <p><b>{{ ta.position }}</b></p>
-    <p>{{ ta.institution }}, {{ ta.location }} | {{ ta.time }}</p>
-    <ul>
-      {% for item in ta.responsibilities %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-  {% endfor %}
+  {% if ta.thank_a_teacher %}
+    <p class="teaching-recognition">
+      Recognized through CMU’s
+      <a href="https://www.cmu.edu/teaching/thankateacher/index.html" target="_blank">
+        Thank a Teacher
+      </a>
+      program.
+    </p>
+  {% endif %}
+
+  <ul>
+    {% for item in ta.responsibilities %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
 </div>
+
 
 <!-- ========== RESUME ========== -->
 <div class="docs-section section-page" id="resume">

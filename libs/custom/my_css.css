@@ -949,3 +949,12 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   TEACHING RECOGNITION
+   ========================================================= */
+.teaching-recognition{
+  font-size: 0.95em;
+  color: var(--muted);
+  margin: 4px 0 6px 0;
+}

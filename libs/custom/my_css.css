@@ -895,12 +895,3 @@ html[data-theme="dark"] .social-icon img {
   opacity: 1 !important;
 }
 
-/* ===== Single-section mode (no continuous scrolling) ===== */
-.docs-section { display: none; }
-.docs-section.is-active { display: block; }
-
-/* optional: remove the big section separators since only one shows at a time */
-.docs-section {
-  border-top: 0;
-  padding-top: 2.5rem;
-}

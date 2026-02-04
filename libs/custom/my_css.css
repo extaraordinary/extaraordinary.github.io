@@ -881,3 +881,15 @@ html[data-theme="dark"] .social-icon img {
     white-space: normal;
   }
 }
+
+/* ===== timeline date pills: force CMU accent ===== */
+.timeline .time{
+  color: var(--accent) !important;
+  border: 1px solid var(--accent-border) !important;
+  background: var(--accent-soft) !important;
+}
+
+/* if your template uses a wrapper behind the pill */
+.timeline .time-wrapper{
+  opacity: 1 !important;
+}

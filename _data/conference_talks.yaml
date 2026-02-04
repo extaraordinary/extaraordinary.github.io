@@ -22,6 +22,7 @@ talks:
     location: "Las Vegas, NV"
     date: "9 March 2023"
     type: "<b>Poster</b>"
+    poster: "/assets/posters/aps23.pdf"
 
   - title: "First‑principles prediction of the phase stability of high‑entropy oxides" 
     event: "@ American Physical Society (APS) March Meeting"
@@ -34,3 +35,4 @@ talks:
     location: "Columbus, OH"
     date: "9 November 2022"
     type: "<b>Poster</b>"
+    poster: "/assets/posters/camps22.pdf"

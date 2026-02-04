@@ -134,6 +134,21 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   border-top: 0;
 }
 
+/* If you're using JS to show only one section at a time,
+   don't draw a section top-border directly under the navbar. */
+.docs-section.section-page {
+  border-top: 0;              /* remove it for all sections */
+}
+
+/* then add the separator back *inside* the section content, if needed */
+.docs-section.section-page::before {
+  content: "";
+  display: block;
+  border-top: 1px solid var(--border);
+  margin-bottom: 4rem;        /* matches your section padding spacing */
+}
+
+
 .title-subtitle h3 { margin-bottom: 0px; }
 .title-subtitle h5 { color: var(--muted); }
 .image { text-align: center; }
@@ -828,7 +843,7 @@ html[data-theme="dark"] .social-icon img {
   align-items: flex-start;
   gap: 18px;
   padding: 14px 0;
-  border-bottom: none;
+  border-bottom: 1px solid var(--border);
 }
 
 .talk-row:last-child {

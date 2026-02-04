@@ -2,23 +2,24 @@
 <html lang="en">
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Basic Page Needs -->
   <meta charset="utf-8">
   <title>{{ site.data.main_info.name }} | {{ page.title }}</title>
   <meta name="description" content="Tara Karimzadeh Sabet">
   <meta name="author" content="Tara Karimzadeh Sabet">
+
+  <link rel="canonical" href="https://extaraordinary.github.io/" />
+
+  <!-- Open Graph / LinkedIn Preview -->
   <meta property="og:title" content="Tara Karimzadeh Sabet" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://extaraordinary.github.io" />
+  <meta property="og:description" content="My personal portfolio." />
+  <meta property="og:image" content="{{ '/assets/misc/favicon.png' | prepend: site.baseurl }}" />
+  <meta property="og:url" content="https://extaraordinary.github.io/" />
   <meta property="og:site_name" content="Tara Karimzadeh Sabet" />
-  <link rel="canonical" href="http://extaraordinary.github.io" />
+  <meta property="og:type" content="website" />
 
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
   <script>
     (function () {
@@ -32,61 +33,40 @@
     })();
   </script>
 
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/misc/favicon.svg' | prepend: site.baseurl }}">
   <link rel="icon" type="image/png" href="{{ '/assets/misc/favicon.png' | prepend: site.baseurl }}">
+  <link rel="shortcut icon" type="image/png" href="{{ '/assets/misc/favicon.png' | prepend: site.baseurl }}">
+
+  <!-- Academicons (CDN) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
 
-  <!-- Open Graph / LinkedIn Preview -->
-  <meta property="og:title" content="Tara Karimzadeh Sabet" />
-  <meta property="og:description" content="My personal portfolio." />
-  <meta property="og:image" content="{{ '/assets/misc/favicon.png' | prepend: site.baseurl }}" />
-  <meta property="og:url" content="https://extaraordinary.github.io/" />
-  <meta property="og:site_name" content="Tara Karimzadeh Sabet" />
-  <meta property="og:type" content="website" />
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href={{ "/libs/external/skeleton/normalize.css" | prepend: site.baseurl }}>
-  <link rel="stylesheet" href={{ "/libs/external/skeleton/skeleton.css" | prepend: site.baseurl }}>
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ '/libs/external/skeleton/normalize.css' | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ '/libs/external/skeleton/skeleton.css' | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ '/libs/custom/my_css.css?v=' | append: site.time | prepend: site.baseurl }}">
 
-  <!-- JQuery
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script src={{ "/libs/external/jquery-3.1.1.min.js" | prepend: site.baseurl }}></script>
+  <!-- JQuery -->
+  <script src="{{ '/libs/external/jquery-3.1.1.min.js' | prepend: site.baseurl }}"></script>
 
-  <!-- Font-Awesome
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href={{ "/libs/external/font-awesome-4.7.0/css/font-awesome.min.css" | prepend: site.baseurl }}>
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="{{ '/libs/external/font-awesome-4.7.0/css/font-awesome.min.css' | prepend: site.baseurl }}">
 
-  <!-- Academicons
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href={{ "/libs/external/academicons-1.8.6/css/academicons.min.css" | prepend: site.baseurl }}>
+  <!-- Academicons (local) -->
+  <link rel="stylesheet" href="{{ '/libs/external/academicons-1.8.6/css/academicons.min.css' | prepend: site.baseurl }}">
 
-  <!-- Skeleton tabs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href={{ "/libs/external/skeleton_tabs/skeleton-tabs.css" | prepend: site.baseurl }}>
-  <script src={{ "/libs/external/skeleton_tabs/skeleton-tabs.js" | prepend: site.baseurl }}></script>
+  <!-- Skeleton tabs -->
+  <link rel="stylesheet" href="{{ '/libs/external/skeleton_tabs/skeleton-tabs.css' | prepend: site.baseurl }}">
+  <script src="{{ '/libs/external/skeleton_tabs/skeleton-tabs.js' | prepend: site.baseurl }}"></script>
 
-  <!-- Timeline
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href={{ "/libs/external/timeline.css" | prepend: site.baseurl }}>
+  <!-- Timeline -->
+  <link rel="stylesheet" href="{{ '/libs/external/timeline.css' | prepend: site.baseurl }}">
 
-  <!-- Scripts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!--<link rel="stylesheet" href={{ "/libs/external/github-prettify-theme.css" | prepend: site.baseurl }}>-->
+  <!-- Scripts -->
   <script src="{{ '/libs/custom/my_js.js?v=' | append: site.time | prepend: site.baseurl }}"></script>
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="{{ '/assets/misc/favicon.png' | prepend: site.baseurl }}">
-  <link rel="shortcut icon" type="image/png" href="{{ '/assets/misc/favicon.png' | prepend: site.baseurl }}">
 
 </head>
 <body>
@@ -95,7 +75,6 @@
   <div class="mobile-nav">
     <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Menu" aria-expanded="false">
       <span class="hamburger" aria-hidden="true"><span></span></span>
-
     </button>
 
     <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
@@ -108,68 +87,66 @@
     </div>
   </div>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Primary Page Layout -->
   <div class="container">
 
     <section class="header">
       <div class="row">
         <div class="three columns">
-          <a href="{{ site.baseurl }}/"><img class="u-max-full-width" src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}'></a>
+          <a href="{{ site.baseurl }}/"><img class="u-max-full-width" src="{{ site.baseurl }}{{ site.data.main_info.profile_pic }}"></a>
         </div>
+
         <div class="nine columns main-description">
-            <h1>{{ site.data.main_info.name }}</h1>
-            <p>{{ site.data.main_info.title }}</p>
-            <p>{{ site.data.main_info.email }}</p>
+          <h1>{{ site.data.main_info.name }}</h1>
+          <p>{{ site.data.main_info.title }}</p>
+          <p>{{ site.data.main_info.email }}</p>
 
-            <p class="social-icons">
-              <span onclick="window.open('{{ site.data.main_info.twitter }}')" class="social-icon" aria-label="X">
-                <img src="{{ '/assets/icons/x-logo.svg' | prepend: site.baseurl }}" alt="X">
-              </span>
+          <p class="social-icons">
+            <span onclick="window.open('{{ site.data.main_info.twitter }}')" class="social-icon" aria-label="X">
+              <img src="{{ '/assets/icons/x-logo.svg' | prepend: site.baseurl }}" alt="X">
+            </span>
 
-              <span onclick="window.open('{{ site.data.main_info.linkedin }}')" class="social-icon" aria-label="LinkedIn">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-              </span>
+            <span onclick="window.open('{{ site.data.main_info.linkedin }}')" class="social-icon" aria-label="LinkedIn">
+              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+            </span>
 
-              <span onclick="window.open('{{ site.data.main_info.github }}')" class="social-icon" aria-label="GitHub">
-                <i class="fa fa-github" aria-hidden="true"></i>
-              </span>
+            <span onclick="window.open('{{ site.data.main_info.github }}')" class="social-icon" aria-label="GitHub">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </span>
 
-              <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" class="social-icon" aria-label="Google Scholar">
-                <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
-              </span>
+            <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" class="social-icon" aria-label="Google Scholar">
+              <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
+            </span>
 
-              <span onclick="window.open('{{ site.data.main_info.strava }}')" class="social-icon" aria-label="Strava">
-                <img src="{{ '/assets/icons/strava.svg' | prepend: site.baseurl }}" alt="Strava">
-              </span>
+            <span onclick="window.open('{{ site.data.main_info.strava }}')" class="social-icon" aria-label="Strava">
+              <img src="{{ '/assets/icons/strava.svg' | prepend: site.baseurl }}" alt="Strava">
+            </span>
+          </p>
 
-            </p>
-
-            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
-              <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
-              <span class="theme-toggle__text">Dark</span>
-            </button>
-
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
+            <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+            <span class="theme-toggle__text">Dark</span>
+          </button>
         </div>
       </div>
     </section>
 
     <div class="navbar-spacer"></div>
+
     <nav class="navbar">
       <div class="container">
         <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>About</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl }}>Publications</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#conference-talks" | prepend: site.baseurl }}>Talks</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#teaching" | prepend: site.baseurl }}>Teaching</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl }}>Resume</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#fun" | prepend: site.baseurl }}>Fun</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#bio' | prepend: site.baseurl }}">About</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#publications' | prepend: site.baseurl }}">Publications</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#conference-talks' | prepend: site.baseurl }}">Talks</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#teaching' | prepend: site.baseurl }}">Teaching</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#resume' | prepend: site.baseurl }}">Resume</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="{{ '/index.html#fun' | prepend: site.baseurl }}">Fun</a></li>
         </ul>
       </div>
-
     </nav>
 
-    {{ content}}
+    {{ content }}
 
     <div class="footer">
       <div class="row">
@@ -200,7 +177,6 @@
             <span onclick="window.open('{{ site.data.main_info.strava }}')" class="social-icon" aria-label="Strava">
               <img src="{{ '/assets/icons/strava.svg' | prepend: site.baseurl }}" alt="Strava">
             </span>
-
           </div>
         </div>
       </div>
@@ -214,7 +190,5 @@
   <!-- do not remove -->
   <span id="62cd7b7da1aff3196fdc26b60e396df9"></span>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

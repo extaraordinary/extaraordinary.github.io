@@ -1,11 +1,16 @@
-/* ==== theme variables ==== */
+/* =========================================================
+   THEME TOKENS (Light + Dark)
+   - Only variables here: no layout/style rules.
+   ========================================================= */
+
+/* Light theme (default) */
 :root {
-  /* core surfaces */
+  /* surfaces */
   --bg: #ffffff;
   --card: #ffffff;
   --text: #111111;
 
-  /* CMU core grays */
+  /* grays */
   --muted: rgba(0, 0, 0, 0.60);
   --muted2: rgba(0, 0, 0, 0.40);
   --border: #E0E0E0;         /* steel Gray */
@@ -15,19 +20,21 @@
   --nav-bg: #ffffff;
   --link-text: #111111;
 
-  /* CMU accents (official) */
-  --accent: #C41230;         /* carnegie Red (dominant) */
-  --accent-2: #941120;       /* skibo Red (deep accent) */
+  /* CMU accents */
+  --accent: #C41230;         /* Carnegie Red */
+  --accent-2: #941120;       /* Skibo Red */
   --accent-soft: rgba(196, 18, 48, 0.12);
   --accent-border: rgba(196, 18, 48, 0.35);
 
-  /* CMU secondary accents */
+  /* secondary accents */
   --teal: #008F91;           /* Teal Thread */
   --deep-teal: #1F4C4C;      /* Hornbostel Teal */
 
+  /* alias used in popovers, focus outlines, etc. */
   --link: var(--accent);
 }
 
+/* Dark theme overrides (applied when html[data-theme="dark"]) */
 html[data-theme="dark"] {
   --bg: #0f1115;
   --card: #151923;
@@ -36,9 +43,11 @@ html[data-theme="dark"] {
   --muted: rgba(231, 231, 231, 0.72);
   --muted2: rgba(231, 231, 231, 0.55);
   --border: rgba(255, 255, 255, 0.14);
+
   --nav-bg: #0f1115;
   --link-text: #e7e7e7;
 
+  /* same CMU reds, slightly stronger soft/border */
   --accent: #C41230;
   --accent-2: #941120;
   --accent-soft: rgba(196, 18, 48, 0.18);
@@ -50,6 +59,10 @@ html[data-theme="dark"] {
   --link: var(--accent);
 }
 
+/* =========================================================
+   BASE / GLOBALS
+   ========================================================= */
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -60,6 +73,10 @@ a:hover { color: var(--accent-2); }
 
 h4 { letter-spacing: .1rem; }
 .container { max-width: 800px; }
+
+/* =========================================================
+   HEADER (profile picture + name + social icons)
+   ========================================================= */
 
 .header {
   margin-top: 60px;
@@ -75,13 +92,19 @@ h4 { letter-spacing: .1rem; }
   margin-top: 5px;
 }
 
+/* =========================================================
+   PUBLICATIONS
+   ========================================================= */
+
 .paper { margin-bottom: 20px; }
 /* .paper .title { text-transform: uppercase; } */
 .paper p { margin-bottom: 2px; }
-
 .paper-buttons { margin-top: 5px; }
 
-/* ==== buttons ==== */
+/* =========================================================
+   BUTTONS (generic buttons used across site)
+   ========================================================= */
+
 .button {
   display: inline-block;
   height: 25px;
@@ -106,7 +129,10 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   outline-offset: 2px;
 }
 
-/* ==== sections ==== */
+/* =========================================================
+   SECTIONS / FOOTER
+   ========================================================= */
+
 .section-header {
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -114,11 +140,18 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   font-weight: 600;
 }
 
+/* Default section spacing */
 .docs-section {
   border-top: 1px solid var(--border);
   padding: 4rem 0;
   margin-bottom: 0;
 }
+
+/* Single-page navigation mode:
+   - If JS hides/shows one section at a time, the visible section sits directly under the navbar.
+   - We remove the section top border to avoid a “double-thick” line (navbar border + section border).
+*/
+.docs-section.section-page { border-top: 0; }
 
 .footer {
   text-align: center;
@@ -128,24 +161,14 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   margin-bottom: 0;
 }
 
-.navbar { display: none; }
-/* prevent "double line" right under navbar */
-.navbar + .docs-section.section-page {
-  border-top: 0;
-}
-
-/* If you're using JS to show only one section at a time,
-   don't draw a section top-border directly under the navbar. */
-.docs-section.section-page {
-  border-top: 0;              /* remove it for all sections */
-}
-
-
 .title-subtitle h3 { margin-bottom: 0px; }
 .title-subtitle h5 { color: var(--muted); }
 .image { text-align: center; }
 
-/* ==== project styling ==== */
+/* =========================================================
+   PROJECT CARDS (hover fade effect)
+   ========================================================= */
+
 .project-container { margin-bottom: 30px; }
 
 .project-image-container {
@@ -159,16 +182,332 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 
 .project-caption { padding: 3px; }
 
-/* larger than phone */
+/* =========================================================
+   NAVBAR (hidden on mobile by default)
+   ========================================================= */
+
+.navbar { display: none; }
+
+/* =========================================================
+   THEME TOGGLE (fixed top-right)
+   ========================================================= */
+
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 1000;
+
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================================
+   TIMELINE (Resume)
+   ========================================================= */
+
+/* Layout */
+.timeline { position: relative; }
+
+/* Center spine */
+.timeline::before {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* Cards */
+.timeline li .flag {
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+/* Remove template’s attached markers */
+.timeline .flag::before,
+.timeline .flag::after {
+  content: none !important;
+}
+
+/* One marker per item anchored to spine */
+.timeline > li { position: relative; }
+
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  top: 32px; /* aligns with flag vertically */
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  z-index: 10;
+  transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
+}
+
+/* Space between cards and spine (desktop) */
+.timeline .direction-l { padding-right: 32px !important; }
+.timeline .direction-r { padding-left: 32px !important; }
+
+/* Date pill positioning (desktop) */
+.timeline .flag-wrapper { position: relative; }
+
+.timeline .time-wrapper {
+  position: absolute !important;
+  top: 50% !important;
+  white-space: nowrap;
+  opacity: 1 !important; /* ensure visible */
+}
+
+.timeline .direction-l .time-wrapper {
+  right: 100% !important;
+  margin-right: 12px !important;
+  left: auto !important;
+}
+
+.timeline .direction-r .time-wrapper {
+  left: 100% !important;
+  margin-left: 12px !important;
+  right: auto !important;
+}
+
+/* Date pill styling (force CMU accent) */
+.timeline .time {
+  color: var(--accent) !important;
+  border: 1px solid var(--accent-border) !important;
+  background: var(--accent-soft) !important;
+}
+
+/* Dark mode timeline overrides (keep intent obvious; avoid hunting) */
+html[data-theme="dark"] .timeline li .flag {
+  background: #151923 !important;
+  color: #e7e7e7 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+html[data-theme="dark"] .timeline li .desc { color: #d6d6d6; }
+
+html[data-theme="dark"] .timeline li .time {
+  color: #f3f4f6 !important;
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+}
+
+html[data-theme="dark"] .timeline:before {
+  background: rgba(255,255,255,0.18);
+}
+
+html[data-theme="dark"] .timeline li .marker {
+  background: #0f1115;
+  border: 3px solid var(--accent);
+}
+
+/* =========================================================
+   TEXT FORMATTING (desktop only)
+   ========================================================= */
+
+@media (min-width: 750px) {
+  #bio p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  #fun {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.65;
+    hyphens: auto;
+  }
+}
+
+/* =========================================================
+   SOCIAL ICONS (header + footer)
+   ========================================================= */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Font icons (LinkedIn, GitHub) */
+.social-icon .fa {
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(0px);
+}
+
+/* Academicons (Google Scholar) */
+.social-icon .ai-google-scholar {
+  font-size: 22px;
+  line-height: 1;
+  transform: translateY(2.5px);
+}
+
+/* Image icons (X, Strava, etc.) */
+.social-icon img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  transform: translateY(2px);
+}
+
+/* Dark mode: invert image-based icons */
+html[data-theme="dark"] .social-icon img { filter: invert(1); }
+
+/* Footer social row tweaks */
+.footer .footer-social {
+  justify-content: center;
+  gap: 2px;
+  opacity: 0.55;
+}
+
+.footer .footer-social .social-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* Footer icon vertical alignment */
+.footer .footer-social .fa { transform: translateY(2px); }
+.footer .footer-social .ai-google-scholar { transform: translateY(2.5px); }
+
+.footer .footer-social img {
+  transform: translateY(2px);
+  opacity: 0.6;
+}
+
+/* Full opacity on hover */
+.footer .footer-social:hover {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+/* =========================================================
+   MAP IMAGE
+   ========================================================= */
+
+.map-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   MOBILE NAV (hidden on desktop)
+   ========================================================= */
+
+.mobile-nav { display: none; } /* hidden on desktop */
+
+/* =========================================================
+   CONFERENCE TALKS LAYOUT
+   ========================================================= */
+
+.talks-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.talk-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.talk-row:last-child { border-bottom: none; }
+
+.talk-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.talk-title { margin-bottom: 6px; }
+
+.talk-meta {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.talk-type {
+  font-weight: 700;     /* bold */
+  color: var(--text);   /* darker than muted line */
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.talk-type--invited { color: var(--accent); }
+.talk-star { color: var(--accent); }
+
+.talk-actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Larger than phone */
 @media (min-width: 550px) {
   .header { margin-top: 5rem; }
 }
 
-/* larger than tablet */
-@media (min-width: 750px) {
-  /* navbar */
-  .navbar + .docs-section { border-top-width: 0; }
+/* Smaller theme toggle on small screens */
+@media (max-width: 550px) {
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+    padding: 5px 9px;
+    font-size: 13px;
+  }
+}
 
+/* Desktop navbar + popovers (tablet and up) */
+@media (min-width: 750px) {
   .navbar,
   .navbar-spacer {
     display: block;
@@ -207,18 +546,7 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 
   .navbar-link.active { color: var(--accent); }
 
-  .has-docked-nav .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  .has-docked-nav .navbar-spacer { display: block; }
-
-  /* re-overiding the width 100% declaration to match size of % based container */
-  .has-docked-nav .navbar > .container { width: 80%; }
-
-  /* popover */
+  /* Popover (template feature) */
   .popover.open { display: block; }
 
   .popover {
@@ -266,10 +594,7 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
     list-style: none;
   }
 
-  .popover-item {
-    padding: 0;
-    margin: 0;
-  }
+  .popover-item { padding: 0; margin: 0; }
 
   .popover-link {
     position: relative;
@@ -285,9 +610,7 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
     letter-spacing: .1rem;
   }
 
-  .popover-item:first-child .popover-link {
-    border-radius: 4px 4px 0 0;
-  }
+  .popover-item:first-child .popover-link { border-radius: 4px 4px 0 0; }
 
   .popover-item:last-child .popover-link {
     border-radius: 0 0 4px 4px;
@@ -305,264 +628,10 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   }
 }
 
-/* ==== theme toggle button ==== */
-.theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 20px;
-  z-index: 1000;
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  padding: 6px 10px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-top: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.theme-toggle:focus {
-  outline: 2px solid var(--teal);
-  outline-offset: 2px;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-/* smaller theme toggle button for mobile */
-@media (max-width: 550px) {
-  .theme-toggle {
-    top: 12px;
-    right: 12px;
-    padding: 5px 9px;
-    font-size: 13px;
-  }
-}
-
-/* ==== timeline dark mode ==== */
-html[data-theme="dark"] .timeline li .flag {
-  background: #151923 !important;
-  color: #e7e7e7 !important;
-  border: 1px solid rgba(255,255,255,0.15) !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-}
-
-html[data-theme="dark"] .timeline li .desc { color: #d6d6d6; }
-
-html[data-theme="dark"] .timeline li .time {
-  color: #f3f4f6 !important;
-  background: rgba(255,255,255,0.10) !important;
-  border: 1px solid rgba(255,255,255,0.18) !important;
-}
-
-html[data-theme="dark"] .timeline li .time-wrapper { opacity: 1 !important; }
-
-/* vertical line */
-html[data-theme="dark"] .timeline:before {
-  background: rgba(255,255,255,0.18);
-}
-
-/* markers */
-html[data-theme="dark"] .timeline li .marker {
-  background: #0f1115;
-  border: 3px solid var(--accent);
-}
-
-/* flags */
-.timeline li .flag {
-  border-radius: 8px;
-  padding: 8px 14px;
-}
-
-/* timeline positioning */
-.timeline { position: relative; }
-
-/* spine perfectly centered */
-.timeline::before {
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-}
-
-/* remove template's card-attached markers */
-.timeline .flag::before,
-.timeline .flag::after {
-  content: none !important;
-}
-
-/* create one marker per item, anchored to spine */
-.timeline > li { position: relative; }
-
-.timeline > li::before {
-  content: "";
-  position: absolute;
-  top: 32px; /* aligns with flag vertically */
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 3px solid var(--accent);
-  z-index: 10;
-  transform: translateX(calc(-50% - 3px)) !important; /* try 2px–6px */
-}
-
-/* add spacing between cards and spine without moving markers */
-.timeline .direction-l { padding-right: 32px !important; }
-.timeline .direction-r { padding-left: 32px !important; }
-
-/* make flag-wrapper the positioning context for the date pills */
-.timeline .flag-wrapper { position: relative; }
-
-/* base style so it behaves consistently */
-.timeline .time-wrapper {
-  position: absolute !important;
-  top: 50% !important;
-  white-space: nowrap;
-}
-
-/* left column - put date pill to the left of the card */
-.timeline .direction-l .time-wrapper {
-  right: 100% !important;
-  margin-right: 12px !important;
-  left: auto !important;
-}
-
-/* right column - put date pill to the right of the card */
-.timeline .direction-r .time-wrapper {
-  left: 100% !important;
-  margin-left: 12px !important;
-  right: auto !important;
-}
-
-/* justify texts */
-@media (min-width: 750px) {
-  #bio p {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: auto;
-  }
-}
-
-@media (min-width: 750px) {
-  #fun {
-    text-align: justify;
-    text-justify: inter-word;
-    line-height: 1.65;
-    hyphens: auto;
-  }
-}
-
-/* ==== social icons ==== */
-.social-icons{
-  display:flex;
-  align-items:center;
-  gap: 2px;
-}
-
-.social-icon{
-  width: 26px;
-  height: 26px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-}
-
-/* font icons (LinkedIn, GitHub) */
-.social-icon .fa{
-  font-size: 22px;
-  line-height: 1;
-  transform: translateY(0px);
-}
-
-/* X */
-.social-icon img{
-  width: 22px;
-  height: 22px;
-  display:block;
-  transform: translateY(2px);
-}
-
-/* Google Scholar */
-.social-icon .ai-google-scholar{
-  font-size: 22px;
-  line-height: 1;
-  transform: translateY(2.5px);
-}
-
-/* Strava */
-.social-icon img[src*="strava"] {
-  width: 22px;
-  height: 22px;
-  transform: translateY(2px);
-}
-
-/* social icon in dark mode */
-html[data-theme="dark"] .social-icon img {
-  filter: invert(1);
-}
-
-/* ==== footer social icons ==== */
-.footer .footer-social {
-  justify-content: center;
-  gap: 2px;
-  opacity: 0.55;
-}
-
-.footer .footer-social .social-icon {
-  width: 26px;
-  height: 26px;
-}
-
-/* align font icons */
-.footer .footer-social .fa {
-  font-size: 22px;
-  line-height: 1;
-  transform: translateY(2px);
-}
-
-.footer .footer-social .ai-google-scholar {
-  font-size: 22px;
-  line-height: 1;
-  transform: translateY(2.5px);
-}
-
-/* X */
-.footer .footer-social img {
-  width: 22px;
-  height: 22px;
-  transform: translateY(2px);
-  opacity: 0.6;
-}
-
-/* full opacity on hover */
-.footer .footer-social:hover {
-  opacity: 1;
-  transition: opacity 0.15s ease;
-}
-
-/* ===== map ===== */
-.map-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 2rem 0;
-  border: none;
-  box-shadow: none;
-}
-
-/* ==== timeline on mobile ==== */
+/* Timeline on mobile (stacked single-column layout) */
 @media (max-width: 768px) {
-  /* iPhone Safari safe-area so nothing looks clipped */
-  .container{
+  /* iPhone Safari safe-area so nothing is clipped */
+  .container {
     max-width: 100% !important;
     padding-left: calc(16px + env(safe-area-inset-left)) !important;
     padding-right: calc(16px + env(safe-area-inset-right)) !important;
@@ -570,7 +639,7 @@ html[data-theme="dark"] .social-icon img {
     overflow: visible !important;
   }
 
-  .timeline{
+  .timeline {
     width: 100% !important;
     margin: 0 auto !important;
     padding: 0 !important;
@@ -579,7 +648,7 @@ html[data-theme="dark"] .social-icon img {
   }
 
   /* center vertical line */
-  .timeline:before{
+  .timeline:before {
     z-index: 1 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
@@ -588,7 +657,7 @@ html[data-theme="dark"] .social-icon img {
   /* kill desktop L/R layout */
   .timeline li,
   .timeline li .direction-l,
-  .timeline li .direction-r{
+  .timeline li .direction-r {
     float: none !important;
     width: 100% !important;
     margin: 0 !important;
@@ -600,9 +669,9 @@ html[data-theme="dark"] .social-icon img {
     box-sizing: border-box !important;
   }
 
-  /* make each item a grid and reorder: flag -> desc -> date */
+  /* each item = grid: flag -> desc -> date */
   .timeline li .direction-l,
-  .timeline li .direction-r{
+  .timeline li .direction-r {
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-template-areas:
@@ -614,19 +683,14 @@ html[data-theme="dark"] .social-icon img {
     text-align: center !important;
   }
 
-  /* make children of flag-wrapper grid items */
-  .timeline li .flag-wrapper{
-    display: contents !important;
-  }
+  .timeline li .flag-wrapper { display: contents !important; }
 
-  /* assign grid areas */
-  .timeline li .flag{ grid-area: flag !important; }
-  .timeline li .desc{ grid-area: desc !important; }
-  .timeline li .time-wrapper{ grid-area: date !important; }
+  .timeline li .flag { grid-area: flag !important; }
+  .timeline li .desc { grid-area: desc !important; }
+  .timeline li .time-wrapper { grid-area: date !important; }
 
-  /* use container width for cards */
   .timeline li .flag,
-  .timeline li .desc{
+  .timeline li .desc {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
@@ -640,23 +704,21 @@ html[data-theme="dark"] .social-icon img {
     text-align: center !important;
   }
 
-  /* keep your card feel */
-  .timeline li .flag{
+  .timeline li .flag {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
     border-radius: 12px !important;
   }
 
-  .timeline li .desc{
+  .timeline li .desc {
     margin-top: 14px !important;
     padding-top: 14px !important;
     padding-bottom: 14px !important;
     border-radius: 14px !important;
-    text-align: center !important;
   }
 
   /* center date pills */
-  .timeline li .time-wrapper{
+  .timeline li .time-wrapper {
     float: none !important;
     position: static !important;
     left: auto !important;
@@ -667,27 +729,25 @@ html[data-theme="dark"] .social-icon img {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    text-align: center !important;
 
     margin: 12px 0 20px 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  .timeline li .time{
+  .timeline li .time {
     display: inline-block !important;
     white-space: nowrap !important;
     padding: 6px 10px !important;
     border-radius: 10px !important;
     border-color: var(--accent-border) !important;
     color: var(--accent) !important;
-    text-align: center !important;
     left: auto !important;
     right: auto !important;
     transform: none !important;
   }
 
-  /* remove markers/dots & pointer triangles on mobile */
+  /* remove markers/dots & triangles on mobile */
   .timeline li .direction-l .flag:after,
   .timeline li .direction-r .flag:after,
   .timeline li .direction-l .flag:before,
@@ -695,7 +755,7 @@ html[data-theme="dark"] .social-icon img {
   .timeline li:before,
   .timeline li:after,
   .timeline .marker,
-  .timeline li .marker{
+  .timeline li .marker {
     display: none !important;
     content: none !important;
   }
@@ -704,35 +764,32 @@ html[data-theme="dark"] .social-icon img {
   html[data-theme="dark"] .timeline li .flag,
   html[data-theme="dark"] .timeline li .desc,
   html[data-theme="dark"] .timeline li .time,
-  html[data-theme="dark"] .timeline li .desc *{
+  html[data-theme="dark"] .timeline li .desc * {
     opacity: 1 !important;
     filter: none !important;
     -webkit-text-fill-color: currentColor !important;
   }
 
   html[data-theme="dark"] .timeline li .flag,
-  html[data-theme="dark"] .timeline li .desc{
+  html[data-theme="dark"] .timeline li .desc {
     background: #151923 !important;
     color: #e7e7e7 !important;
     border: 1px solid rgba(255,255,255,0.16) !important;
     box-shadow: 0 8px 22px rgba(0,0,0,0.45) !important;
   }
 
-  html[data-theme="dark"] .timeline li .time{
+  html[data-theme="dark"] .timeline li .time {
     background: var(--accent-soft) !important;
     color: var(--accent) !important;
     border: 1px solid var(--accent-border) !important;
   }
-
 }
 
-/* ==== mobile menu ==== */
-.mobile-nav { display: none; } /* hidden on desktop */
-
+/* Mobile menu (≤ 750px) */
 @media (max-width: 750px) {
   .mobile-nav { display: block; }
 
-  .mobile-menu-btn{
+  .mobile-menu-btn {
     position: fixed;
     z-index: 3000;
 
@@ -757,12 +814,13 @@ html[data-theme="dark"] .social-icon img {
     box-sizing: border-box;
   }
 
+  /* keep toggle in safe-area */
   .theme-toggle {
     top: calc(12px + env(safe-area-inset-top));
     right: calc(12px + env(safe-area-inset-right));
   }
 
-  .hamburger{
+  .hamburger {
     width: 20px;
     height: 14px;
     position: relative;
@@ -773,7 +831,7 @@ html[data-theme="dark"] .social-icon img {
 
   .hamburger::before,
   .hamburger::after,
-  .hamburger span{
+  .hamburger span {
     content:"";
     position:absolute;
     left:0;
@@ -784,15 +842,15 @@ html[data-theme="dark"] .social-icon img {
     display:block;
   }
 
-  .hamburger::before{ top: 0; }
-  .hamburger::after{ bottom: 0; }
+  .hamburger::before { top: 0; }
+  .hamburger::after { bottom: 0; }
 
-  .hamburger span{
+  .hamburger span {
     top: 50%;
     transform: translateY(-50%);
   }
 
-  .mobile-menu{
+  .mobile-menu {
     position: fixed;
     top: calc(64px + env(safe-area-inset-top));
     left: calc(12px + env(safe-area-inset-left));
@@ -808,9 +866,9 @@ html[data-theme="dark"] .social-icon img {
     display: none;
   }
 
-  .mobile-menu.open{ display: block; }
+  .mobile-menu.open { display: block; }
 
-  .mobile-menu a{
+  .mobile-menu a {
     display: block;
     padding: 12px 16px;
     text-decoration: none;
@@ -820,89 +878,13 @@ html[data-theme="dark"] .social-icon img {
     text-transform: uppercase;
     font-size: 12px;
   }
-}
 
-/* ==== conference talks layout ==== */
-.talks-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.talk-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 18px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.talk-row:last-child {
-  border-bottom: none;
-}
-
-.talk-main {
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.talk-title {
-  margin-bottom: 6px;
-}
-
-.talk-meta {
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-/* ==== type text ==== */
-.talk-type {
-  font-weight: 700;     /* bold */
-  color: var(--text);   /* darker than muted line */
-  margin-left: 8px;
-  white-space: nowrap;
-}
-
-/* invited talk highlight */
-.talk-type--invited { color: var(--accent); }
-.talk-star { color: var(--accent); }
-
-/* ==== buttons ==== */
-.talk-actions {
-  flex: 0 0 auto;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-/* mobile stacking */
-@media (max-width: 750px) {
+  /* Talks stack on mobile */
   .talk-row {
     flex-direction: column;
     gap: 10px;
   }
 
-  .talk-actions {
-    justify-content: flex-start;
-  }
-
-  .talk-type {
-    white-space: normal;
-  }
+  .talk-actions { justify-content: flex-start; }
+  .talk-type { white-space: normal; }
 }
-
-/* ===== timeline date pills: force CMU accent ===== */
-.timeline .time{
-  color: var(--accent) !important;
-  border: 1px solid var(--accent-border) !important;
-  background: var(--accent-soft) !important;
-}
-
-/* if your template uses a wrapper behind the pill */
-.timeline .time-wrapper{
-  opacity: 1 !important;
-}
-

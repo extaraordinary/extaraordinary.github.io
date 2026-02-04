@@ -760,42 +760,114 @@ html[data-theme="dark"] .social-icon img {
   }
 }
 
-/* ==== conference talks ==== */
+/* ==== Conference Talks (clean layout) ==== */
 .talks-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
-.talk-item {
-  margin-bottom: 14px;
+.talk-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
 }
 
-/* badge for talk type */
+.talk-row:last-child {
+  border-bottom: none;
+}
+
+.talk-row--invited {
+  border-left: 3px solid rgba(139, 92, 246, 0.6);
+  padding-left: 12px;
+}
+
+.talk-main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.talk-title {
+  margin-bottom: 6px;
+}
+
+.talk-meta {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.talk-side {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.talk-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* smaller buttons for this section */
+.button--small {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 14px;
+  font-size: 12px;
+}
+
+/* ==== Type badges ==== */
 .talk-badge {
   display: inline-block;
-  margin-left: 8px;
-  padding: 2px 8px;
+  padding: 4px 10px;
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-
-  color: var(--muted);
-  background: rgba(0,0,0,0.05);
-  border: 1px solid var(--border);
   border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.04);
+  color: var(--muted);
+  white-space: nowrap;
 }
 
-/* highlight invited talks */
-.talk-badge.invited {
-  color: #6d28d9;
+/* Talk */
+.talk-badge--talk {
+  background: rgba(0,0,0,0.04);
+}
+
+/* Poster */
+.talk-badge--poster {
+  background: rgba(16, 185, 129, 0.10);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: rgba(16, 185, 129, 0.95);
+}
+
+/* Invited Talk (highlight) */
+.talk-badge--invited-talk {
   background: rgba(139, 92, 246, 0.14);
-  border-color: rgba(139, 92, 246, 0.35);
+  border-color: rgba(139, 92, 246, 0.40);
+  color: rgba(109, 40, 217, 0.95);
 }
 
-/* subtle left accent on invited talk row */
-.talk-item.invited {
-  border-left: 3px solid rgba(139, 92, 246, 0.6);
-  padding-left: 10px;
+/* Mobile stacking */
+@media (max-width: 750px) {
+  .talk-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .talk-side {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .talk-actions {
+    justify-content: flex-start;
+  }
 }

@@ -889,52 +889,41 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 }
 
 /* =========================================================
-   PHOTOGRAPHY
-   - responsive gallery with captions
+   PHOTOGRAPHY (simpler, no cards)
    ========================================================= */
-.photo-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-top: 18px;
-}
 
-.photo-card {
+.photo-card{
   margin: 0;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--card);
+  border: 0;
+  border-radius: 0;
+  overflow: visible;
+  background: transparent;
 }
 
-.photo-card img {
+.photo-card a { display: block; }
+
+.photo-card img{
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 0;     /* no curved edges */
+  box-shadow: none;     /* ensure no “card” feel */
 }
 
-.photo-card figcaption {
-  padding: 10px 12px;
+.photo-card figcaption{
+  padding: 8px 0 0 0;   /* caption below photo */
   color: var(--muted);
   line-height: 1.35;
 }
 
-.photo-title {
+.photo-title{
   display: block;
   color: var(--text);
   font-weight: 600;
-  margin-bottom: 2px;
+  margin: 0 0 2px 0;
 }
 
-.photo-meta {
+.photo-meta{
   display: block;
   font-size: 0.95em;
-}
-
-/* wider screens: 2 columns */
-@media (min-width: 750px) {
-  .photo-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
 }

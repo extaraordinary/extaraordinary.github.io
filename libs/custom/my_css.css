@@ -569,6 +569,7 @@ html[data-theme="dark"] .social-icon img {
 
   /* center vertical line */
   .timeline:before{
+    z-index: 1 !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
   }

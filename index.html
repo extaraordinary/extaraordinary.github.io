@@ -103,22 +103,35 @@ title: Home
 
   <ul class="talks-list">
     {% for talk in site.data.conference_talks.talks %}
-      <li class="talk-item{% if talk.type == 'Invited Talk' %} invited{% endif %}">
-        <b>{{ talk.title }}</b><br/>
-        {{ talk.event }}, {{ talk.location }}, {{ talk.date }}
+      {% assign t = talk.type | downcase %}
 
-        <span class="talk-badge{% if talk.type == 'Invited Talk' %} invited{% endif %}"> {{ talk.type }} </span>
+      <li class="talk-row">
+        <div class="talk-main">
+          <div class="talk-title"><b>{{ talk.title }}</b></div>
+          <div class="talk-meta">
+            {{ talk.event }}, {{ talk.location }}, {{ talk.date }}
+          </div>
+        </div>
 
-        {% if talk.slides %}
-          <a class="button" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
-        {% endif %}
-        {% if talk.poster %}
-          <a class="button" href="{{ talk.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
-        {% endif %}
-        {% if talk.video %}
-          <a class="button" href="{{ talk.video }}" target="_blank">Video</a>
-        {% endif %}
+        <div class="talk-side">
+          <span class="talk-badge talk-badge--{{ t | replace: ' ', '-' }}">
+            {{ talk.type }}
+          </span>
 
+          <div class="talk-actions">
+            {% if talk.slides %}
+              <a class="button button--small" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+            {% endif %}
+
+            {% if talk.poster %}
+              <a class="button button--small" href="{{ talk.poster | prepend: site.baseurl }}" target="_blank">Poster PDF</a>
+            {% endif %}
+
+            {% if talk.video %}
+              <a class="button button--small" href="{{ talk.video }}" target="_blank">Video</a>
+            {% endif %}
+          </div>
+        </div>
       </li>
     {% endfor %}
   </ul>

@@ -378,22 +378,22 @@ html[data-theme="dark"] .timeline li .marker {
 
 /* image icons (X) */
 .social-icon img {
-  width: 21px;
-  height: 21px;
+  width: 22px;
+  height: 22px;
   display: block;
   transform: translateY(2px);
 }
 
 /* image icons (Strava) */
 .social-icon img.icon-small {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
 }
 
 /* image icons (goodreads) */
 .social-icon img.icon-smaller {
-  width: 20px;
-  height: 20px;
+  width: 19px;
+  height: 19px;
 }
 
 /* dark mode - invert image-based icons */

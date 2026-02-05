@@ -376,12 +376,24 @@ html[data-theme="dark"] .timeline li .marker {
   transform: translateY(2.5px);
 }
 
-/* image icons (X, Strava) */
+/* image icons (X) */
 .social-icon img {
   width: 22px;
   height: 22px;
   display: block;
   transform: translateY(2px);
+}
+
+/* image icons (Strava) */
+.social-icon img.icon-small {
+  width: 21px;
+  height: 21px;
+}
+
+/* image icons (goodreads) */
+.social-icon img.icon-smaller {
+  width: 20px;
+  height: 20px;
 }
 
 /* dark mode - invert image-based icons */

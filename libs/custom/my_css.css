@@ -381,6 +381,7 @@ html[data-theme="dark"] .timeline li .marker {
   width: 21px;
   height: 21px;
   display: block;
+  transform: translateY(2px);
 }
 
 /* image icons (Strava) */

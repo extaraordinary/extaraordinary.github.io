@@ -378,10 +378,9 @@ html[data-theme="dark"] .timeline li .marker {
 
 /* image icons (X) */
 .social-icon img {
-  width: 22px;
-  height: 22px;
+  width: 21px;
+  height: 21px;
   display: block;
-  transform: translateY(2px);
 }
 
 /* image icons (Strava) */

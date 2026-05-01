@@ -992,7 +992,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 }
 
 .fun-item img {
-  width: 100%;
+  width: 70%;
   aspect-ratio: 3 / 4;   /* Enforces 3:4 ratio */
   object-fit: cover;     /* Crops instead of stretching */
   border-radius: 10px;

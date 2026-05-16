@@ -4,6 +4,7 @@ talks:
     location: "Anaheim, CA"
     date: "18 March 2025"
     type: "Talk"
+    poster: "https://meetings-archive.aps.org/smt/2025/mar-j49/3/"
 
   - title: "Electrocaloric performance of high‑entropy oxides from first principles"
     event: "Materials Research Society (MRS) Spring Meeting & Exhibit"

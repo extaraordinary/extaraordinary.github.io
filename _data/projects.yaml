@@ -1,7 +1,7 @@
 projects:
   - title: >
       High-Entropy Design of Transition Metal Oxide Semiconductors with Ultra-Low Thermal Conductivity
-    tags: [DFT, Phono3py, Machine Learning, High-Entropy Oxides]
+    tags: [Lattice Thermal Conductivity, Phonon Scattering, Thermoelectrics]
     description: >
       Led the first-principles thermal transport calculations explaining the ultra-low
       thermal conductivity (<1 W/m·K) of the high-entropy wolframite oxide
@@ -17,7 +17,7 @@ projects:
 
   - title: >
       Local Nuances in Vibrational Properties of High-Entropy Oxides Revealed by STEM-EELS
-    tags: [DFPT, CHGNet, Phonon Unfolding, Multi-institution Collaboration]
+    tags: [DFPT, CHGNet, Phonon Unfolding, Machine Learning Interatomic Potentials]
     description: >
       Contributed the computational phonon modeling for a collaboration with Penn State,
       University of Michigan, and SuperSTEM (UK), correlating first-principles vibrational
@@ -31,7 +31,7 @@ projects:
 
   - title: >
       Electrocaloric Performance of High-Entropy Perovskite Oxides from First Principles
-    tags: [Wang–Landau Monte Carlo, NEB, Convex-Hull Phase Diagrams, Ferroelectrics]
+    tags: [DFT, NEB, Phase Diagrams, Local Strain, Ferroelectrics, Electrocaloric COP]
     description: >
       Computed mixing enthalpies for 2,286 DFT-relaxed perovskite supercells (Ba/Ca/Sr-based)
       and constructed convex-hull phase diagrams to resolve formation energies. Applied
@@ -40,11 +40,11 @@ projects:
       statistics to predict the temperature- and field-dependent polarization of the
       high-entropy perovskite oxide (Na,Bi,Sr,Ba,Ca)TiO<sub>3</sub>, estimating its
       electrocaloric performance.
-    venue: Penn State MRSEC; APS March Meeting 2023/2024, MRS Spring Meeting 2024 (Invited)
+    venue: Center for Nanoscale Science (MRSEC); APS March Meeting 2023/2024, MRS Spring Meeting 2024
 
   - title: >
       First-Principles Study of Aluminum Pnictide Semiconductors (AlAs, AlSb, AlBi)
-    tags: [DFT, Spin-Orbit Coupling, DFPT, Topological Insulators]
+    tags: [DFT, DFPT, Spin-Orbit Coupling, Semiconductors, Topological Insulators]
     description: >
       Performed DFT structural relaxation for zincblende aluminum pnictides, benchmarking
       lattice constants against experimental RHEED/XRD data from collaborators' MBE-grown
@@ -52,4 +52,4 @@ projects:
       fitting energy-volume curves to a Birch–Murnaghan equation of state, and computed
       phonon dispersion via DFPT to support experimental Raman spectroscopy interpretation
       of AlBi, a predicted topological insulator.
-    venue: Penn State–CMU collaboration
+    venue: CMU–Penn State collaboration (NSF-supported)

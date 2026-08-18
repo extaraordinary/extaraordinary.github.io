@@ -1,55 +1,87 @@
 projects:
   - title: >
-      High-Entropy Design of Transition Metal Oxide Semiconductors with Ultra-Low Thermal Conductivity
-    tags: [Lattice Thermal Conductivity, Phonon Scattering, Thermoelectrics]
-    description: >
-      Led the first-principles thermal transport calculations explaining the ultra-low
-      thermal conductivity (<1 W/m·K) of the high-entropy wolframite oxide
-      (Mn,Fe,Co,Ni,Cu,Zn)WO<sub>4</sub>. Computed harmonic and anharmonic force constants
-      via finite-displacement DFT (VASP, Phono3py) for the parent tungstate phases, solving
-      the Boltzmann transport equation to extract phonon lifetimes and lattice thermal
-      conductivity. Combined these results with a Debye–Klemens–Callaway model and
-      experimental data to show that chemical disorder opens a crystal-momentum
-      non-conserving three-phonon scattering channel — providing the first mechanistic
-      explanation for the material's anomalous conductivity profile.
-    paper: https://www.nature.com/articles/s43246-026-01103-2
-    venue: Communications Materials, 2026
-
-  - title: >
       Local Nuances in Vibrational Properties of High-Entropy Oxides Revealed by STEM-EELS
     tags: [DFPT, CHGNet, Phonon Unfolding, Machine Learning Interatomic Potentials]
     description: >
       Contributed the computational phonon modeling for a collaboration with Penn State,
       University of Michigan, and SuperSTEM (UK), correlating first-principles vibrational
       predictions with STEM-EELS measurements on high-entropy rock-salt oxides. Built an
-      automated Quantum ESPRESSO DFPT workflow for the parent oxide phases, then developed a
-      CHGNet machine-learned-potential pipeline via atomate2 to compute phonon densities of
-      states on SQS supercells where direct DFPT was computationally prohibitive.
+      automated Quantum ESPRESSO DFPT workflow for the parent oxide phases. Developed a 
+      machine-learned interatomic potential (MLIP) pipeline (CHGNet, atomate2) 
+      to predict phonon properties and structural stability on SQS supercells across disordered, 
+      high-dimensional compositional spaces, accelerating property prediction by orders of 
+      magnitude over direct DFT, and establishing benchmarked accuracy against first-principles 
+      ground truth for structure/property screening at scale.
       Implemented a phonon band-unfolding code to project MLIP-derived force constants onto
       the primitive Brillouin zone, enabling direct comparison with experimental spectra.
-    venue: In preparation
+    venue: Manuscript in preparation
+
+  - title: >
+      First-Principles Structural and Vibrational Properties of Aluminum Pnictides
+    tags: [DFT, DFPT, Spin-Orbit Coupling, Semiconductors, Topological Insulators]
+    description: >
+      This work was an NSF-supported collaboration between CMU and Penn State, studying the 
+      growth and characterization of AlBi, a predicted topological insulator. Performed 
+      first-principles structural relaxation calculations for zincblende aluminum pnictides 
+      (AlAs, AlSb, AlBi), benchmarking lattice constants against experimental RHEED/XRD data 
+      from collaborators' MBE-grown films. Demonstrated high spin-orbit coupling effects for 
+      AlBi via fully-relativistic pseudopotentials, fitting energy--volume curves to a 
+      Birch–Murnaghan equation of state to extract lattice constants and bulk moduli. 
+      Computed phonon dispersion via DFPT to predict Raman-active modes, supporting experimental 
+      spectroscopy interpretation.
+    venue: Manuscript submitted to Journal of Crystal Growth
+
+  - title: >
+      High-Entropy Design of Transition Metal Oxide Semiconductors with Ultra-Low Thermal Conductivity
+    tags: [Lattice Thermal Conductivity, Phonon Scattering, Thermoelectrics]
+    description: >
+      Led the first-principles thermal transport calculations for a collaborative study 
+      within the Center for Nanoscale Science investigating the ultra-low thermal conductivity 
+      (<1 W/m·K) observed in the high-entropy oxide (Mn,Fe,Co,Ni,Cu,Zn)WO<sub>4</sub>. Computed harmonic 
+      and anharmonic interatomic force constants via finite-displacement DFT (via VASP + Phono3py) 
+      for the parent tungstate phases, solving the Boltzmann transport equation to extract phonon 
+      group velocities, lifetimes, and lattice thermal conductivity. Fit these first-principles 
+      results into a Debye–Klemens–Callaway model alongside experimental thermal conductivity data, 
+      revealing that the high-entropy phase's anomalous, broad conductivity peak could not be 
+      explained by simple parent-averaged scattering. Showed that chemical disorder opens a 
+      crystal-momentum-non-conserving three-phonon scattering channel, in addition to enhanced 
+      phonon-defect scattering, establishing configurational entropy as a design lever for 
+      low-thermal-conductivity semiconducting oxides.
+    paper: https://www.nature.com/articles/s43246-026-01103-2
+    venue: Communications Materials, 2026
 
   - title: >
       Electrocaloric Performance of High-Entropy Perovskite Oxides from First Principles
     tags: [DFT, NEB, Phase Diagrams, Local Strain, Ferroelectrics, Electrocaloric COP]
     description: >
-      Computed mixing enthalpies for 2,286 DFT-relaxed perovskite supercells (Ba/Ca/Sr-based)
-      and constructed convex-hull phase diagrams to resolve formation energies. Applied
-      Wang–Landau Monte Carlo sampling to map configurational entropy and identify
-      thermodynamically stable compositions, then used NEB simulations and Boltzmann
-      statistics to predict the temperature- and field-dependent polarization of the
-      high-entropy perovskite oxide (Na,Bi,Sr,Ba,Ca)TiO<sub>3</sub>, estimating its
-      electrocaloric performance.
-    venue: Center for Nanoscale Science (MRSEC); APS March Meeting 2023/2024, MRS Spring Meeting 2024
+      As part of Penn State's Center for Nanoscale Science, an NSF-supported Materials Research 
+      Science and Engineering Center (MRSEC), computed mixing enthalpies for 2,286 DFT-relaxed 
+      perovskite supercells (Ba/Ca/Sr-based, enumerated via ICET) using Quantum ESPRESSO, then 
+      constructed convex-hull phase diagrams to resolve formation energies across the composition
+      space. Applied Wang–Landau Monte Carlo sampling to map configurational entropy and identify 
+      thermodynamically stable compositions and their crystal structures, and quantified local 
+      strain via ionic-radius and deformation-matrix analysis, revealing an inverse correlation 
+      between formation energy and A-site strain. Extended this framework to predict the electrocaloric 
+      performance of the high-entropy perovskite oxide (Na,Bi,Sr,Ba,Ca)TiO<sub>3</sub>, using NEB simulations 
+      and Boltzmann statistics to model temperature- and field-dependent polarization. Automated the 
+      full DFT/Monte Carlo/NEB pipeline via Slurm on Penn State's ICDS Roar Collab HPC cluster to 
+      enable high-throughput screening across thousands of structures.
+    venue: APS March Meeting 2023/2024, MRS Spring Meeting 2024
 
   - title: >
-      First-Principles Study of Aluminum Pnictide Semiconductors (AlAs, AlSb, AlBi)
-    tags: [DFT, DFPT, Spin-Orbit Coupling, Semiconductors, Topological Insulators]
+      Solution Combustion Synthesis of Iron Oxide/Graphene Nanocomposite for Supercapacitors
+    tags: [Synthesis, Nanocomposites, XRD, Cyclic Voltammetry, Supercapacitors]
     description: >
-      Performed DFT structural relaxation for zincblende aluminum pnictides, benchmarking
-      lattice constants against experimental RHEED/XRD data from collaborators' MBE-grown
-      films. Included spin-orbit coupling for AlBi via fully-relativistic pseudopotentials,
-      fitting energy-volume curves to a Birch–Murnaghan equation of state, and computed
-      phonon dispersion via DFPT to support experimental Raman spectroscopy interpretation
-      of AlBi, a predicted topological insulator.
-    venue: CMU–Penn State collaboration (NSF-supported)
+      Synthesized magnetite (Fe3O4) nanopowders via solution combustion synthesis under an 
+      adiabatic atmosphere, systematically varying the fuel-to-oxidant ratio (φ = 0.5, 0.75, 1, 1.5) 
+      to control phase evolution, microstructure, and morphology. Characterized phase purity and 
+      crystallite size via X-ray diffraction and surface morphology via scanning electron microscopy, 
+      identifying φ = 1 as the condition yielding single-phase Fe3O4, while other ratios produced 
+      mixed magnetite/hematite (α-Fe2O3) phases. Evaluated the resulting powders as supercapacitor 
+      electrode materials using a three-electrode electrochemical cell, employing cyclic voltammetry 
+      and galvanostatic charge-discharge testing in KOH electrolyte. Found specific capacitances of 
+      ~25–57 F/g across compositions, with φ = 1 giving the best performance and φ = 0.75 identified 
+      as a critical, electrochemically unstable composition unsuitable for supercapacitor applications. 
+      This work was completed as a Bachelor's thesis in Materials Engineering at Iran University of 
+      Science and Technology.
+    venue: B.Sc. Thesis

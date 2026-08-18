@@ -102,6 +102,37 @@ title: Home
   {% endfor %}
 </div>
 
+<!-- ========== PROJECTS ========== -->
+<div class="docs-section section-page" id="projects">
+  <h4>Research Projects</h4>
+
+  <p>
+    A closer look at select projects — spanning phonon transport, high-entropy oxides,
+    and machine-learning-accelerated materials discovery.
+  </p>
+
+  {% for proj in site.data.projects.projects %}
+    <div class="project-card">
+      <p class="title"><b>{{ proj.title }}</b></p>
+
+      <div class="project-tags">
+        {% for tag in proj.tags %}
+          <span class="tag-pill">{{ tag }}</span>
+        {% endfor %}
+      </div>
+
+      <p class="project-description">{{ proj.description }}</p>
+      <p class="project-venue"><i>{{ proj.venue }}</i></p>
+
+      {% if proj.paper %}
+        <div class="paper-buttons">
+          <a class="button" href="{{ proj.paper }}" target="_blank">Paper</a>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
 <!-- ========== CONFERENCE TALKS ========== -->
 <div class="docs-section section-page" id="conference-talks">
   <h4>Conference Talks</h4>

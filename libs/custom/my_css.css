@@ -101,6 +101,51 @@ h4 { letter-spacing: .1rem; }
 .paper-buttons { margin-top: 5px; }
 
 /* =========================================================
+   RESEARCH PROJECT CARDS
+   ========================================================= */
+
+.project-card {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-card:last-child { border-bottom: none; }
+
+.project-card .title { margin-bottom: 8px; }
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tag-pill {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: .03rem;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+}
+
+.project-description {
+  color: var(--text);
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.project-venue {
+  color: var(--muted);
+  font-size: 0.92em;
+  margin-bottom: 8px;
+}
+
+/* =========================================================
    BUTTONS
    ========================================================= */
 

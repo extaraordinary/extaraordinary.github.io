@@ -578,14 +578,22 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   .navbar-spacer { display: none; }
   .navbar > .container { width: 100%; }
 
+  .navbar {
+    height: auto;
+    min-height: 6.5rem;
+    padding: 1rem 0;
+  }
+
   .navbar-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     list-style: none;
     margin-bottom: 0;
   }
 
   .navbar-item {
     position: relative;
-    float: left;
     margin-bottom: 0;
   }
 
@@ -596,11 +604,12 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     letter-spacing: .2rem;
     margin-right: 35px;
     text-decoration: none;
-    line-height: 6.5rem;
+    line-height: normal;
     color: var(--link-text);
   }
 
   .navbar-link.active { color: var(--accent); }
+
 
   /* popover (template feature) */
   .popover.open { display: block; }

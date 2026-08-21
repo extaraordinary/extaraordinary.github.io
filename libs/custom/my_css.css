@@ -146,6 +146,97 @@ h4 { letter-spacing: .1rem; }
 }
 
 /* =========================================================
+   CODE / GITHUB PROJECT CARDS
+   ========================================================= */
+
+.code-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.code-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.code-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-border);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="dark"] .code-card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+}
+
+.code-card-thumb {
+  position: relative;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.code-card-thumb svg { width: 100%; height: 100%; display: block; transition: transform .35s ease; }
+.code-card:hover .code-card-thumb svg { transform: scale(1.045); }
+
+.code-card-body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.code-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+
+.code-tag-pill {
+  display: inline-block;
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: .03rem;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+}
+
+.code-card-title { font-weight: 600; font-size: 1.05em; margin: 0 0 6px 0; color: var(--text); }
+
+.code-card-description {
+  color: var(--muted);
+  font-size: 0.92em;
+  line-height: 1.5;
+  margin: 0 0 14px 0;
+  flex: 1;
+}
+
+.code-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.86em;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: auto;
+}
+
+.code-card-link svg.gh-icon { width: 15px; height: 15px; fill: currentColor; opacity: .75; }
+.code-card-link .arrow { transition: transform .22s ease; }
+.code-card:hover .code-card-link { color: var(--accent); }
+.code-card:hover .code-card-link .arrow { transform: translateX(3px); }
+
+/* =========================================================
    BUTTONS
    ========================================================= */
 

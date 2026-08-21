@@ -931,6 +931,14 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     left: auto !important;
     right: auto !important;
     transform: none !important;
+
+    /* sit above the timeline spine (z-index: 5) and fully hide it behind
+       an opaque backdrop -- accent-soft alone is translucent and let the
+       spine bleed through the pill text */
+    position: relative !important;
+    z-index: 6 !important;
+    background-image: linear-gradient(var(--accent-soft), var(--accent-soft)) !important;
+    background-color: var(--card) !important;
   }
 
   /* remove markers/dots & triangles on mobile */
@@ -965,7 +973,8 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   }
 
   html[data-theme="dark"] .timeline li .time {
-    background: var(--accent-soft) !important;
+    background-image: linear-gradient(var(--accent-soft), var(--accent-soft)) !important;
+    background-color: var(--card) !important;
     color: var(--accent) !important;
     border: 1px solid var(--accent-border) !important;
   }

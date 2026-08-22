@@ -109,3 +109,27 @@ projects:
 
       <line x1="150" y1="122" x2="250" y2="122" stroke="var(--card)" stroke-width="1.5" opacity="0.5"/>
       <line x1="200" y1="72" x2="200" y2="172" stroke="var(--card)" stroke-width="1.5" opacity="0.5"/>
+
+  - title: GNN + T4 GPU Setup Notes
+    url: https://github.com/extaraordinary/gnn-t4-gpu-setup
+    tags: [Notes, PyTorch, DGL, CUDA]
+    description: >
+      Debugging notes on setting up PyTorch and DGL for GNN training on Colab's T4 GPU &mdash; covering CUDA/driver version conflicts, torchdata dependency issues, and an overview of the GraphBolt sampling pipeline.
+    thumb_aria_label: Terminal window with debugging log illustration
+    thumb_svg: |
+      <rect width="400" height="240" fill="var(--card)"/>
+      <rect x="40" y="34" width="320" height="172" rx="10" fill="var(--card)" stroke="var(--border)" stroke-width="1.5"/>
+      <line x1="40" y1="66" x2="360" y2="66" stroke="var(--border)" stroke-width="1.5"/>
+      <g>
+        <circle cx="58" cy="50" r="5" fill="var(--deep-teal)"/>
+        <circle cx="76" cy="50" r="5" fill="var(--teal)"/>
+        <circle cx="94" cy="50" r="5" fill="var(--accent)"/>
+      </g>
+      <g font-family="Menlo, monospace" font-size="13" fill="var(--muted)">
+        <text x="58" y="94"><tspan fill="var(--accent)">$</tspan> pip install torch==2.4.0+cu121</text>
+        <text x="58" y="120">CUDA 12.1  |  driver 550.54.15</text>
+        <text x="58" y="146" fill="var(--teal)">&#10003; DGL + GraphBolt ready</text>
+        <text x="58" y="172" opacity="0.7">30% faster node sampling</text>
+        <text x="58" y="198"><tspan fill="var(--accent)">$</tspan></text>
+      </g>
+      <rect x="74" y="187" width="9" height="15" fill="var(--accent)" opacity="0.85"/>

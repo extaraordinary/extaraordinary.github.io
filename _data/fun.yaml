@@ -6,6 +6,3 @@ fun_paragraphs:
   - 'I have recently found joy in woodworking. Learning about CMU''s TechSpark was a great starting point for me. You can check out my latest projects here: <a href="{{ "/assets/misc/plant-stand.jpg" | prepend: site.baseurl }}" target="_blank">plant stand</a>, <a href="{{ "/assets/misc/crate.jpg" | prepend: site.baseurl }}" target="_blank">crate</a>, and <a href="{{ "/assets/misc/folding-stool-1.JPG" | prepend: site.baseurl }}" target="_blank">folding stool</a>.'
 
   - "Reading remains a cherished refuge. I am drawn to fiction novels and philosophy, which together enrich my understanding of the world and the human experience."
-
-
-  

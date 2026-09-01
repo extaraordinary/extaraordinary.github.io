@@ -1,19 +1,27 @@
 projects:
   - title: >
       Local Nuances in Vibrational Properties of High-Entropy Oxides Revealed by STEM-EELS
-    tags: [DFPT, CHGNet, Phonon Unfolding, Machine Learning Interatomic Potentials]
+    tags: [DFPT, MLIPs, Band Unfolding, Cluster Expansion, Monte Carlo Simulation]
     description: >
-      Contributed the computational phonon modeling for a collaboration with Penn State,
-      University of Michigan, and SuperSTEM (UK), correlating first-principles vibrational
-      predictions with STEM-EELS measurements on high-entropy rock-salt oxides. Built an
-      automated Quantum ESPRESSO DFPT workflow for the parent oxide phases. Developed a 
-      machine-learned interatomic potential (MLIP) pipeline (CHGNet, atomate2) 
-      to predict phonon properties and structural stability on SQS supercells across disordered, 
-      high-dimensional compositional spaces, accelerating property prediction by orders of 
-      magnitude over direct DFT, and establishing benchmarked accuracy against first-principles 
-      ground truth for structure/property screening at scale.
-      Implemented a phonon band-unfolding code to project MLIP-derived force constants onto
-      the primitive Brillouin zone, enabling direct comparison with experimental spectra.
+      Led the computational lattice-dynamical modeling for a multi-institution collaboration 
+      (Penn State, CMU, University of Michigan, SuperSTEM UK) correlating first-principles 
+      vibrational predictions with STEM-EELS measurements on high-entropy rock-salt oxides 
+      (Mg,Co,Ni,Cu,Zn)O and (Mg,Cr,Co,Ni,Cu,Zn)O. 
+      Built an automated density functional perturbation theory (DFPT) workflow based on 
+      Quantum ESPRESSO — including convergence testing, structural relaxation, and phonon 
+      dispersion/DOS calculations with Born effective charges and LO–TO splitting corrections 
+      — for the parent oxide phases (MgO, MnO, CoO, NiO, CuO, ZnO, CrO). Since the low symmetry 
+      and large supercells of the high-entropy compositions made direct DFPT prohibitive, 
+      used cluster expansion to generate realistic, energy-based supercells, and developed a 
+      GNN-based machine-learned interatomic potential pipeline (CHGNet, atomate2) to predict 
+      structural stability and vibrational spectra across these disordered, high-dimensional 
+      compositional spaces — accelerating property prediction by orders of magnitude over direct 
+      DFT, with accuracy benchmarked against DFT/DFPT ground truth. 
+      Scaled this into a high-throughput CHGNet pipeline on cloud GPUs to efficiently screen 
+      supercell configurations. 
+      Implemented a phonon band-unfolding code from scratch (spectral weight method) to project 
+      MLIP-derived force constants back onto the primitive Brillouin zone, enabling direct, 
+      cation-resolved comparison between simulated phonon spectra and experimental data.
     venue: Manuscript in preparation
 
   - title: >

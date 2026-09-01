@@ -514,20 +514,15 @@ html[data-theme="dark"] .timeline li .marker {
 
 /* image icons (X) */
 .social-icon img {
-  width: 22px;
-  height: 22px;
+  width: 23px;
+  height: 23px;
   display: block;
   transform: translateY(2px);
 }
 
-/* image icons (Strava) */
+/* image icons that bleed to the edge of their viewBox (Strava, Goodreads) -
+   sized down slightly so their optical size matches the font icons above */
 .social-icon img.icon-small {
-  width: 20px;
-  height: 20px;
-}
-
-/* image icons (goodreads) */
-.social-icon img.icon-smaller {
   width: 19px;
   height: 19px;
 }

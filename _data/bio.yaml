@@ -9,27 +9,26 @@ paragraphs:
     design and discovery for next-generation energy conversion and thermal management systems.
 
   - > 
-    Broadly, I am interested in how atomic-scale disorder governs the physical properties of 
-    materials particularly how the arrangement of atoms within a crystal, from perfect order 
-    to random substitution to intermediate short-range clustering, shapes the way heat and 
-    vibrations move through a solid. Much of my work uses density functional theory (DFT) and 
-    density functional perturbation theory (DFPT) to compute phonon spectra and thermal transport 
-    properties from first principles. Because these calculations become computationally prohibitive 
-    for the large, low-symmetry supercells needed to represent realistic disordered materials, I 
-    also implement machine-learned interatomic potentials — most recently fine-tuning a GNN-based 
-    model (CHGNet) as a fast, physically validated surrogate for phonon predictions — to make this 
-    class of problem tractable at scale.
+    More specifically, I am interested in how the arrangement of atoms within a crystal — from 
+    perfect order, to random substitution, to intermediate short-range clustering — shapes the 
+    way heat and vibrations move through a solid. Much of my work uses density functional theory 
+    (DFT) and density functional perturbation theory (DFPT) to compute phonon spectra and thermal 
+    transport properties from first principles. Because these calculations become computationally 
+    prohibitive for the large, low-symmetry supercells needed to represent realistic disordered 
+    materials, I also implement machine-learned interatomic potentials — most recently fine-tuning 
+    a GNN-based model (CHGNet) — to build a physically validated surrogate for accelerated phonon 
+    predictions and make this class of problem tractable at scale.
 
   - > 
-    Current projects focus on high-entropy oxides — rock-salt and wolframite compositions incorporating 
-    five or six transition-metal cations in a single lattice. I use statistical sampling methods (Monte 
-    Carlo simulated annealing, cluster expansion) to generate and control short-range order across these 
-    compositions, and correlate that disorder directly with phonon behavior — work carried out in close 
-    collaboration with experimental groups performing electron energy-loss spectroscopy (EELS) and 
-    transmission electron microscopy (TEM), so that first-principles predictions are tested directly 
-    against measurement. I am also interested more broadly in building reproducible, open computational 
-    workflows — from structure generation through MLIP training to phonon analysis — that can be extended 
-    to other disordered material systems.
+    Current projects focus on high-entropy oxides — specifically, rock-salt and wolframite compositions 
+    incorporating five or six transition-metal cations in a single lattice. I use statistical sampling 
+    methods (such as Monte Carlo simulations) and cluster expansion to generate realistic representative 
+    supercells and control short-range order across these compositions, and correlate that disorder 
+    directly with vibrational behavior — work carried out in close collaboration with experimental groups 
+    performing bulk/thin-film synthesis, electron energy-loss spectroscopy (EELS) and transmission electron 
+    microscopy (TEM), so that first-principles predictions are tested directly against measurement. I am 
+    also interested more broadly in building reproducible, open computational workflows — from MLIP training 
+    to high-throughput phonon spectra analysis — that can be extended to other highly disordered material systems.
 
   - >
     An overarching theme in my work is the tradeoff between physical interpretability and 
@@ -46,7 +45,10 @@ paragraphs:
     across large HPC clusters. My work is inherently collaborative; I engage with theorists 
     and experimentalists as a member of the Center for Nanoscale Science, a Materials Research 
     Science and Engineering Center (MRSEC) supported by the National Science Foundation, along 
-    with other multi-institutional networks.
+    with other multi-institutional networks.I am grateful for the mentorship of my advisor, 
+    Prof. Ismaila Dabo, and for the collaborative environment of the Center for Nanoscale 
+    Science, through which much of this work has been possible. For more on my specific projects, 
+    publications, and talks, please see the other pages on this site.
 
   - >
     I'm always happy to discuss research, cool ideas, or potential collaborations. I also 

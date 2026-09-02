@@ -1,0 +1,15 @@
+intro: >
+  A few essays I've written on Medium.
+
+articles:
+  - title: The Most Radical Thing You Can Do Is Change Your Mind
+    url: https://medium.com/@extaraordinary/the-most-radical-thing-you-can-do-is-change-your-mind-9559c9bff252
+    description: A short piece on learning and intellectual humility.
+    image: writing-radical-thing.png
+    alt: Cover image for "The Most Radical Thing You Can Do Is Change Your Mind"
+
+  - title: The Treadmill Has No Finish Line
+    url: https://extaraordinary.medium.com/the-treadmill-has-no-finish-line-164383b5c505
+    description: Some thoughts on motion and progress.
+    image: writing-treadmill.png
+    alt: Cover image for "The Treadmill Has No Finish Line"

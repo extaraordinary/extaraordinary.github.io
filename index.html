@@ -229,6 +229,32 @@ title: Home
   {% endfor %}
 </div>
 
+<!-- ========== WRITING ========== -->
+<div class="docs-section section-page" id="writing">
+  <h4>Writing</h4>
+
+  <p>{{ site.data.writing.intro }}</p>
+
+  <div class="writing-grid">
+    {% for article in site.data.writing.articles %}
+      <a class="writing-card" href="{{ article.url }}" target="_blank" rel="noopener">
+        <div class="writing-card-thumb">
+          <img src="{{ '/assets/misc/' | append: article.image | prepend: site.baseurl }}" alt="{{ article.alt }}" loading="lazy">
+        </div>
+        <div class="writing-card-body">
+          <p class="writing-card-title">{{ article.title }}</p>
+          <p class="writing-card-description">{{ article.description }}</p>
+          <span class="writing-card-link">
+            <i class="fa fa-medium" aria-hidden="true"></i>
+            Read on Medium
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
 <!-- ========== FUN ========== -->
 <div class="docs-section section-page" id="fun">
   <h4>Fun</h4>

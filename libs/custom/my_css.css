@@ -264,6 +264,16 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
   outline-offset: 2px;
 }
 
+/* Publications & Talks: Paper/News/Abstract/Poster buttons read as one
+   consistent row of controls when they share a single fixed width. */
+#publications .paper-buttons .button,
+#publications .talk-actions .button {
+  width: 96px;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
 /* =========================================================
    SECTIONS / FOOTER
    ========================================================= */
@@ -608,20 +618,12 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 }
 
 .talk-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 18px;
   padding: 14px 0;
   border-bottom: 1px solid var(--border);
+  overflow: hidden; /* clearfix: contains the floated talk-actions */
 }
 
 .talk-row:last-child { border-bottom: none; }
-
-.talk-main {
-  flex: 1 1 auto;
-  min-width: 0;
-}
 
 .talk-title { margin-bottom: 6px; }
 
@@ -640,13 +642,19 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 .talk-type--invited { color: var(--accent); }
 .talk-star { color: var(--accent); }
 
+/* Floated (not flexed) so talk-meta's text wraps around it instead of
+   sharing a fixed-width column — otherwise a long tag like "(Invited Talk)"
+   gets pushed to its own line even though the row has room for it. */
 .talk-actions {
-  flex: 0 0 auto;
+  float: right;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  justify-content: flex-end;
   align-items: center;
+  height: 25px;
+  line-height: 25px;
+  margin-top: 2px;
+  margin-left: 18px;
 }
 
 /* =========================================================
@@ -1136,13 +1144,25 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     background: var(--accent-soft);
   }
 
-  /* talks stack on mobile */
+  /* talks stack on mobile: title/meta above, actions below
+     (markup order is actions-then-main for the desktop float, so
+     column-reverse restores the visual main-then-actions stacking) */
   .talk-row {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 10px;
+    overflow: visible;
   }
 
-  .talk-actions { justify-content: flex-start; }
+  .talk-actions {
+    float: none;
+    height: auto;
+    line-height: normal;
+    margin-top: 0;
+    margin-left: 0;
+    justify-content: flex-start;
+  }
+
   .talk-type { white-space: normal; }
 }
 

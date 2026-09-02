@@ -112,18 +112,6 @@ title: Home
   <ul class="talks-list">
     {% for talk in site.data.conference_talks.talks %}
       <li class="talk-row">
-        <div class="talk-main">
-          <div class="talk-title"><b>{{ talk.title }}</b></div>
-
-          <div class="talk-meta">
-            {{ talk.event }}, {{ talk.location }}, {{ talk.date }}
-            <span class="talk-type{% if talk.type == 'Invited Talk' %} talk-type--invited{% endif %}">
-              ({{ talk.type }})
-              <!--{% if talk.type == 'Invited Talk' %}<span class="talk-star" aria-hidden="true">★</span>{% endif %}-->
-            </span>
-          </div>
-        </div>
-
         <div class="talk-actions">
           {% if talk.slides %}
             <a class="button" href="{{ talk.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
@@ -142,6 +130,17 @@ title: Home
           {% endif %}
         </div>
 
+        <div class="talk-main">
+          <div class="talk-title"><b>{{ talk.title }}</b></div>
+
+          <div class="talk-meta">
+            {{ talk.event }}, {{ talk.location }}, {{ talk.date }}
+            <span class="talk-type{% if talk.type == 'Invited Talk' %} talk-type--invited{% endif %}">
+              ({{ talk.type }})
+              <!--{% if talk.type == 'Invited Talk' %}<span class="talk-star" aria-hidden="true">★</span>{% endif %}-->
+            </span>
+          </div>
+        </div>
       </li>
     {% endfor %}
   </ul>

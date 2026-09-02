@@ -208,14 +208,10 @@ title: Home
   <h4>Skills</h4>
   <div class="skills-groups">
     {% for group in site.data.skills.groups %}
-      <div class="skills-group">
-        <p class="skills-group-title">{{ group.category }}</p>
-        <div class="skills-pills">
-          {% for skill in group.skills %}
-            <span class="tag-pill">{{ skill }}</span>
-          {% endfor %}
-        </div>
-      </div>
+      <p class="skills-group">
+        <span class="skills-group-title">{{ group.category }}:</span>
+        {{ group.skills | join: ", " }}
+      </p>
     {% endfor %}
   </div>
 

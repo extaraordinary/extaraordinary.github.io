@@ -365,25 +365,19 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
    ========================================================= */
 
 .skills-groups {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
   margin: 16px 0 32px 0;
+}
+
+.skills-group {
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: var(--text);
 }
 
 .skills-group-title {
   font-weight: 600;
-  font-size: 0.85em;
-  text-transform: uppercase;
-  letter-spacing: .05rem;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.skills-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  color: var(--text);
+  margin-right: 4px;
 }
 
 /* =========================================================

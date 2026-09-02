@@ -7,7 +7,7 @@ groups:
       - LAMMPS
       - Monte Carlo Simulations
       - Cluster Expansion
-      - Atomic Simulation Environment (ASE)
+      - ASE
       - icet
       - pymatgen
       - atomate2

@@ -672,13 +672,13 @@ html[data-theme="dark"] .social-icon:focus-visible img {
    baked into its viewBox, so it needs to run much larger than the rest
    to read as the same size. */
 .social-icon img[alt="Goodreads"] {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
 }
 
 .social-icon img[alt="Strava"] {
-  width: 23px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
 }
 
 /* dark mode - invert image-based icons */

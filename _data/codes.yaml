@@ -45,40 +45,69 @@ projects:
     tags: [Python, DFPT, SQS]
     description: >
       Spectral-weight phonon band unfolding for SQS supercells, projecting disordered force constants onto the primitive Brillouin zone.
-    thumb_aria_label: Phonon dispersion band diagram illustration
+    thumb_aria_label: Phonon spectral-weight unfolding plot along Gamma-X-M-Gamma with weight colorbar
     thumb_svg: |
+      <defs>
+        <filter id="pbBlurWide" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="5"/>
+        </filter>
+        <filter id="pbBlurSoft" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.4"/>
+        </filter>
+        <linearGradient id="pbHeat" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%"  stop-color="var(--deep-teal)"/>
+          <stop offset="55%" stop-color="var(--teal)"/>
+          <stop offset="100%" stop-color="var(--accent)"/>
+        </linearGradient>
+      </defs>
+
       <rect width="400" height="240" fill="var(--card)"/>
       <g stroke="var(--border)" stroke-width="1" stroke-dasharray="3,4">
         <line x1="40" y1="24" x2="40" y2="216"/>
-        <line x1="146.7" y1="24" x2="146.7" y2="216"/>
-        <line x1="253.3" y1="24" x2="253.3" y2="216"/>
-        <line x1="360" y1="24" x2="360" y2="216"/>
+        <line x1="140" y1="24" x2="140" y2="216"/>
+        <line x1="240" y1="24" x2="240" y2="216"/>
+        <line x1="340" y1="24" x2="340" y2="216"/>
       </g>
-      <line x1="40" y1="216" x2="360" y2="216" stroke="var(--border)" stroke-width="1.5"/>
+      <line x1="40" y1="216" x2="340" y2="216" stroke="var(--border)" stroke-width="1.5"/>
 
-      <path d="M 40,205 L 75.6,184.5 L 111.1,166.4 L 146.7,153.0 L 182.2,145.9 L 200,145 L 217.8,145.9 L 253.3,153.0 L 288.9,166.4 L 324.4,184.5 L 360,205"
-            fill="none" stroke="var(--deep-teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-      <path d="M 40,197.5 L 75.6,163.8 L 111.1,139.0 L 146.7,130.0 L 182.2,139.0 L 217.8,163.8 L 253.3,197.5 L 288.9,163.8 L 324.4,139.0 L 360,130.0"
-            fill="none" stroke="var(--teal)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
-      <path d="M 40,143.7 L 75.6,144.6 L 111.1,160.1 L 146.7,179.8 L 182.2,190.7 L 217.8,185.6 L 253.3,167.9 L 288.9,149.3 L 324.4,142.0 L 360,151.0"
-            fill="none" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
-      <path d="M 40,136.0 L 75.6,143.7 L 111.1,152.2 L 146.7,159.0 L 182.2,162.1 L 217.8,160.3 L 253.3,154.4 L 288.9,146.1 L 324.4,137.9 L 360,132.3"
-            fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+      <!-- faint folded-replica weight, smeared by disorder -->
+      <g fill="none" stroke="var(--muted2)" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 40,143.7 L 73.4,144.6 L 106.7,160.1 L 140,179.8 L 173.3,190.7 L 206.7,185.6 L 240,167.9 L 273.3,149.3 L 306.7,142.0 L 340,151.0"
+              stroke-width="5" opacity="0.4" filter="url(#pbBlurWide)"/>
+        <path d="M 40,136.0 L 73.4,143.7 L 106.7,152.2 L 140,159.0 L 173.3,162.1 L 206.7,160.3 L 240,154.4 L 273.3,146.1 L 306.7,137.9 L 340,132.3"
+              stroke-width="5" opacity="0.4" filter="url(#pbBlurWide)"/>
+      </g>
 
-      <g fill="var(--accent)">
-        <circle cx="40"    cy="205"   r="5"   opacity="0.9"/>
-        <circle cx="111.1" cy="166.4" r="3.6" opacity="0.75"/>
-        <circle cx="146.7" cy="153.0" r="2.6" opacity="0.55"/>
-        <circle cx="200"   cy="145"   r="2"   opacity="0.35"/>
-        <circle cx="253.3" cy="153.0" r="2.6" opacity="0.55"/>
-        <circle cx="324.4" cy="184.5" r="4.2" opacity="0.8"/>
+      <!-- dominant unfolded branches: layered glow stands in for spectral weight -->
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 40,205 L 73.4,184.5 L 106.7,166.4 L 140,153.0 L 173.3,145.9 L 190,145 L 206.7,145.9 L 240,153.0 L 273.3,166.4 L 306.7,184.5 L 340,205"
+              stroke="var(--teal)" stroke-width="9" opacity="0.20" filter="url(#pbBlurWide)"/>
+        <path d="M 40,205 L 73.4,184.5 L 106.7,166.4 L 140,153.0 L 173.3,145.9 L 190,145 L 206.7,145.9 L 240,153.0 L 273.3,166.4 L 306.7,184.5 L 340,205"
+              stroke="var(--teal)" stroke-width="5" opacity="0.45" filter="url(#pbBlurSoft)"/>
+        <path d="M 40,205 L 73.4,184.5 L 106.7,166.4 L 140,153.0 L 173.3,145.9 L 190,145 L 206.7,145.9 L 240,153.0 L 273.3,166.4 L 306.7,184.5 L 340,205"
+              stroke="var(--accent)" stroke-width="2.25" opacity="0.95"/>
+
+        <path d="M 40,197.5 L 73.4,163.8 L 106.7,139.0 L 140,130.0 L 173.3,139.0 L 206.7,163.8 L 240,197.5 L 273.3,163.8 L 306.7,139.0 L 340,130.0"
+              stroke="var(--teal)" stroke-width="9" opacity="0.18" filter="url(#pbBlurWide)"/>
+        <path d="M 40,197.5 L 73.4,163.8 L 106.7,139.0 L 140,130.0 L 173.3,139.0 L 206.7,163.8 L 240,197.5 L 273.3,163.8 L 306.7,139.0 L 340,130.0"
+              stroke="var(--teal)" stroke-width="5" opacity="0.4" filter="url(#pbBlurSoft)"/>
+        <path d="M 40,197.5 L 73.4,163.8 L 106.7,139.0 L 140,130.0 L 173.3,139.0 L 206.7,163.8 L 240,197.5 L 273.3,163.8 L 306.7,139.0 L 340,130.0"
+              stroke="var(--deep-teal)" stroke-width="2.25" opacity="0.95"/>
+      </g>
+
+      <!-- spectral-weight colorbar -->
+      <rect x="352" y="24" width="10" height="192" rx="2" fill="url(#pbHeat)" stroke="var(--border)" stroke-width="1"/>
+
+      <g font-family="Menlo, monospace" font-size="9" fill="var(--muted)">
+        <text x="357" y="19" text-anchor="middle">hi</text>
+        <text x="357" y="229" text-anchor="middle">lo</text>
       </g>
 
       <g font-family="Menlo, monospace" font-size="11" fill="var(--muted)">
         <text x="40" y="230" text-anchor="middle">&#915;</text>
-        <text x="146.7" y="230" text-anchor="middle">X</text>
-        <text x="253.3" y="230" text-anchor="middle">M</text>
-        <text x="360" y="230" text-anchor="middle">&#915;</text>
+        <text x="140" y="230" text-anchor="middle">X</text>
+        <text x="240" y="230" text-anchor="middle">M</text>
+        <text x="340" y="230" text-anchor="middle">&#915;</text>
       </g>
 
   - title: Spherical Harmonics

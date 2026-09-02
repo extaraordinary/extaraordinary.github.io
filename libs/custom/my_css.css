@@ -648,13 +648,13 @@ html[data-theme="dark"] .social-icon:focus-visible img {
    padding than the fa/ image icons, so they need a noticeably larger
    font-size to read as the same optical size in the row */
 .social-icon .ai-google-scholar {
-  font-size: 25px;
+  font-size: 22px;
   line-height: 1;
   transform: translateY(3px);
 }
 
 .social-icon .ai-orcid {
-  font-size: 25px;
+  font-size: 23px;
   line-height: 1;
   transform: translateY(1.5px);
 }

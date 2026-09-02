@@ -83,7 +83,7 @@ $(document).ready(function() {
 
     if (!sections.length || !links.length) return;
 
-    function show(id) {
+    function show(id, scrollToTop) {
       sections.forEach(s => (s.style.display = (s.id === id ? "block" : "none")));
 
       links.forEach(l => {
@@ -97,6 +97,9 @@ $(document).ready(function() {
       if (history && history.replaceState) {
         history.replaceState(null, "", "#" + id);
       }
+
+      // keep the header/photo in view when switching sections
+      if (scrollToTop) window.scrollTo(0, 0);
     }
 
     // bind clicks
@@ -104,7 +107,7 @@ $(document).ready(function() {
       link.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        show(this.dataset.target);
+        show(this.dataset.target, true);
 
         // if mobile menu is open, close it
         const menu = document.getElementById("mobileMenu");
@@ -117,9 +120,13 @@ $(document).ready(function() {
       });
     });
 
-    // start page: About/Bio by default (or respect URL hash if present)
-    const initial = (window.location.hash || "").replace("#", "");
-    show(initial || "bio");
+    // start page: About/Bio by default (or respect the section requested
+    // before the page loaded — see the head script that strips the URL
+    // hash early so the browser never auto-scrolls past the header)
+    const requested = window.__initialSection || "";
+    const initial = [...sections].some(s => s.id === requested) ? requested : "bio";
+    show(initial, false);
+    window.scrollTo(0, 0);
   }
 
   function init() {
@@ -194,42 +201,6 @@ $(document).ready(function() {
       $(this).html(newContent)
     })
   }
-
-  document.addEventListener("DOMContentLoaded", function () {
-
-  const sections = document.querySelectorAll(".section-page");
-  const links = document.querySelectorAll(".nav-toggle");
-
-  // hide all sections
-  sections.forEach(section => {
-    section.style.display = "none";
-  });
-
-  // show default section
-  const defaultSection = document.getElementById("bio");
-  if (defaultSection) {
-    defaultSection.style.display = "block";
-  }
-
-  links.forEach(link => {
-    link.addEventListener("click", function () {
-      const targetId = this.dataset.target;
-
-      sections.forEach(section => {
-        section.style.display = "none";
-      });
-
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.style.display = "block";
-      }
-
-      links.forEach(l => l.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
-
-  });
 
   init();
 

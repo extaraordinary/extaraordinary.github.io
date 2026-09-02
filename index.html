@@ -201,9 +201,25 @@ title: Home
 <div class="docs-section section-page" id="resume">
   <h4>Resume</h4>
 
-  <!-- <p>Full resume available <a href={{ "/assets/cv/tara_k_sabet_cv.pdf" | prepend: site.baseurl }} target="_blank">here</a> [last updated Aug 2026].</p> -->
+  <p>
+    <a class="button" href="{{ '/assets/cv/tara_k_sabet_cv.pdf' | prepend: site.baseurl }}" target="_blank">Download Full Resume (PDF)</a>
+  </p>
 
-  <!-- The Timeline -->
+  <h4>Skills</h4>
+  <div class="skills-groups">
+    {% for group in site.data.skills.groups %}
+      <div class="skills-group">
+        <p class="skills-group-title">{{ group.category }}</p>
+        <div class="skills-pills">
+          {% for skill in group.skills %}
+            <span class="tag-pill">{{ skill }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <h4>Career &amp; Education</h4>
   <ul class="timeline">
     {% for exp in site.data.experience.experiences %}
     <li>

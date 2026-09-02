@@ -1,0 +1,65 @@
+groups:
+  - category: Materials Science
+    skills:
+      - Quantum ESPRESSO
+      - VASP
+      - DFPT
+      - Monte Carlo
+      - ASE
+      - ICET
+      - Pymatgen
+      - Phonopy
+      - Ovito
+      - VESTA
+      - CrystalMaker
+
+  - category: Machine Learning
+    skills:
+      - GNNs
+      - Deep Learning
+      - Surrogate Modeling
+      - Gaussian Process Regression
+      - Random Forests
+      - Generative AI
+      - LLMs
+
+  - category: Programming & Scripting
+    skills:
+      - Python (Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Plotly)
+      - Bash
+      - C++
+      - C#
+      - MATLAB
+      - HTML
+      - LaTeX
+
+  - category: Dev Tools & HPC
+    skills:
+      - Git/GitHub
+      - Docker
+      - Linux OS
+      - Jupyter
+      - VS Code
+      - PyCharm
+      - AWS SageMaker
+      - Slurm/PBS Schedulers
+      - atomate2
+      - AiiDa
+      - Parallelization (MPI, OpenMP)
+      - GPU Acceleration (CUDA)
+
+  - category: General/Engineering
+    skills:
+      - SolidWorks
+      - ANSYS Mechanical
+      - ANSYS Granta Selector
+      - Origin
+      - Microsoft Office Suite (Proficient)
+
+  - category: Languages
+    skills:
+      - Persian (Native Speaker)
+      - English (Fluent)
+      - French (Intermediate)
+      - German (Intermediate)
+      - Dutch (Intermediate)

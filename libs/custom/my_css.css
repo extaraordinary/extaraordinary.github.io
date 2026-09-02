@@ -656,7 +656,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 .social-icon .ai-orcid {
   font-size: 23px;
   line-height: 1;
-  transform: translateY(1.5px);
+  transform: translateY(2.0px);
 }
 
 /* image icons (X) */
@@ -852,7 +852,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
-    gap: 6px;
+    gap: 3px;
     list-style: none;
     margin-bottom: 0;
     overflow-x: auto;
@@ -875,7 +875,7 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     line-height: normal;
     white-space: nowrap;
     color: var(--link-text);
-    padding: 9px 12px;
+    padding: 9px 9px;
     border-radius: 999px;
     border: 1px solid transparent;
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;

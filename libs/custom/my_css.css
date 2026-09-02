@@ -608,6 +608,33 @@ html[data-theme="dark"] .timeline li .marker {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  transform: scale(1.18);
+  opacity: 1;
+}
+
+/* font icons (LinkedIn, GitHub, Google Scholar, ORCID) turn accent-colored on hover */
+.social-icon:hover .fa,
+.social-icon:hover .ai,
+.social-icon:focus-visible .fa,
+.social-icon:focus-visible .ai {
+  color: var(--accent);
+}
+
+/* image icons (X, Strava, Goodreads) get an accent glow on hover, since raster
+   silhouettes can't be recolored the way font icons can */
+.social-icon:hover img,
+.social-icon:focus-visible img {
+  filter: drop-shadow(0 0 3px var(--accent-border)) drop-shadow(0 0 1px var(--accent));
+}
+
+html[data-theme="dark"] .social-icon:hover img,
+html[data-theme="dark"] .social-icon:focus-visible img {
+  filter: invert(1) drop-shadow(0 0 3px var(--accent-border)) drop-shadow(0 0 1px var(--accent));
 }
 
 /* font icons (LinkedIn, GitHub) */
@@ -646,12 +673,21 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 .footer .footer-social {
   justify-content: center;
   gap: 2px;
-  opacity: 0.55;
 }
 
+/* dimmed per-icon (not on the row) so a hovered icon can brighten on its own
+   without fighting a parent opacity that would otherwise cap it back down */
 .footer .footer-social .social-icon {
   width: 26px;
   height: 26px;
+  opacity: 0.55;
+}
+
+/* higher specificity than the dimmed rule above, so hovering one footer icon
+   actually brightens it instead of staying capped at 0.55 */
+.footer .footer-social .social-icon:hover,
+.footer .footer-social .social-icon:focus-visible {
+  opacity: 1;
 }
 
 /* footer icon vertical alignment */

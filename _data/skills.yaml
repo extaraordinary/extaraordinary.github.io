@@ -7,9 +7,11 @@ groups:
       - VASP
       - LAMMPS
       - Monte Carlo Simulations
-      - ASE
+      - Atomistic Simulation Environment (ASE)
       - ICET
       - Pymatgen
+      - Atomate2
+      - AiiDA
       - Phonopy/Phono3py
       - Ovito
       - VESTA
@@ -28,8 +30,8 @@ groups:
   - category: Programming & Scripting
     skills:
       - Python (Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Plotly)
-      - Bash
-      - C++
+      - Unix Shell Scripting (Bash)
+      - C/C++
       - C#
       - MATLAB
       - HTML
@@ -39,15 +41,13 @@ groups:
     skills:
       - Git/GitHub
       - Docker
-      - Linux OS
+      - Linux
       - Jupyter
       - VS Code
       - PyCharm
       - AWS SageMaker
       - Slurm/PBS Schedulers
-      - atomate2
-      - AiiDa
-      - Parallelization (MPI, OpenMP)
+      - Parallel Computing (MPI, OpenMP)
       - GPU Acceleration (CUDA)
 
   - category: General/Engineering

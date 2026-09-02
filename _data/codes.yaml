@@ -4,7 +4,7 @@ intro: >
 projects:
   - title: Data Visualization
     url: https://github.com/extaraordinary/data_visualization
-    tags: [Python, Matplotlib, Plotly]
+    tags: [Python, Plotting]
     description: >
       A hands-on tutorial notebook covering visualization techniques using Python, from basic plots to interactive dashboards.
     thumb_aria_label: Bar and line chart illustration

@@ -650,7 +650,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 .social-icon .ai-google-scholar {
   font-size: 23px;
   line-height: 1;
-  transform: translateY(2.0px);
+  transform: translateY(2.5px);
 }
 
 .social-icon .ai-orcid {
@@ -674,7 +674,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 .social-icon img[alt="Goodreads"] {
   width: 20px;
   height: 20px;
-  transform: translateY(1.0px);
+  transform: translateY(1.5px);
 }
 
 .social-icon img[alt="Strava"] {
@@ -870,12 +870,12 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
     text-transform: uppercase;
     font-size: 10px;
     font-weight: 600;
-    letter-spacing: .12rem;
+    letter-spacing: .06rem;
     text-decoration: none;
     line-height: normal;
     white-space: nowrap;
     color: var(--link-text);
-    padding: 9px 9px;
+    padding: 8px 7px;
     border-radius: 999px;
     border: 1px solid transparent;
     transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;

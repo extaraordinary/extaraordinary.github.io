@@ -648,7 +648,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
    padding than the fa/ image icons, so they need a noticeably larger
    font-size to read as the same optical size in the row */
 .social-icon .ai-google-scholar {
-  font-size: 29px;
+  font-size: 25px;
   line-height: 1;
   transform: translateY(3px);
 }

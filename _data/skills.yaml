@@ -8,9 +8,9 @@ groups:
       - Monte Carlo Simulations
       - Cluster Expansion
       - Atomic Simulation Environment (ASE)
-      - ICET
+      - icet
       - Pymatgen
-      - Atomate2
+      - atomate2
       - AiiDA
       - Phonopy, Phono3py
       - Ovito

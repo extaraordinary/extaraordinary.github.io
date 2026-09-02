@@ -1,0 +1,43 @@
+paragraphs:
+  - >
+    I am a doctoral candidate in Materials Science and Engineering at Carnegie Mellon University, advised by
+    Dr. Ismaila Dabo (watch a short overview of our research group's vision for AI and sustainable
+    energy <a href="https://www.youtube.com/watch?v=eZXgrFlzvkA&t=4s" target="_blank">here</a>). My research
+    develops predictive models for how atomic-scale disorder in complex oxides governs heat and vibrational
+    transport, work aimed at accelerating materials design and discovery for next-generation energy conversion
+    and thermal management systems.
+
+  - >
+    My core doctoral work centers on predictive modeling of phonons in high-entropy oxides for thermal energy
+    harvesting. To probe these expansive compositional spaces, I combine high-throughput density functional
+    theory (DFT) with applied machine learning techniques such as graph neural network (GNN) interatomic potentials,
+    running automated, high-performance computing (HPC) workflows that make tractable calculations that would
+    otherwise be computationally prohibitive.
+
+  - >
+    An overarching theme in my work is the tradeoff between physical interpretability and computational
+    efficiency. This raises several open questions I actively pursue: How can vibrational modes be meaningfully
+    defined and tracked in strongly disordered materials? What structural information is lost when complexity
+    is reduced to parent components, and what new atomistic descriptors are needed to capture emergent behavior?
+    How can data-driven models be designed to strictly respect underlying physical constraints?
+
+  - >
+    To address these questions, my research draws on specialized methods including phonon band unfolding,
+    non-analytical corrections to dynamical matrices, and the virtual crystal approximation, built on automated
+    DFT workflow pipelines that scale materials screening across large HPC clusters. My work is
+    inherently collaborative; I engage with theorists and experimentalists as a member of the Center for
+    Nanoscale Science, a Materials Research Science and Engineering Center (MRSEC) supported by the National
+    Science Foundation, along with other multi-institutional networks.
+
+  - >
+    I'm always happy to discuss research, cool ideas, or potential collaborations. I also welcome any
+    conversations that challenge me. Definitely feel free to reach out! :-)
+
+map:
+  intro: >
+    Here's a brief geography of my life so far, highlighting where I began and where life has taken me since!
+  image: map_tara.png
+  alt: Map showing my home country and my trajectory
+
+acknowledgement: >
+  This website uses the designed template by Martin Saveski, forked from its GitHub repository available <a href="https://github.com/msaveski/www_personal" target="_blank">here</a>.

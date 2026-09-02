@@ -8,44 +8,19 @@ title: Home
   <h4>About</h4>
 
   <p>
-  I am a doctoral candidate in Materials Science and Engineering at Carnegie Mellon University, advised by 
-  Dr. Ismaila Dabo (watch a short overview of our research group's vision for AI and sustainable 
-  energy <a href="https://www.youtube.com/watch?v=eZXgrFlzvkA&t=4s" target="_blank">here</a>). My research 
-  develops predictive models for how atomic-scale disorder in complex oxides governs heat and vibrational 
-  transport, work aimed at accelerating materials design and discovery for next-generation energy conversion 
-  and thermal management systems. <br><br>
+  {% for p in site.data.bio.paragraphs %}
+    {{ p }}<br><br>
+  {% endfor %}
 
-  My core doctoral work centers on predictive modeling of phonons in high-entropy oxides for thermal energy 
-  harvesting. To probe these expansive compositional spaces, I combine high-throughput density functional 
-  theory (DFT) with applied machine learning techniques such as graph neural network (GNN) interatomic potentials, 
-  running automated, high-performance computing (HPC) workflows that make tractable calculations that would 
-  otherwise be computationally prohibitive.<br><br>
+  {{ site.data.bio.map.intro }}
+  <a href="{{ '/assets/misc/' | append: site.data.bio.map.image | prepend: site.baseurl }}" target="_blank"> View map </a>.
 
-  An overarching theme in my work is the tradeoff between physical interpretability and computational 
-  efficiency. This raises several open questions I actively pursue: How can vibrational modes be meaningfully 
-  defined and tracked in strongly disordered materials? What structural information is lost when complexity 
-  is reduced to parent components, and what new atomistic descriptors are needed to capture emergent behavior? 
-  How can data-driven models be designed to strictly respect underlying physical constraints?<br><br>
-
-  To address these questions, my research draws on specialized methods including phonon band unfolding, 
-  non-analytical corrections to dynamical matrices, and the virtual crystal approximation, built on automated 
-  DFT workflow pipelines that scale materials screening across large HPC clusters. My work is 
-  inherently collaborative; I engage with theorists and experimentalists as a member of the Center for 
-  Nanoscale Science, a Materials Research Science and Engineering Center (MRSEC) supported by the National 
-  Science Foundation, along with other multi-institutional networks.<br><br>
-
-  I'm always happy to discuss research, cool ideas, or potential collaborations. I also welcome any 
-  conversations that challenge me. Definitely feel free to reach out! :-) <br><br>
-
-  Here's a brief geography of my life so far, highlighting where I began and where life has taken me since!
-  <a href="{{ '/assets/misc/map_tara.png' | prepend: site.baseurl }}" target="_blank"> View map </a>.
-
-  <img src="{{ '/assets/misc/map_tara.png' | prepend: site.baseurl }}" alt="Map showing my home country and my trajectory" class="map-image">
+  <img src="{{ '/assets/misc/' | append: site.data.bio.map.image | prepend: site.baseurl }}" alt="{{ site.data.bio.map.alt }}" class="map-image">
 
   <h4>Acknowledgement</h4>
-  This website uses the designed template by Martin Saveski, forked from its GitHub repository available <a href="https://github.com/msaveski/www_personal" target="_blank">here</a>. <br/>
+  {{ site.data.bio.acknowledgement }} <br/>
 
-</p> 
+</p>
 </div>
 
 <!-- ========== PUBLICATIONS ========== -->
@@ -251,352 +226,48 @@ title: Home
 <!-- ========== FUN ========== -->
 <div class="docs-section section-page" id="fun">
   <h4>Fun</h4>
-  Playing the piano has long been a central part of my life. 
-  I enjoy exploring a wide range of music that spans from the Romantic era—particularly the works of 
-  Chopin and Liszt—to contemporary composers such as Hans Zimmer, Max Richter, Ludovico Einaudi, and 
-  Yann Tiersen. Occasionally, I compose minimalist pieces of my own or reinterpret modern songs that 
-  resonate with me. You can listen to a performance of 
-  Claude Debussy's <a href="https://www.youtube.com/watch?v=aUbCEKy-R8c" target="_blank">Piano Trio in G Major</a> 
-  by our trio chamber ensemble, as well as our piano quintet's interpretation of 
-  Queen's <a href="https://www.youtube.com/watch?v=mPP6lBkw2GA" target="_blank">Bohemian Rhapsody</a>.<br><br>
 
-  Traveling and learning about new cultures constantly inspires me. 
-  I find delight in wandering around new places, discovering local art, savoring regional cuisine, and 
-  capturing the quiet rythms of daily life through photography. 
-  I also enjoy hiking, camping, and skiing; any excuse to be outdoors and feel connected to nature.<br><br>
-
-  I have recently discovered a deep appreciation for woodworking, and find it truly grounding and rewarding. 
-  Learning about CMU's TechSpark makerspace was a natural entry point, and I had the opportunity of benefiting 
-  from the tools and community to turn ideas into some cool, tangible objects. Some of my recent projects are:<br><br>
+  {% for p in site.data.fun.intro %}
+    {{ p }}<br><br>
+  {% endfor %}
 
   <div class="fun-gallery">
-    <div class="fun-item">
-      <img src="{{ '/assets/misc/plant-stand.jpg' | prepend: site.baseurl }}" alt="Plant Stand">
-      <p>Plant Stand</p>
-    </div>
-
-    <div class="fun-item">
-      <img src="{{ '/assets/misc/crate.jpg' | prepend: site.baseurl }}" alt="Wooden Crate">
-      <p>Wooden Crate</p>
-    </div>
-
-    <div class="fun-item">
-      <img src="{{ '/assets/misc/folding-stool-1.JPG' | prepend: site.baseurl }}" alt="Folding Stool">
-      <p>Folding Stool</p>
-    </div>
-
-    <div class="fun-item">
-      <img src="{{ '/assets/misc/folding-stool-2.jpg' | prepend: site.baseurl }}" alt="Folding Stool Folded">
-      <p>Folding Stool (Folded)</p>
-    </div>
+    {% for item in site.data.fun.gallery %}
+      <div class="fun-item">
+        <img src="{{ '/assets/misc/' | append: item.image | prepend: site.baseurl }}" alt="{{ item.alt }}">
+        <p>{{ item.caption }}</p>
+      </div>
+    {% endfor %}
   </div>
 
-  Reading remains a cherished refuge of mine. I am drawn to fiction novels and philosophy, which together enrich 
-  my understanding of the world and the human experience. I cannot begin to describe how much reading has shaped 
-  who I am and how I view things since years ago. 
-  I am also on <a href="https://www.goodreads.com/user/show/122411744-tara-sabet" target="_blank">goodreads</a>!<br><br>
-
-  Feel free to take a look at my short article about learning and intellectual humility on <a href="https://medium.com/@extaraordinary/the-most-radical-thing-you-can-do-is-change-your-mind-9559c9bff252" target="_blank">Medium</a>. 
-  I've also written some thoughts on motion and progress <a href="https://extaraordinary.medium.com/the-treadmill-has-no-finish-line-164383b5c505" target="_blank">here</a>.<br><br>
-</div> 
+  {% for p in site.data.fun.closing %}
+    {{ p }}<br><br>
+  {% endfor %}
+</div>
 
 <!-- ========== PHOTOGRAPHY ========== -->
 <div class="docs-section section-page" id="photography">
   <h4>Photography</h4>
 
   <p>
-    A small selection of some nature photos I've taken.
+    {{ site.data.photography.intro }}
   </p>
 
   <div class="photo-grid">
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/aurora.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/aurora.heic' | prepend: site.baseurl }}"
-             alt="(Aurora borealis taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Aurora borealis</span>
-        <span class="photo-meta">State College, PA. 2024</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/sf1.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/sf1.heic' | prepend: site.baseurl }}"
-             alt="(Marin Headlands taken in San Francisco, CA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Marin Headlands</span>
-        <span class="photo-meta">San Francisco, CA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/lake1.HEIC' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/lake1.HEIC' | prepend: site.baseurl }}"
-             alt="(Black Moshannon Lake taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Fall colors at the lake</span>
-        <span class="photo-meta">Black Moshannon State Park, PA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/tulips.jpg' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/tulips.jpg' | prepend: site.baseurl }}"
-             alt="(Tulips taken in DC)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Tulips</span>
-        <span class="photo-meta">Washington, DC. 2022</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/laguna5.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/laguna5.heic' | prepend: site.baseurl }}"
-             alt="(Laguna Beach taken in California)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Laguna Beach</span>
-        <span class="photo-meta">Orange County, CA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/mount_nittany.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/mount_nittany.JPG' | prepend: site.baseurl }}"
-             alt="(Mount Nittany taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Sunset from atop Mount Nittany</span>
-        <span class="photo-meta">State College, PA. 2022</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/fall4.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/fall4.JPG' | prepend: site.baseurl }}"
-             alt="(Fall foliage taken in Jim Thorpe, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Fall foliage in Jim Thorpe</span>
-        <span class="photo-meta">Pocono Mountains, PA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/niagara.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/niagara.JPG' | prepend: site.baseurl }}"
-             alt="(Niagara Falls taken in Niagara Falls, NY)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Rainbow in Niagara Falls</span>
-        <span class="photo-meta">Niagara Falls, NY. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/laguna1.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/laguna1.JPG' | prepend: site.baseurl }}"
-             alt="(Laguna Beach taken in California)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Laguna Beach</span>
-        <span class="photo-meta">Orange County, CA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/fall1.jpg' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/fall1.jpg' | prepend: site.baseurl }}"
-             alt="(Fall foliage taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Fall foliage</span>
-        <span class="photo-meta">Black Moshannon State Park, PA. 2024</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/stonevalley2.HEIC' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/stonevalley2.HEIC' | prepend: site.baseurl }}"
-             alt="(Stone Valley taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Sunset at Lake Perez</span>
-        <span class="photo-meta">Stone Valley Recreation Area, PA. 2022</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/stonevalley1.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/stonevalley1.JPG' | prepend: site.baseurl }}"
-             alt="(Stone Valley taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Foggy mountains</span>
-        <span class="photo-meta">Stone Valley Recreation Area, PA. 2022</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/fall2.jpg' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/fall2.jpg' | prepend: site.baseurl }}"
-             alt="(Fall foliage taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Fall foliage</span>
-        <span class="photo-meta">Black Moshannon State Park, PA. 2024</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/lakeperez.jpg' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/lakeperez.jpg' | prepend: site.baseurl }}"
-             alt="(Lake Perez taken in State College, PA)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Lake Perez</span>
-        <span class="photo-meta">Stone Valley Recreation Area, PA. 2022</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/grandcanyon.HEIC' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/grandcanyon.HEIC' | prepend: site.baseurl }}"
-             alt="(Grand Canyon taken in Arizona)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Grand Canyon</span>
-        <span class="photo-meta">Grand Canyon, AZ. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/centralpark.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/centralpark.heic' | prepend: site.baseurl }}"
-             alt="(Central Park taken in New York)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Central Park</span>
-        <span class="photo-meta">New York, NY. 2021</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/biloxi.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/biloxi.heic' | prepend: site.baseurl }}"
-             alt="(Biloxi Beach taken in Mississippi)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Biloxi Beach</span>
-        <span class="photo-meta">Biloxi, MS. 2024</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/arboretum2.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/arboretum2.heic' | prepend: site.baseurl }}"
-             alt="(Arboretum taken in University Park)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">My favorite tree at Penn State's Arboretum</span>
-        <span class="photo-meta">University Park, PA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/minnesota3.jpg' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/minnesota3.jpg' | prepend: site.baseurl }}"
-             alt="(Minnesota taken in Minnesota)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Frozen Lake Minnesota</span>
-        <span class="photo-meta">Excelsior Bay, MN. 2021</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/jackson2.HEIC' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/jackson2.HEIC' | prepend: site.baseurl }}"
-             alt="(Jackson taken in Centre County)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Jackson Trail</span>
-        <span class="photo-meta">Centre County, PA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/brooklynbridge.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/brooklynbridge.JPG' | prepend: site.baseurl }}"
-             alt="(Brooklyn Bridge taken in New York)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Bird under the Brooklyn Bridge</span>
-        <span class="photo-meta">New York, NY. 2021</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/laguna4.HEIC' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/laguna4.HEIC' | prepend: site.baseurl }}"
-             alt="(Laguna Beach taken in California)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Laguna Beach</span>
-        <span class="photo-meta">Orange County, CA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/thousandsteps.JPG' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/thousandsteps.JPG' | prepend: site.baseurl }}"
-             alt="(Thousand Steps taken in Centre County)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Thousand Steps at the Standing Stone Trail</span>
-        <span class="photo-meta">Huntingdon County, PA. 2023</span>
-      </figcaption>
-    </figure>
-
-    <figure class="photo-card">
-      <a href="{{ '/assets/misc/squirrel.heic' | prepend: site.baseurl }}" target="_blank">
-        <img src="{{ '/assets/misc/squirrel.heic' | prepend: site.baseurl }}"
-             alt="(Squirrel taken in University Park)"
-             loading="lazy">
-      </a>
-      <figcaption>
-        <span class="photo-title">Squirrel at Penn State's campus</span>
-        <span class="photo-meta">University Park, PA. 2024</span>
-      </figcaption>
-    </figure>
-
+    {% for photo in site.data.photography.photos %}
+      <figure class="photo-card">
+        <a href="{{ '/assets/misc/' | append: photo.file | prepend: site.baseurl }}" target="_blank">
+          <img src="{{ '/assets/misc/' | append: photo.file | prepend: site.baseurl }}"
+               alt="{{ photo.alt }}"
+               loading="lazy">
+        </a>
+        <figcaption>
+          <span class="photo-title">{{ photo.title }}</span>
+          <span class="photo-meta">{{ photo.meta }}</span>
+        </figcaption>
+      </figure>
+    {% endfor %}
   </div>
 </div>
+
 

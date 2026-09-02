@@ -1,8 +1,49 @@
-fun_paragraphs:
-  - "Playing the piano has long been a central part of my life. I enjoy exploring a wide range of music that spans from the Romantic era—particularly the works of Chopin and Liszt—to contemporary composers such as Hans Zimmer, Max Richter, Ludovico Einaudi, and Yann Tiersen. Occasionally, I compose minimalist pieces of my own or reinterpret modern songs that resonate with me. You can listen to a Debussy performance by our trio chamber ensemble, as well as our piano quintet's interpretation of Bohemian Rhapsody."
-  
-  - "Traveling and learning about new cultures constantly inspires me. I find delight in wandering around new places, discovering local art, savoring regional cuisine, and capturing the quiet rythms of daily life through photography. I also enjoy hiking, camping, and skiing; any excuse to be outdoors and feel connected to nature."
+intro:
+  - >
+    Playing the piano has long been a central part of my life.
+    I enjoy exploring a wide range of music that spans from the Romantic era—particularly the works of
+    Chopin and Liszt—to contemporary composers such as Hans Zimmer, Max Richter, Ludovico Einaudi, and
+    Yann Tiersen. Occasionally, I compose minimalist pieces of my own or reinterpret modern songs that
+    resonate with me. You can listen to a performance of
+    Claude Debussy's <a href="https://www.youtube.com/watch?v=aUbCEKy-R8c" target="_blank">Piano Trio in G Major</a>
+    by our trio chamber ensemble, as well as our piano quintet's interpretation of
+    Queen's <a href="https://www.youtube.com/watch?v=mPP6lBkw2GA" target="_blank">Bohemian Rhapsody</a>.
 
-  - 'I have recently found joy in woodworking. Learning about CMU''s TechSpark was a great starting point for me. You can check out my latest projects here: <a href="{{ "/assets/misc/plant-stand.jpg" | prepend: site.baseurl }}" target="_blank">plant stand</a>, <a href="{{ "/assets/misc/crate.jpg" | prepend: site.baseurl }}" target="_blank">crate</a>, and <a href="{{ "/assets/misc/folding-stool-1.JPG" | prepend: site.baseurl }}" target="_blank">folding stool</a>.'
+  - >
+    Traveling and learning about new cultures constantly inspires me.
+    I find delight in wandering around new places, discovering local art, savoring regional cuisine, and
+    capturing the quiet rythms of daily life through photography.
+    I also enjoy hiking, camping, and skiing; any excuse to be outdoors and feel connected to nature.
 
-  - "Reading remains a cherished refuge. I am drawn to fiction novels and philosophy, which together enrich my understanding of the world and the human experience."
+  - >
+    I have recently discovered a deep appreciation for woodworking, and find it truly grounding and rewarding.
+    Learning about CMU's TechSpark makerspace was a natural entry point, and I had the opportunity of benefiting
+    from the tools and community to turn ideas into some cool, tangible objects. Some of my recent projects are:
+
+gallery:
+  - image: plant-stand.jpg
+    alt: Plant Stand
+    caption: Plant Stand
+
+  - image: crate.jpg
+    alt: Wooden Crate
+    caption: Wooden Crate
+
+  - image: folding-stool-1.JPG
+    alt: Folding Stool
+    caption: Folding Stool
+
+  - image: folding-stool-2.jpg
+    alt: Folding Stool Folded
+    caption: Folding Stool (Folded)
+
+closing:
+  - >
+    Reading remains a cherished refuge of mine. I am drawn to fiction novels and philosophy, which together enrich
+    my understanding of the world and the human experience. I cannot begin to describe how much reading has shaped
+    who I am and how I view things since years ago.
+    I am also on <a href="https://www.goodreads.com/user/show/122411744-tara-sabet" target="_blank">goodreads</a>!
+
+  - >
+    Feel free to take a look at my short article about learning and intellectual humility on <a href="https://medium.com/@extaraordinary/the-most-radical-thing-you-can-do-is-change-your-mind-9559c9bff252" target="_blank">Medium</a>.
+    I've also written some thoughts on motion and progress <a href="https://extaraordinary.medium.com/the-treadmill-has-no-finish-line-164383b5c505" target="_blank">here</a>.

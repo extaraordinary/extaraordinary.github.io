@@ -381,11 +381,39 @@ html[data-theme="dark"] .button:hover { background: rgba(255,255,255,0.06); }
 .docs-section.section-page { border-top: 0; }
 
 .footer {
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  color: var(--muted2);
-  border-top: 1px solid var(--border);
-  padding: 15px 0 40px 0;
+  color: rgba(255, 255, 255, 0.68);
+  background: #0a1a2f;
+  padding: 28px 0 32px 0;
   margin-bottom: 0;
+}
+
+/* the CMU pattern, faded into a texture rather than a decoration -
+   deliberately behind everything else in the footer (z-index below
+   .footer-inner) and non-interactive. */
+.footer-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/misc/cmu-pattern.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-motto {
+  font-style: italic;
+  font-size: 0.98em;
+  letter-spacing: .02rem;
+  color: var(--accent);
+  margin: 0 0 18px 0;
 }
 
 .title-subtitle h3 { margin-bottom: 0px; }
@@ -710,9 +738,17 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
 .footer .footer-social .fa { transform: translateY(2px); }
 .footer .footer-social .ai-google-scholar { transform: translateY(2.5px); }
 
+/* the footer is always a dark band now, regardless of the site's own
+   light/dark theme toggle, so its image icons always need the light
+   (inverted) treatment rather than only in dark theme. */
 .footer .footer-social img {
   transform: translateY(2px);
-  opacity: 0.6;
+  filter: invert(1);
+}
+
+.footer .footer-social .social-icon:hover img,
+.footer .footer-social .social-icon:focus-visible img {
+  filter: invert(1) drop-shadow(0 0 3px var(--accent-border)) drop-shadow(0 0 1px var(--accent));
 }
 
 /* full opacity on hover */

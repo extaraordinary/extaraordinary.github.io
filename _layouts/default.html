@@ -178,7 +178,16 @@
 
     {{ content }}
 
-    <div class="footer">
+  </div>
+
+  <!-- full-bleed dark band, deliberately outside .container so the
+       background/pattern can run edge-to-edge; its own inner .container
+       keeps the text/icons lined up with the rest of the page's content
+       width. -->
+  <div class="footer">
+    <div class="footer-pattern" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <p class="footer-motto">&ldquo;My heart is in the work.&rdquo;</p>
       <div class="row">
         <div class="four columns">
           {{ site.data.main_info.name }}
@@ -219,7 +228,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <!-- Google Analytics -->

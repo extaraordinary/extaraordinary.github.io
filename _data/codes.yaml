@@ -111,7 +111,7 @@ projects:
 
   - title: GNN + T4 GPU Setup Notes
     url: https://github.com/extaraordinary/gnn-t4-gpu-setup
-    tags: [Notes, PyTorch, DGL, CUDA]
+    tags: [PyTorch, DGL, CUDA]
     description: >
       Debugging notes on setting up PyTorch and DGL for GNN training on Colab's T4 GPU &mdash; covering CUDA/driver version conflicts, torchdata dependency issues, and an overview of the GraphBolt sampling pipeline.
     thumb_aria_label: Terminal window with debugging log illustration

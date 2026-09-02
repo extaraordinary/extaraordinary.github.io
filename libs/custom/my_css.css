@@ -1328,6 +1328,24 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   margin: 4px 0 6px 0;
 }
 
+.teaching-description {
+  color: var(--muted);
+  margin: 4px 0;
+}
+
+.teaching-highlights {
+  margin: 6px 0;
+  padding-left: 1.2em;
+}
+.teaching-highlights li { margin-bottom: 4px; }
+
+.teaching-materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 4px 0;
+}
+
 .fun-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* was ~220px */

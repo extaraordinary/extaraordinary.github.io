@@ -5,6 +5,7 @@ groups:
       - Density Functional Perturbation Theory (DFPT)
       - Quantum ESPRESSO
       - VASP
+      - LAMMPS
       - Monte Carlo Simulations
       - ASE
       - ICET

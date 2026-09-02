@@ -3,7 +3,12 @@
   time: Fall 2025
   location: Pittsburgh, PA
   thank_a_teacher: true
-  
+  highlights:
+    - Created a tutorial on thermal analysis in Ansys Mechanical for the course's finite-element module.
+  materials:
+    - label: Ansys Thermal Analysis Tutorial (Slides)
+      url: /assets/teaching/ansys-thermal-analysis-tutorial.pdf
+
 - institution: CMU
   position: 27-534 Methods of Computational Materials Science
   time: Spring 2025

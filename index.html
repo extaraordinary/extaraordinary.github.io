@@ -213,11 +213,27 @@ title: Home
   <div class="teaching-entry">
     <p><b>{{ ta.position }}</b></p>
     <p>{{ ta.institution }}, {{ ta.location }} | {{ ta.time }}</p>
-    <ul>
-      {% for item in ta.responsibilities %}
-        <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+
+    {% if ta.description %}
+      <p class="teaching-description">{{ ta.description }}</p>
+    {% endif %}
+
+    {% if ta.highlights %}
+      <ul class="teaching-highlights">
+        {% for item in ta.highlights %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if ta.materials %}
+      <div class="teaching-materials">
+        {% for m in ta.materials %}
+          <a class="button" href="{{ m.url | prepend: site.baseurl }}" target="_blank">{{ m.label }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
       {% if ta.thank_a_teacher %}
         <p class="teaching-recognition">
           Recipient of MSE Teaching Intern Award. Recognized through CMU's

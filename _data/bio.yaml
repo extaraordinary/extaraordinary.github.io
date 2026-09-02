@@ -8,13 +8,28 @@ paragraphs:
     oxides governs heat and vibrational transport, work aimed at accelerating materials 
     design and discovery for next-generation energy conversion and thermal management systems.
 
-  - >
-    My core doctoral work centers on predictive modeling of phonons in high-entropy 
-    oxides for thermal energy harvesting. To probe these expansive compositional spaces, 
-    I combine high-throughput density functional theory (DFT) with applied machine learning 
-    techniques such as graph neural network (GNN) interatomic potentials, running automated, 
-    high-performance computing (HPC) workflows that make tractable calculations that would
-    otherwise be computationally prohibitive.
+  - > 
+    Broadly, I am interested in how atomic-scale disorder governs the physical properties of 
+    materials particularly how the arrangement of atoms within a crystal, from perfect order 
+    to random substitution to intermediate short-range clustering, shapes the way heat and 
+    vibrations move through a solid. Much of my work uses density functional theory (DFT) and 
+    density functional perturbation theory (DFPT) to compute phonon spectra and thermal transport 
+    properties from first principles. Because these calculations become computationally prohibitive 
+    for the large, low-symmetry supercells needed to represent realistic disordered materials, I 
+    also implement machine-learned interatomic potentials — most recently fine-tuning a GNN-based 
+    model (CHGNet) as a fast, physically validated surrogate for phonon predictions — to make this 
+    class of problem tractable at scale.
+
+  - > 
+    Current projects focus on high-entropy oxides — rock-salt and wolframite compositions incorporating 
+    five or six transition-metal cations in a single lattice. I use statistical sampling methods (Monte 
+    Carlo simulated annealing, cluster expansion) to generate and control short-range order across these 
+    compositions, and correlate that disorder directly with phonon behavior — work carried out in close 
+    collaboration with experimental groups performing electron energy-loss spectroscopy (EELS) and 
+    transmission electron microscopy (TEM), so that first-principles predictions are tested directly 
+    against measurement. I am also interested more broadly in building reproducible, open computational 
+    workflows — from structure generation through MLIP training to phonon analysis — that can be extended 
+    to other disordered material systems.
 
   - >
     An overarching theme in my work is the tradeoff between physical interpretability and 

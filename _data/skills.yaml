@@ -26,8 +26,9 @@ groups:
       - Bayesian Optimization
       - Gaussian Process Regression
       - Random Forests
-      - PyTorch, TensorFlow
-      - Generative AI, LLMs
+      - PyTorch
+      - TensorFlow
+      - Generative AI
       - LLM Fine-Tuning (PEFT, LoRA)
 
   - category: Programming & Scripting

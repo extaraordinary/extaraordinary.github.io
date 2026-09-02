@@ -664,7 +664,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
   width: 22px;
   height: 22px;
   display: block;
-  transform: translateY(2px);
+  transform: translateY(2.5px);
 }
 
 /* Goodreads' cursive "g" already fills its viewBox, so it only needs a
@@ -826,11 +826,14 @@ html[data-theme="dark"] .social-icon img { filter: invert(1); }
   .navbar-spacer { display: none; }
 
   /* fixed 1000px container overflowed viewports between ~750-1176px;
-     cap the width instead of forcing it, and let items wrap if needed */
+     cap the width instead of forcing it, and let items wrap if needed.
+     No horizontal padding here: this container is already nested inside
+     the page's own .container, which supplies the left/right gutter -
+     padding here a second time was stealing 40px the nav items needed. */
   .navbar > .container {
     width: 100%;
     max-width: 1040px;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
   }
 

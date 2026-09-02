@@ -3,12 +3,12 @@ groups:
     skills:
       - Quantum ESPRESSO
       - VASP
-      - DFPT
-      - Monte Carlo
+      - DFT
+      - Monte Carlo Simulations
       - ASE
       - ICET
       - Pymatgen
-      - Phonopy
+      - Phonopy/Phono3py
       - Ovito
       - VESTA
       - CrystalMaker

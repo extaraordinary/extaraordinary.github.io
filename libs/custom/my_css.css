@@ -650,7 +650,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 .social-icon .ai-google-scholar {
   font-size: 23px;
   line-height: 1;
-  transform: translateY(1.5px);
+  transform: translateY(2.0px);
 }
 
 .social-icon .ai-orcid {
@@ -674,7 +674,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 .social-icon img[alt="Goodreads"] {
   width: 20px;
   height: 20px;
-  transform: translateY(0.5px);
+  transform: translateY(1.0px);
 }
 
 .social-icon img[alt="Strava"] {

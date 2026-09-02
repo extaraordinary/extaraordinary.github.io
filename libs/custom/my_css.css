@@ -644,11 +644,19 @@ html[data-theme="dark"] .social-icon:focus-visible img {
   transform: translateY(0px);
 }
 
-/* academicons (Google Scholar) */
+/* academicons (Google Scholar, ORCID) - these glyphs carry more internal
+   padding than the fa/ image icons, so they need a noticeably larger
+   font-size to read as the same optical size in the row */
 .social-icon .ai-google-scholar {
-  font-size: 22px;
+  font-size: 29px;
   line-height: 1;
-  transform: translateY(2.5px);
+  transform: translateY(3px);
+}
+
+.social-icon .ai-orcid {
+  font-size: 27px;
+  line-height: 1;
+  transform: translateY(1.5px);
 }
 
 /* image icons (X) */
@@ -659,11 +667,18 @@ html[data-theme="dark"] .social-icon:focus-visible img {
   transform: translateY(2px);
 }
 
-/* image icons that bleed to the edge of their viewBox (Strava, Goodreads) -
-   sized down slightly so their optical size matches the font icons above */
-.social-icon img.icon-small {
-  width: 19px;
-  height: 19px;
+/* Goodreads' cursive "g" already fills its viewBox, so it only needs a
+   slight trim to match; Strava's chevron has a lot of empty padding
+   baked into its viewBox, so it needs to run much larger than the rest
+   to read as the same size. */
+.social-icon img[alt="Goodreads"] {
+  width: 21px;
+  height: 21px;
+}
+
+.social-icon img[alt="Strava"] {
+  width: 25px;
+  height: 25px;
 }
 
 /* dark mode - invert image-based icons */

@@ -1,37 +1,40 @@
 groups:
   - category: Materials Science
     skills:
-      - Density Functional Theory (DFT)
-      - Density Functional Perturbation Theory (DFPT)
+      - DFT, DFPT
       - Quantum ESPRESSO
       - VASP
       - LAMMPS
       - Monte Carlo Simulations
-      - Atomistic Simulation Environment (ASE)
+      - Cluster Expansion
+      - Atomic Simulation Environment (ASE)
       - ICET
       - Pymatgen
       - Atomate2
       - AiiDA
-      - Phonopy/Phono3py
+      - Phonopy, Phono3py
       - Ovito
       - VESTA
       - CrystalMaker
 
   - category: Machine Learning
     skills:
-      - GNNs
-      - Deep Learning
+      - Graph Neural Networks (GNNs)
+      - Convolutional & Recurrent Neural Networks (CNNs, RNNs)
       - Surrogate Modeling
+      - Active Learning
+      - Bayesian Optimization
       - Gaussian Process Regression
       - Random Forests
-      - Generative AI
-      - LLMs
+      - PyTorch, TensorFlow
+      - Generative AI, LLMs
+      - LLM Fine-Tuning (PEFT, LoRA)
 
   - category: Programming & Scripting
     skills:
       - Python (Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Plotly)
       - Unix Shell Scripting (Bash)
-      - C/C++
+      - C++
       - C#
       - MATLAB
       - HTML

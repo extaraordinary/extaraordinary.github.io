@@ -656,7 +656,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 .social-icon .ai-orcid {
   font-size: 23px;
   line-height: 1;
-  transform: translateY(1.5px);
+  transform: translateY(1.0px);
 }
 
 /* image icons (X) */

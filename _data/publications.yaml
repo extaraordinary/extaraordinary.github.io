@@ -1,9 +1,9 @@
 papers:
 
-  - title: "Local Nuances in Vibrational Properties of High-Entropy Oxides Revealed by STEM‑EELS"
-    authors: "S. V. G. Ayyagari, <b>T. Karimzadeh Sabet</b>, M. Webb, A. B. Mosberg, S. Gelin, S. S. I. Almishal, G. Bejger, J-P Maria, C. M. Rost, J. T. Heron, I. Dabo, D. Kepaptsoglou, Q. M. Ramasse, N. Alem"
-    venue: "Physical Review Letters. 2026 (in preparation)"
-    selected: n
+  # - title: "Local Nuances in Vibrational Properties of High-Entropy Oxides Revealed by STEM‑EELS"
+  #   authors: "S. V. G. Ayyagari, <b>T. Karimzadeh Sabet</b>, M. Webb, A. B. Mosberg, S. Gelin, S. S. I. Almishal, G. Bejger, J-P Maria, C. M. Rost, J. T. Heron, I. Dabo, D. Kepaptsoglou, Q. M. Ramasse, N. Alem"
+  #   venue: "Physical Review Letters. 2026 (in preparation)"
+  #   selected: n
 
   - title: "Growth of Aluminum Bismide (AlBi) via Molecular Beam Epitaxy"
     authors: "M. McDonough, <b>T. Karimzadeh Sabet</b>, A. Graves, R. Trice, G. N. Gopakumar, Q. Zhang, M. Hilse, I. Dabo, S. Law"

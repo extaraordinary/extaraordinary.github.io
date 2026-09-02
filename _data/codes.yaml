@@ -6,7 +6,7 @@ projects:
     url: https://github.com/extaraordinary/data_visualization
     tags: [Python, Matplotlib, Plotly]
     description: >
-      A hands-on tutorial notebook covering Matplotlib, Seaborn, and Plotly &mdash; from basic plots to interactive dashboards.
+      A hands-on tutorial notebook covering visualization techniques using Python, from basic plots to interactive dashboards.
     thumb_aria_label: Bar and line chart illustration
     thumb_svg: |
       <defs>

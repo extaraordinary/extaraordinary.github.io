@@ -677,8 +677,8 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 }
 
 .social-icon img[alt="Strava"] {
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
 }
 
 /* dark mode - invert image-based icons */

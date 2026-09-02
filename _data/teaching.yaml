@@ -4,9 +4,9 @@
   location: Pittsburgh, PA
   thank_a_teacher: true
   highlights:
-    - Created a tutorial on thermal analysis in Ansys Mechanical for the course's finite-element module.
+    - Created a tutorial on thermal analysis using ANSYS Mechanical.
   materials:
-    - label: Ansys Thermal Analysis Tutorial (Slides)
+    - label: Slides
       url: /assets/teaching/ansys-thermal-analysis-tutorial.pdf
 
 - institution: CMU

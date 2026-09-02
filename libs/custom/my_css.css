@@ -639,7 +639,7 @@ html[data-theme="dark"] .social-icon:focus-visible img {
 
 /* font icons (LinkedIn, GitHub) */
 .social-icon .fa {
-  font-size: 22px;
+  font-size: 23px;
   line-height: 1;
   transform: translateY(0px);
 }

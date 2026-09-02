@@ -9,7 +9,7 @@ groups:
       - Cluster Expansion
       - Atomic Simulation Environment (ASE)
       - icet
-      - Pymatgen
+      - pymatgen
       - atomate2
       - AiiDA
       - Phonopy, Phono3py
@@ -19,8 +19,8 @@ groups:
 
   - category: Machine Learning
     skills:
-      - Graph Neural Networks (GNNs)
-      - Convolutional & Recurrent Neural Networks (CNNs, RNNs)
+      - Deep Neural Networks
+      - GNNs
       - Surrogate Modeling
       - Active Learning
       - Bayesian Optimization
@@ -45,13 +45,13 @@ groups:
     skills:
       - Git/GitHub
       - Docker
-      - Linux
+      - Linux OS
       - Jupyter
       - VS Code
       - PyCharm
       - AWS SageMaker
       - Slurm/PBS Schedulers
-      - Parallel Computing (MPI, OpenMP)
+      - Shared & Distributed Parallelism (MPI, OpenMP)
       - GPU Acceleration (CUDA)
 
   - category: General/Engineering

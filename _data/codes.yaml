@@ -44,7 +44,7 @@ projects:
     url: https://github.com/extaraordinary/phonon-unfolding
     tags: [Python, DFPT, SQS]
     description: >
-      Spectral-weight phonon band unfolding for special quasirandom structure (SQS) supercells, projecting disordered force constants onto the primitive Brillouin zone.
+      Spectral-weight phonon band unfolding for SQS supercells, projecting disordered force constants onto the primitive Brillouin zone.
     thumb_aria_label: Phonon dispersion band diagram illustration
     thumb_svg: |
       <rect width="400" height="240" fill="var(--card)"/>
@@ -85,7 +85,7 @@ projects:
     url: https://github.com/extaraordinary/spherical_harmonics
     tags: [Python, NumPy, Plotly]
     description: >
-      Interactive 3D visualization of real spherical harmonics and atomic orbitals (s, p, d), correctly handling real-orbital shapes and phase.
+      Interactive 3D visualization of real spherical harmonics and atomic orbitals (s, p, d), handling real-orbital shapes and phase.
     thumb_aria_label: Atomic orbital lobe illustration
     thumb_svg: |
       <rect width="400" height="240" fill="var(--card)"/>

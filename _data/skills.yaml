@@ -1,9 +1,10 @@
 groups:
   - category: Materials Science
     skills:
+      - Density Functional Theory (DFT)
+      - Density Functional Perturbation Theory (DFPT)
       - Quantum ESPRESSO
       - VASP
-      - DFT
       - Monte Carlo Simulations
       - ASE
       - ICET

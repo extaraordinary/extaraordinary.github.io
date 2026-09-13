@@ -75,6 +75,24 @@ projects:
       full DFT/Monte Carlo/NEB pipeline via Slurm on Penn State's ICDS Roar Collab HPC cluster to 
       enable high-throughput screening across thousands of structures.
     venue: APS March Meeting 2023/2024, MRS Spring Meeting 2024
+  
+  - title: >
+      All-Solid-State Lithium-Sulfur Battery Design
+    tags: [Battery Design, Electrochemistry, Solid-State Electrolytes, Cost Analysis]
+    description: >
+      Led a five-person team ("Better Batteries") in Iran's national Rahneshan energy technology 
+      competition, designing a next-generation alternative to lithium-ion batteries. Benchmarked 
+      candidate battery chemistries against energy density, cycle life, cost, and manufacturability 
+      under real material-availability constraints, and proposed an all-solid-state lithium-sulfur 
+      cell — a Li₂S–LiX-based composite cathode (with VGCF and solid electrolyte), a Li₂S–P₂S₅ 
+      glass-ceramic solid electrolyte, and a lithium-indium alloy anode. Quantified the cell's cost 
+      structure component-by-component, identifying lithium and electrolyte as the two largest cost 
+      drivers (55% and 31% of total cell cost, respectively), and projected an estimated cost of 
+      $59–78/kWh — well below commercial lithium-ion benchmarks. Defined the full technical roadmap 
+      from raw-material synthesis through cell assembly and electrochemical validation (cycling, 
+      impedance, and cyclic voltammetry testing), informed by international battery safety and testing 
+      standards (UL, IEC).
+    venue: Rahneshan National Energy Competition
 
   - title: >
       Solution Combustion Synthesis of Iron Oxide/Graphene Nanocomposite for Supercapacitors
